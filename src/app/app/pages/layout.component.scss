@@ -1,0 +1,26 @@
+:host {
+    ng-scrollbar {
+      --scrollbar-thumb-color: var(--cui-border-color, #999);
+      --scrollbar-track-color: var(--cui-body-color, #fff);
+      --scrollbar-hover-size: calc(var(--scrollbar-size) * 1.5);
+    }
+  }
+  ul{
+  direction: rtl;
+  }
+  .close {
+    font-size: 1.4rem;
+    opacity: 0.1;
+    transition: opacity 0.3s;
+  }
+  .nav-link:hover > .close {
+    opacity: 0.8;
+  }
+  .hidden{
+    display: none;
+  }
+  .mobile-tab{
+    position: fixed;
+    top: 0;
+  }
+  

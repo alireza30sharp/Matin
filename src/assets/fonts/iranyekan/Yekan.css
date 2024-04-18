@@ -1,0 +1,7 @@
+/*WebYekanFont*/
+@font-face {
+	font-family: 'Yekan';
+	src: url('Yekan.ttf') format('ttf'),
+    url('Yekan.woff') format('woff'),
+    url('Yekan.eot') format('eot');
+}

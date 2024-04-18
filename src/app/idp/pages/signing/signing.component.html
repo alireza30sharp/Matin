@@ -1,0 +1,213 @@
+<div class="auth-signing" *ngIf="authVM.formState === 'username'">
+  <div>
+    <p class="f-22 fw-bold">ورود و ثبت‌نام</p>
+    <p class="f-14 gray mt-2">لطفاً شماره همراه یا ایمیل خود را وارد کنید</p>
+  </div>
+  <form
+    [formGroup]="authVM.signingForm"
+    class="d-flex flex-column align-items-start gap-4 w-100"
+  >
+    <div
+      class="input-box w-100"
+      [class.input-box--invalid]="
+        authVM.userNameControl.dirty && !authVM.userNameControl.valid
+      "
+    >
+      <input
+        tabindex="0"
+        autofocus
+        type="text"
+        class="input h-56px"
+        placeholder=" "
+        formControlName="userName"
+        (keyup.enter)="signupUserName()"
+      />
+      <label for="name" class="input-label">شماره همراه یا ایمیل</label>
+    </div>
+    <button
+      [disabled]="!authVM.userNameControl.valid || userNameLoading"
+      (click)="signupUserName()"
+      class="button btn-blue w-100 h-60px radius-15 f-14 min-w-unset"
+    >
+      <ng-container *ngIf="exsistedUser; else otp">
+        {{ userNameLoading ? "در حال بررسی کاربر..." : "ورود" }}
+      </ng-container>
+      <ng-template #otp>
+        {{ userNameLoading ? "در حال ارسال کد..." : "ورود" }}
+      </ng-template>
+    </button>
+  </form>
+  <p class="f-12 gray">
+    ورود شما به معنی پذیرش
+    <span class="blue">قوانین و مفررات</span>
+    کیا سیستم می‌باشد.
+  </p>
+</div>
+
+<div class="auth-signing auth-signing--otp" *ngIf="authVM.formState === 'otp'">
+  <div class="d-flex flex-column gap-2">
+    <div
+      class="auth-back d-flex gap-2"
+      [class.deactivate]="!authVM.userNameControl.valid || userNameLoading"
+      (click)="authVM.changeFormState('username')"
+    >
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M19.75 11.7256L4.75 11.7256"
+          stroke="#130F26"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M13.6992 5.701C13.6992 5.701 19.7492 8.962 19.7492 11.724C19.7492 14.488 13.6992 17.75 13.6992 17.75"
+          stroke="#130F26"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+      <span>بازگشت</span>
+    </div>
+    <p class="mt-3 auth-signing--otp__title">لطفا کد تایید را وارد نمایید</p>
+    <p
+      *ngIf="authVM.otpData?.has_account; else notAccount_tpl"
+      class="f-14 gray mt-1"
+    >
+      کد تایید برای شماره {{ authVM.userNameControl.value }} پیامک شد.
+    </p>
+    <ng-template #notAccount_tpl>
+      <p class="f-14 gray mt-1">
+        حساب کاربری با شماره موبایل {{ authVM.userNameControl.value }} وجود
+        ندارد. برای ساخت حساب جدید، کد تایید برای این شماره ارسال گردید.
+      </p>
+    </ng-template>
+  </div>
+  <form
+    [formGroup]="authVM.signingForm"
+    class="d-flex flex-column align-items-start gap-4 w-100"
+  >
+    <!-- [class.input-box--invalid]="
+  authVM.otpControl.dirty && !authVM.otpControl.valid
+" -->
+    <div class="d-flex flex-column gap-3 w-100">
+      <div class="input-box w-100">
+        <app-pin-code #codeEle (emitCode)="verifyOtp($event)"></app-pin-code>
+        <!-- <input
+          #codeEle
+          type="number"
+          class="input h-56px"
+          placeholder=" "
+          formControlName="otp"
+          (keyup.enter)="authVM.otpControl.valid && signupUserName()"
+        />
+      
+        <label *ngIf="{ _: codeEle.focus() }" for="name" class="input-label"
+          >کد را وارد کنید ...</label
+        > -->
+      </div>
+      <div class="d-flex justify-content-between align-items-center">
+        <div *ngIf="authVM.otpTimer; else resendOtp_tpl" class="f-12 gray">
+          {{ authVM.otpTimerTextAction$ | async }} مانده تا دریافت مجدد کد
+        </div>
+        <ng-template #resendOtp_tpl>
+          <div class="f-12 blue pointer" (click)="signupUserName(true)">
+            ارسال مجدد کد
+          </div>
+        </ng-template>
+        <div class="f-12 blue pointer" (click)="updateFormStateToUserName()">
+          ورود با رمزعبور >
+        </div>
+      </div>
+    </div>
+    <button
+      [disabled]="otpVerifyLoading"
+      class="button btn-blue w-100 h-60px radius-15 f-14 min-w-unset"
+    >
+      تایید
+    </button>
+  </form>
+</div>
+
+<div
+  class="auth-signing auth-signing--password"
+  *ngIf="authVM.formState === 'password'"
+>
+  <div class="d-flex flex-column gap-2">
+    <div
+      class="auth-back d-flex gap-2"
+      [class.deactivate]="passwordLoading"
+      (click)="authVM.changeFormState('username')"
+    >
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M19.75 11.7256L4.75 11.7256"
+          stroke="#130F26"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M13.6992 5.701C13.6992 5.701 19.7492 8.962 19.7492 11.724C19.7492 14.488 13.6992 17.75 13.6992 17.75"
+          stroke="#130F26"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+      <span>بازگشت</span>
+    </div>
+    <p class="mt-3 auth-signing--otp__title">رمزعبور</p>
+    <p class="f-14 gray mt-1">لطفا رمز عبور خود را وارد کنید</p>
+  </div>
+  <form
+    [formGroup]="authVM.signingForm"
+    class="d-flex flex-column align-items-start gap-4 w-100"
+  >
+    <div class="d-flex flex-column gap-3 w-100">
+      <div
+        class="input-box w-100"
+        [class.input-box--invalid]="
+          authVM.passwordControl.dirty && !authVM.passwordControl.valid
+        "
+      >
+        <input
+          #passwordEle
+          type="password"
+          class="input h-56px"
+          placeholder=" "
+          formControlName="password"
+          (keyup.enter)="authVM.passwordControl.valid && signingWithPassword()"
+        />
+        <label *ngIf="{ _: passwordEle.focus() }" for="name" class="input-label"
+          >رمزعبور را وارد کنید ...</label
+        >
+      </div>
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="f-12 blue pointer">فراموشی رمزعبور</div>
+        <div class="f-12 blue pointer" (click)="updateFormStateToUserName()">
+          ورود با کد پیامک >
+        </div>
+      </div>
+    </div>
+    <button
+      [disabled]="!authVM.passwordControl.valid || passwordLoading"
+      (click)="signingWithPassword()"
+      class="button btn-blue w-100 h-60px radius-15 f-14 min-w-unset"
+    >
+      تایید
+    </button>
+  </form>
+</div>

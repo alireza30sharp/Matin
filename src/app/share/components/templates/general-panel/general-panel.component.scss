@@ -1,0 +1,58 @@
+@import 'variable';
+$name: 'general-panel';
+.#{$name} {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  background-color:  var(--light);;
+
+  &__content {
+    flex: 1;
+    min-width: 0;
+    padding: $side-distance;
+  }
+
+  &__header {
+    position: sticky;
+    top: 0;
+    background-color:var(--top-header);
+    z-index: 12;
+    padding: $side-distance;
+    &::after {
+      position: absolute;
+      content: '';
+      bottom: 0;
+      right: $side-distance;
+      left: $side-distance;
+      border-bottom: 1px solid $border;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: $spacing-x2;
+    position: sticky;
+    bottom: 0;
+    background-color: $background-primary;
+    z-index: 12;
+    padding: $side-distance;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: $side-distance;
+      left: $side-distance;
+      border-bottom: 1px solid $border;
+    }
+  }
+
+  &--in-sticky-tab {
+    .#{$name} {
+      &__header {
+        top: $tab-height + 1px;
+      }
+    }
+  }
+}

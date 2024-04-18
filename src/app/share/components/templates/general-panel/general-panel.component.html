@@ -1,0 +1,26 @@
+<section
+  class="general-panel h-100 border-15"
+  [style.height]="height"
+  [style.overflow]="overflow"
+>
+  <app-general-header
+    class="general-panel__header border-top-15"
+    [title]="title"
+    [subtitle]="subtitle"
+    [hideBackButton]="hideBackButton"
+    [backButtonTooltip]="backButtonTooltip"
+    (backCallback)="backCallback.emit($event)"
+    ><ng-container [ngTemplateOutlet]="header"></ng-container
+  ></app-general-header>
+  <section
+    class="general-panel__content h-100 overflow-auto"
+    [style.overflow]="contentOverflow"
+  >
+    <ng-content></ng-content>
+  </section>
+  <ng-container *ngIf="footer">
+    <footer class="general-panel__footer">
+      <ng-container [ngTemplateOutlet]="footer"></ng-container>
+    </footer>
+  </ng-container>
+</section>

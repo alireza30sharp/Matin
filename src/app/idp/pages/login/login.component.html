@@ -1,0 +1,28 @@
+<div class="row h-100vh bg-white transition-02s">
+  <div
+    class="col-6 d-flex flex-column justify-content-center align-items-center gap-5 z-index-9"
+  >
+    <div *ngIf="authVM.errorText" class="col-6">
+      <div class="auth-error-box rtl">
+        <button
+          type="button"
+          class="btn-close"
+          aria-label="Close"
+          (click)="authVM.clearError()"
+        ></button>
+        <div class="auth-error-box--text">{{ authVM.errorText }}</div>
+      </div>
+    </div>
+    <div
+      class="col-6 d-flex flex-column align-items-start gap-4 border p-5 rounded-5 rtl transition-02s"
+    >
+      <img src="/assets/images/logo-50.png" />
+      <!-- <router-outlet></router-outlet> -->
+      <app-signing
+        *ngIf="['username', 'password', 'otp'].includes(authVM.formState)"
+        class="w-100"
+      ></app-signing>
+      <app-signup *ngIf="['signup'].includes(authVM.formState)"></app-signup>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="tab-navigation">
+  <!--<img src="assets/images/i-calendar.svg">-->
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;</p>
+  <p>کیا سیستم</p>
+  <img
+    src="assets/images/burger-menu.svg"
+    (click)="openScrollableContent(longContent)"
+  />
+</div>
+
+<ng-template #longContent let-modal>
+  <button
+    type="button"
+    class="btn-close"
+    aria-label="Close"
+    (click)="modal.dismiss('Cross click')"
+  ></button>
+  <app-sidebar></app-sidebar>
+</ng-template>
+
+<!--<div class="burger-side-menu" [ngClass]="isOpen ? 'open' : 'close'"
+(click)="isOpen = !isOpen">
+  <app-sidebar></app-sidebar>
+</div>-->

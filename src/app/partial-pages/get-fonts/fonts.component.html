@@ -1,0 +1,20 @@
+<!--Default Exir Modal-->
+<div class="exir-modal-container">
+    <div class="exir-modal-header">
+        <p class="">مفاهیم</p>
+        <i class="icon-fo-circle-close"></i>
+    </div>
+    <div class="exir-modal-content d-flex flex-wrap justify-content-center gap-4 ex-f-25 my-4 py-3 icon-container">
+        <i *ngFor="let font of fontsData" class=" {{font.class}} "></i>
+    </div>
+    <div class="exir-modal-footer">
+        <div class="exir-right-fc">
+            <i class="icon-fo-info-circle"></i>
+            <p>مفاهیم مورد نظر خود را انتخاب کنید</p>
+        </div>
+        <div class="exir-left-fc">
+            <button class="exir-btn-cancel">انصراف</button>
+            <button class="exir-btn-submit">تایید</button>
+        </div>
+    </div>
+</div>

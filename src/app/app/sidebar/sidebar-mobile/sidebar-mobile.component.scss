@@ -1,0 +1,45 @@
+.tab-navigation {
+  height: 70px;
+  border-radius: 0 0 15px 15px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 25px;
+  box-shadow: 0 5px 10px rgba(182, 184, 202, 0.25);
+
+  & img {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+  }
+
+  & p {
+    font-size: 18px;
+  }
+}
+
+.btn-close {
+  position: absolute;
+  left: 24px;
+  top: 40px;
+}
+
+/*.burger-side-menu {
+  position: fixed;
+  top: 70px;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  overflow-y: auto;
+  transition: 0.2s;
+  z-index: 1;
+
+  &.close {
+    transform: translateY(1000px);
+  }
+
+  &.open {
+    transform: translateX(0);
+  }
+}*/

@@ -1,0 +1,18 @@
+<span class="textarea">
+  <textarea
+    class="textarea__element"
+    [class.textarea__element--large]="size === 'lg'"
+    [class.textarea__element--small]="size === 'sm'"
+    [class.textarea__element--error]="state === 'error'"
+    [class.textarea__element--success]="state === 'success'"
+    [style.height]="height"
+    [attr.placeholder]="placeholder ?? ''"
+    [attr.id]="id"
+    [attr.rows]="rows"
+    [readonly]="readonly"
+    [(ngModel)]="value"
+    (input)="onChange()"
+    (change)="onChange()"
+    (blur)="onTouchedFn()"
+  ></textarea>
+</span>

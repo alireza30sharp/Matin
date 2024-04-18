@@ -1,0 +1,71 @@
+<!-- Sidebar -->
+<div class="sidebar">
+  <a href="#" class="logo">
+    <i class="bx bx-code-alt"></i>
+    <div class="logo-name"><span class="f-16">KiaSystem</span> Matin</div>
+  </a>
+  <ul class="side-menu">
+    <li routerLinkActive="active">
+      <a routerLink="dashboard"><i class="bx bxs-dashboard"></i>Dashboard</a>
+    </li>
+    <li routerLinkActive="active">
+      <a routerLink="list"><i class="bx bx-store-alt"></i>company List</a>
+    </li>
+    <!-- <li>
+      <a href="#"><i class="bx bx-analyse"></i>Analytics</a>
+    </li>
+    <li>
+      <a href="#"><i class="bx bx-message-square-dots"></i>Tickets</a>
+    </li>
+    <li>
+      <a href="#"><i class="bx bx-group"></i>Users</a>
+    </li>
+    <li>
+      <a href="#"><i class="bx bx-cog"></i>Settings</a>
+    </li> -->
+  </ul>
+  <ul class="side-menu">
+    <li>
+      <a href="#" class="logout">
+        <i class="bx bx-log-out-circle"></i>
+        Logout
+      </a>
+    </li>
+  </ul>
+</div>
+<!-- End of Sidebar -->
+
+<!-- Main Content -->
+<div class="content">
+  <!-- Navbar -->
+  <nav>
+    <i class="bx bx-menu" (click)="bxMenuClick()"></i>
+    <form action="#">
+      <div class="form-input">
+        <input type="search" placeholder="Search..." />
+        <button class="search-btn" type="submit">
+          <i class="bx bx-search"></i>
+        </button>
+      </div>
+    </form>
+    <input
+      type="checkbox"
+      [(ngModel)]="toggle"
+      (ngModelChange)="toggleChange()"
+      id="theme-toggle"
+      hidden
+    />
+    <label for="theme-toggle" class="theme-toggle"></label>
+    <a href="#" class="notif">
+      <i class="bx bx-bell"></i>
+      <span class="count">12</span>
+    </a>
+    <a href="#" class="profile">
+      <img src="images/logo.png" />
+    </a>
+  </nav>
+  <!-- End of Navbar -->
+  <main>
+    <router-outlet></router-outlet>
+  </main>
+</div>

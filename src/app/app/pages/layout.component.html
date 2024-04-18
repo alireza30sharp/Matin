@@ -1,0 +1,72 @@
+<div class="row">
+  <div
+    [ngClass]="
+      isMobile ? 'col-12' + ' pt-70px' + ' px-0' : 'col-10' + ' pe-0' + ' p-3'
+    "
+  >
+    <main>
+      <div class="row">
+        <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs f-15">
+          <li
+            *ngFor="let menu of manageTabBarService.listMenu"
+            [ngbNavItem]="menu.index"
+            class="position-relative"
+          >
+            <button ngbNavLink class="d-flex justify-content-bettwen">
+              <input
+                type="text"
+                [class.hidden]="!menu.dbClick"
+                class="form-control f-12"
+                [(ngModel)]="menu.name"
+                (keydown.enter)="menu.dbClick = false"
+                (blur)="menu.dbClick = false"
+              />
+              <span
+                class="f-12"
+                *ngIf="!menu.dbClick"
+                (dblclick)="menu.dbClick = true"
+              >
+                {{ menu.name }}
+              </span>
+              <i
+                [class.auto-save]="menu.isAutoSave"
+                class="fa-regular fa-floppy-disk me-2"
+                (click)="
+                  menu.isAutoSave = !menu.isAutoSave; setlocalStorageData()
+                "
+              ></i>
+              <i
+                class="fa-solid fa-xmark close f-14 me-2"
+                (click)="close($event, menu.index)"
+              ></i>
+            </button>
+            <ng-template ngbNavContent>
+              <ndc-dynamic
+                [ndcDynamicComponent]="menu.component"
+                [ndcDynamicInputs]="{ input: menu }"
+                [ndcDynamicOutputs]="outputs"
+              ></ndc-dynamic>
+            </ng-template>
+          </li>
+
+          <!-- <li class="nav-item" role="presentation">
+      <button type="button" class="nav-link" (click)="add($event)">
+        ...
+      </button>
+    </li> -->
+        </ul>
+      </div>
+      <div class="row">
+        <div [ngbNavOutlet]="nav" class="mt-2"></div>
+      </div>
+    </main>
+  </div>
+  <div
+    class="right-0 ps-3"
+    [class.mobile-tab]="isMobile"
+    [ngClass]="isMobile ? 'col-12' : 'col-2'"
+  >
+    <app-sidebar *ngIf="!isMobile"></app-sidebar>
+    <app-sidebar-mobile *ngIf="isMobile"></app-sidebar-mobile>
+  </div>
+</div>

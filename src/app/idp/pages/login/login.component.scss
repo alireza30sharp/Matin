@@ -1,0 +1,290 @@
+img {
+    -webkit-user-drag: none;
+    user-select: none;
+    pointer-events: none;
+}
+
+.circle-fill {
+    width: 100%;
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    animation: rotate-fill 30s infinite linear;
+    z-index: -1;
+}
+
+@keyframes rotate-fill {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.h-100vh {
+    height: 100vh;
+}
+
+.circle-line1 {
+    width: 100%;
+    position: fixed;
+    top: -50%;
+    left: -45%;
+    animation: rotate-line1 20s infinite alternate;
+    z-index: -2;
+    opacity: .3;
+}
+
+@keyframes rotate-line1 {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(50deg);
+    }
+}
+
+.circle-line2 {
+    width: 100%;
+    position: fixed;
+    top: -50%;
+    left: -45%;
+    animation: rotate-line2 8s infinite alternate;
+    z-index: -2;
+    opacity: .3;
+}
+
+@keyframes rotate-line2 {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(50deg);
+    }
+}
+
+.circle-line3 {
+    width: 100%;
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    animation: rotate-line3 14s infinite alternate;
+    z-index: -2;
+    opacity: .3;
+}
+
+@keyframes rotate-line3 {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(-30deg);
+    }
+}
+
+.circle-line4 {
+    width: 100%;
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    animation: rotate-line4 16s infinite alternate;
+    z-index: -2;
+    opacity: .3;
+}
+
+@keyframes rotate-line4 {
+    from {
+        transform: rotate(20deg);
+    }
+    to {
+        transform: rotate(-10deg);
+    }
+}
+
+.circle-line5 {
+    width: 100%;
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    animation: rotate-line5 12s infinite alternate;
+    z-index: -2;
+    opacity: .3;
+}
+
+@keyframes rotate-line5 {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(25deg);
+    }
+}
+
+.circle-line6 {
+    width: 100%;
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    animation: rotate-line6 7s infinite alternate;
+    z-index: -2;
+    opacity: .3;
+}
+
+@keyframes rotate-line6 {
+    from {
+        transform: rotate(-40deg);
+    }
+    to {
+        transform: rotate(7deg);
+    }
+}
+
+.circle-line7 {
+    width: 100%;
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    animation: rotate-line7 15s infinite alternate;
+    z-index: -2;
+    opacity: .3;
+}
+
+@keyframes rotate-line7 {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(-30deg);
+    }
+}
+
+.circle-line8 {
+    width: 100%;
+    position: fixed;
+    top: -50%;
+    left: -43%;
+    animation: rotate-line8 5s infinite alternate;
+    z-index: -2;
+    opacity: .3;
+}
+
+@keyframes rotate-line8 {
+    from {
+        transform: rotate(-20deg);
+    }
+    to {
+        transform: rotate(-70deg);
+    }
+}
+
+.circle-contents {
+    width: 450px;
+    position: relative;
+
+    &::after {
+        content: "";
+        width: 50%;
+        height: 100%;
+        position: fixed;
+        top: 10%;
+        left: 0;
+        background-image: url('../../../../assets/images/login-imgs/obj0.svg');
+        background-repeat: no-repeat;
+        background-position: 43% 22%;
+        background-size: 73%;
+        z-index: -1;
+    }
+}
+
+.img1 {
+    width: 200px;
+    margin-right: 2.5rem;
+}
+
+.img2 {
+    width: 200px;
+    margin-top: 5rem;
+}
+
+.img3 {
+    width: 200px;
+    margin-bottom: 5rem;
+}
+
+.img4 {
+    width: 200px;
+    margin-left: 2.5rem;
+}
+
+@mixin afterBg {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border-radius: 50%;
+}
+
+.prof-shock {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  position: relative;
+  outline: none;
+
+  & img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid var(--blue);
+  }
+}
+
+.shockwave.is-active {
+  animation: shockwaveJump 1s ease-out infinite;
+  
+  &:after {
+    @include afterBg;
+    animation: shockwave 1s .65s ease-out infinite;
+  }
+  
+  &:before {
+    @include afterBg;
+    animation: shockwave 1s .5s ease-out infinite;
+  }
+}
+
+@keyframes shockwave {
+  0% {
+    transform: scale(1);
+    border: 1px solid var(--blue);
+  }
+  95% {
+    border: 1px solid var(--blue);
+    opacity: 0;
+  }
+  100% {
+    border: 1px solid var(--blue);
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+
+
+
+
+
+
+
+// ========= for preview =======
+
+.close-login {
+    height: 0 !important;
+    overflow: hidden !important;
+    pointer-events: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+}

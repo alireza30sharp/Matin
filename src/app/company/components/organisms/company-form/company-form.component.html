@@ -1,0 +1,29 @@
+<form
+  #companyForm="ngForm"
+  (ngSubmit)="!companyForm.invalid && submitHandler()"
+>
+  <div class="row">
+    <div class="col-3">
+      <ki-form-group
+        [label]="'Company Name'"
+        [showRequireSign]="true"
+        [errorMessage]="'Validation Required'"
+        [hideError]="
+          !(
+            (companyForm.submitted || companyName.dirty) &&
+            companyName.errors?.required
+          )
+        "
+      >
+        <ki-input
+          name="companyName"
+          [(ngModel)]="companyModel.companyName"
+          #companyName="ngModel"
+          required
+        ></ki-input>
+      </ki-form-group>
+    </div>
+  </div>
+
+  <input type="submit" [hidden]="true" [attr.id]="submitButtonId" />
+</form>

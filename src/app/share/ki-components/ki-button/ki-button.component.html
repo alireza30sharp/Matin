@@ -1,0 +1,72 @@
+<ng-container *ngIf="!!for; else buttonTemplate"
+  ><label
+    #buttonRef
+    [for]="showLoading ? '' : for"
+    class="ki-button"
+    [class.ki-button--large]="size === 'lg'"
+    [class.ki-button--small]="size === 'sm'"
+    [class.ki-button--is-only-icon]="!!iconClassName && !title"
+    [class.ki-button--fill]="varient === 'fill'"
+    [class.ki-button--outline]="varient === 'outline'"
+    [class.ki-button--text]="varient === 'text'"
+    [class.ki-button--primary]="btnType === 'primary'"
+    [class.ki-button--secondary]="btnType === 'secondary'"
+    [class.ki-button--success]="btnType === 'success'"
+    [class.ki-button--danger]="btnType === 'danger'"
+    [class.ki-button--warning]="btnType === 'warning'"
+    [class.ki-button--info]="btnType === 'info'"
+    [class.ki-button--disabled]="disabled || showLoading"
+    [class.ki-button--match-parent]="matchParent"
+    [attr.disabled]="disabled || showLoading"
+    [attr.title]="tooltip"
+    (click)="onBtnClicked($event)"
+  >
+    <ki-spinner
+      [buttonMode]="true"
+      color="dark"
+      [size]="'small'"
+      *ngIf="showLoading"
+    ></ki-spinner>
+    <ng-container *ngIf="!!iconClassName"
+      ><span class="ki-button__icon" [class]="iconClassName"></span
+    ></ng-container>
+    <span *ngIf="title">{{ title }}</span>
+    <ng-container *ngTemplateOutlet="content"></ng-container></label
+></ng-container>
+<ng-template #buttonTemplate
+  ><button
+    #buttonRef
+    [type]="type ?? 'submit'"
+    class="ki-button"
+    [class.ki-button--large]="size === 'lg'"
+    [class.ki-button--small]="size === 'sm'"
+    [class.ki-button--is-only-icon]="!!iconClassName && !title"
+    [class.ki-button--fill]="varient === 'fill'"
+    [class.ki-button--outline]="varient === 'outline'"
+    [class.ki-button--text]="varient === 'text'"
+    [class.ki-button--primary]="btnType === 'primary'"
+    [class.ki-button--secondary]="btnType === 'secondary'"
+    [class.ki-button--success]="btnType === 'success'"
+    [class.ki-button--danger]="btnType === 'danger'"
+    [class.ki-button--warning]="btnType === 'warning'"
+    [class.ki-button--info]="btnType === 'info'"
+    [class.ki-button--disabled]="disabled || showLoading"
+    [class.ki-button--match-parent]="matchParent"
+    [disabled]="disabled || showLoading"
+    [attr.title]="tooltip"
+    (click)="onBtnClicked($event)"
+  >
+    <ki-spinner
+      [buttonMode]="true"
+      color="dark"
+      [size]="'small'"
+      *ngIf="showLoading"
+    ></ki-spinner>
+    <ng-container *ngIf="!!iconClassName"
+      ><span class="ki-button__icon" [class]="iconClassName"></span
+    ></ng-container>
+    <span *ngIf="title">{{ title }}</span>
+    <ng-container *ngTemplateOutlet="content"></ng-container>
+  </button>
+</ng-template>
+<ng-template #content> <ng-content></ng-content></ng-template>

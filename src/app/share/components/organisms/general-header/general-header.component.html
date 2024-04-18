@@ -1,0 +1,14 @@
+<section class="general-header">
+  <ng-container *ngIf="backButtonIsShow">
+    <button
+      [attr.title]="backButtonTooltip"
+      class="general-header__back-button fa fa-arrow-left"
+      (click)="backHandler($event)"
+    ></button>
+  </ng-container>
+  <div class="general-header__content">
+    <h2 class="general-header__title">{{ title }}</h2>
+    <h3 *ngIf="subtitle" class="general-header__subtitle">{{ subtitle }}</h3>
+  </div>
+  <ng-content></ng-content>
+</section>

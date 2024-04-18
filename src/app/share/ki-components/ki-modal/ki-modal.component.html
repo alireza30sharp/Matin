@@ -1,0 +1,59 @@
+<section>
+  <div class="modal-header" *ngIf="!hideCloseIcon && !!title">
+    <h4 *ngIf="!!title" class="modal-title" id="modal-basic-title">
+      {{ title
+      }}<ng-container *ngIf="headerActionsIsShow">
+        <span class="modal-header-actions">
+          <button
+            type="button"
+            class="modal-header-actions__button modal-header-actions__button--task"
+            (click)="addTaskHandler()"
+          >
+            <span class="fa fa-tasks"></span>
+            ADD_TASK
+          </button>
+          <button
+            type="button"
+            class="modal-header-actions__button modal-header-actions__button--note"
+            (click)="addNoteHandler()"
+          >
+            <span class="fa fa-notes-medical"></span>
+            ADD_NOTE
+          </button>
+        </span>
+      </ng-container>
+    </h4>
+    <button
+      *ngIf="!hideCloseIcon"
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+      (click)="closeModal()"
+    ></button>
+  </div>
+  <div class="modal-body"><ng-content></ng-content></div>
+  <div class="modal-footer" *ngIf="showPrimaryButton || showCancelButton">
+    <ki-button [type]="'button'" (click)="closeModal()" [for]="cancelButtonFor">
+      {{ cancelButtonText ? cancelButtonText : "Cancel" }}
+    </ki-button>
+    <ki-button
+      *ngIf="showSkipButton"
+      [type]="'button'"
+      (click)="closeModal()"
+      [for]="skipButtonFor"
+    >
+      {{ skipButtonText ? skipButtonText : "Skip" }}
+    </ki-button>
+    <ki-button
+      *ngIf="showPrimaryButton"
+      type="button"
+      [for]="primaryButtonFor"
+      [showLoading]="showPrimaryButtonLoading"
+      [btnType]="'primary'"
+      (click)="onPrimaryButtonClicked()"
+      [disabled]="showPrimaryButtonLoading"
+    >
+      {{ primaryButtonText ? primaryButtonText : "SAVE" }}
+    </ki-button>
+  </div>
+</section>

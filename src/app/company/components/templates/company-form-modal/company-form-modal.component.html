@@ -1,0 +1,23 @@
+<ki-modal
+  [title]="isEditMode ? 'EditNote' : 'Add_New_Note'"
+  [showCancelButton]="true"
+  (onCloseCallback)="cancelHandler()"
+  [showPrimaryButton]="true"
+  [primaryButtonFor]="submitButtonId"
+  [hideHeaderActions]="true"
+  [showPrimaryButtonLoading]="isLoadingForm || isLoading"
+>
+  <ki-spinner
+    [matchParent]="true"
+    color="dark"
+    *ngIf="isLoading; else content"
+  ></ki-spinner>
+  <ng-template #content>
+    <app-company-form
+      [submitButtonId]="submitButtonId"
+      [companyModel]="initialData"
+      (submitCallback)="saveHandler($event)"
+    >
+    </app-company-form>
+  </ng-template>
+</ki-modal>

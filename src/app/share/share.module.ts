@@ -15,7 +15,6 @@ import { NgSelectModule } from '@ng-select/ng-select';
 import { SkeletonLoadingDirective } from './directives/skeleton-loading.directive';
 import { NgbModule, NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 import * as Ag from 'ag-grid-angular';
-import * as agc from '../partial-pages/ag-grid';
 import * as _templates from './components/templates';
 import * as _organisms from './components/organisms';
 

@@ -1,7 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { AgGridMaster } from '../../../partial-pages/aggrid-master';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { ColDef, GridOptions } from 'ag-grid-community';
 import { Subject, debounceTime } from 'rxjs';
 import { ToastService } from '~/share/services';
 import { ITabBarModel } from '~/share/models';
@@ -14,7 +12,7 @@ import { CompanyFormModalComponent } from '~/company/components/templates';
   styleUrls: ['./company-list.component.scss'],
   providers: [CompanyService],
 })
-export class CompanyListComponent extends AgGridMaster implements OnInit {
+export class CompanyListComponent implements OnInit {
   type = 'ag-theme-balham';
   rowDataDefault = [];
   totalCount = 0;
@@ -34,124 +32,122 @@ export class CompanyListComponent extends AgGridMaster implements OnInit {
   onSomething = new EventEmitter<ITabBarModel>();
   public favoriteColor = '#26ab3c';
   public rowSelection = 'multiple';
-  public defaultColDef: ColDef = {
-    width: 120,
-    sortable: true,
-    resizable: true,
-    enableRowGroup: true,
-    enablePivot: true,
-    flex: 1,
-    minWidth: 100,
-    // allow every column to be aggregated
-    enableValue: true,
-    chartDataType: 'series',
-  };
-  public autoGroupColumnDef: ColDef = {
-    width: 250,
-  };
-  columnsDefault: ColDef[] = [
-    {
-      field: 'row_NO',
-      headerName: 'row_NO',
-      hide: true,
-    },
-    {
-      field: 'id',
-      hide: true,
-    },
-    {
-      field: 'componyUniqCode',
-      headerName: 'کد شرکت',
-      suppressSizeToFit: true,
-      sortable: true,
-      filter: 'agTextColumnFilter',
-    },
-    {
-      field: 'componyName',
-      headerName: 'نام شرکت',
-      suppressSizeToFit: true,
-      sortable: true,
-      filter: 'agTextColumnFilter',
-    },
-    {
-      field: 'cityId',
-      headerName: 'کد شهر',
-      suppressSizeToFit: true,
-      sortable: true,
-      filter: 'agNumberColumnFilter',
-    },
-    {
-      field: 'cityName',
-      enableRowGroup: true,
-      enablePivot: true,
-      headerName: 'نام شهر',
-      suppressSizeToFit: true,
-      sortable: true,
-      filter: 'agTextColumnFilter',
-    },
-    {
-      field: 'componyTel',
-      headerName: 'تلفن شرکت',
-      suppressSizeToFit: true,
-      sortable: true,
-      filter: 'agTextColumnFilter',
-    },
-    {
-      field: 'componyAddress',
-      headerName: 'آدرس شرکت',
-      suppressSizeToFit: true,
-      sortable: true,
-      filter: 'agTextColumnFilter',
-    },
-    {
-      field: 'companyMobile',
-      headerName: 'تلفن شرکت',
-      suppressSizeToFit: true,
-      sortable: true,
-      filter: 'agTextColumnFilter',
-    },
-    {
-      field: 'statusId',
-      headerName: 'کد وضعیت',
-      suppressSizeToFit: true,
-      sortable: true,
-      filter: 'agNumberColumnFilter',
-    },
-    {
-      field: 'companyTypeId',
-      headerName: 'نوع شرکت',
-      suppressSizeToFit: true,
-      sortable: true,
-      filter: 'agNumberColumnFilter',
-    },
-    {
-      field: 'companyStatuesName',
-      headerName: 'نام وضعیت',
-      enableRowGroup: true,
-      enablePivot: true,
-      suppressSizeToFit: true,
-      sortable: true,
-      filter: 'agTextColumnFilter',
-    },
-    {
-      field: 'companyTypeName',
-      headerName: 'نام نوع شرکت',
-      suppressSizeToFit: true,
-      enableRowGroup: true,
-      enablePivot: true,
-      sortable: true,
-      filter: 'agTextColumnFilter',
-    },
-  ];
+  // public defaultColDef: ColDef = {
+  //   width: 120,
+  //   sortable: true,
+  //   resizable: true,
+  //   enableRowGroup: true,
+  //   enablePivot: true,
+  //   flex: 1,
+  //   minWidth: 100,
+  //   // allow every column to be aggregated
+  //   enableValue: true,
+  //   chartDataType: 'series',
+  // };
+  // public autoGroupColumnDef: ColDef = {
+  //   width: 250,
+  // };
+  // columnsDefault: ColDef[] = [
+  //   {
+  //     field: 'row_NO',
+  //     headerName: 'row_NO',
+  //     hide: true,
+  //   },
+  //   {
+  //     field: 'id',
+  //     hide: true,
+  //   },
+  //   {
+  //     field: 'componyUniqCode',
+  //     headerName: 'کد شرکت',
+  //     suppressSizeToFit: true,
+  //     sortable: true,
+  //     filter: 'agTextColumnFilter',
+  //   },
+  //   {
+  //     field: 'componyName',
+  //     headerName: 'نام شرکت',
+  //     suppressSizeToFit: true,
+  //     sortable: true,
+  //     filter: 'agTextColumnFilter',
+  //   },
+  //   {
+  //     field: 'cityId',
+  //     headerName: 'کد شهر',
+  //     suppressSizeToFit: true,
+  //     sortable: true,
+  //     filter: 'agNumberColumnFilter',
+  //   },
+  //   {
+  //     field: 'cityName',
+  //     enableRowGroup: true,
+  //     enablePivot: true,
+  //     headerName: 'نام شهر',
+  //     suppressSizeToFit: true,
+  //     sortable: true,
+  //     filter: 'agTextColumnFilter',
+  //   },
+  //   {
+  //     field: 'componyTel',
+  //     headerName: 'تلفن شرکت',
+  //     suppressSizeToFit: true,
+  //     sortable: true,
+  //     filter: 'agTextColumnFilter',
+  //   },
+  //   {
+  //     field: 'componyAddress',
+  //     headerName: 'آدرس شرکت',
+  //     suppressSizeToFit: true,
+  //     sortable: true,
+  //     filter: 'agTextColumnFilter',
+  //   },
+  //   {
+  //     field: 'companyMobile',
+  //     headerName: 'تلفن شرکت',
+  //     suppressSizeToFit: true,
+  //     sortable: true,
+  //     filter: 'agTextColumnFilter',
+  //   },
+  //   {
+  //     field: 'statusId',
+  //     headerName: 'کد وضعیت',
+  //     suppressSizeToFit: true,
+  //     sortable: true,
+  //     filter: 'agNumberColumnFilter',
+  //   },
+  //   {
+  //     field: 'companyTypeId',
+  //     headerName: 'نوع شرکت',
+  //     suppressSizeToFit: true,
+  //     sortable: true,
+  //     filter: 'agNumberColumnFilter',
+  //   },
+  //   {
+  //     field: 'companyStatuesName',
+  //     headerName: 'نام وضعیت',
+  //     enableRowGroup: true,
+  //     enablePivot: true,
+  //     suppressSizeToFit: true,
+  //     sortable: true,
+  //     filter: 'agTextColumnFilter',
+  //   },
+  //   {
+  //     field: 'companyTypeName',
+  //     headerName: 'نام نوع شرکت',
+  //     suppressSizeToFit: true,
+  //     enableRowGroup: true,
+  //     enablePivot: true,
+  //     sortable: true,
+  //     filter: 'agTextColumnFilter',
+  //   },
+  // ];
   companyInput: companyInput = new companyInput();
   companyModel: companyModel;
   constructor(
     private _modalService: NgbModal,
     private companyService: CompanyService,
     private readonly _toaster: ToastService
-  ) {
-    super(_modalService);
-  }
+  ) {}
 
   ngOnInit(): void {
     this.changeModel.pipe(debounceTime(900)).subscribe((res) => {
@@ -180,39 +176,39 @@ export class CompanyListComponent extends AgGridMaster implements OnInit {
   //   );
 
   // }
-  override removeCell(row) {
-    this.companyService.deleteCompany(row.id).subscribe((res) => {
-      if (res.isOk) {
-        this._toaster.success(res.message);
-        this.getCompanies();
-      } else {
-        this._toaster.error(res.message);
-      }
-    });
-  }
-  override editCell(row: any): void {
-    var modalRef = this._modalService.open(CompanyFormModalComponent, {
-      size: 'xl',
-      centered: true,
-      backdrop: 'static',
-    });
+  // override removeCell(row) {
+  //   this.companyService.deleteCompany(row.id).subscribe((res) => {
+  //     if (res.isOk) {
+  //       this._toaster.success(res.message);
+  //       this.getCompanies();
+  //     } else {
+  //       this._toaster.error(res.message);
+  //     }
+  //   });
+  // }
+  // override editCell(row: any): void {
+  //   var modalRef = this._modalService.open(CompanyFormModalComponent, {
+  //     size: 'xl',
+  //     centered: true,
+  //     backdrop: 'static',
+  //   });
 
-    modalRef.componentInstance.companyModel = {
-      companyId: row.companyId,
-      companyUniqCode: row.companyUniqCode,
-      companyName: row.componyName,
-      cityId: row.cityId,
-      companyPassword: row.companyPassword,
-      companyTel: row.companyTel,
-      companyAddress: row.companyAddress,
-      companyType: row.companyType,
-      companyMobile: row.companyMobile,
-      id: row.id,
-    };
-    modalRef.result.then((res) => {
-      this.updateOrInsertCompany(res);
-    });
-  }
+  //   modalRef.componentInstance.companyModel = {
+  //     companyId: row.companyId,
+  //     companyUniqCode: row.companyUniqCode,
+  //     companyName: row.componyName,
+  //     cityId: row.cityId,
+  //     companyPassword: row.companyPassword,
+  //     companyTel: row.companyTel,
+  //     companyAddress: row.companyAddress,
+  //     companyType: row.companyType,
+  //     companyMobile: row.companyMobile,
+  //     id: row.id,
+  //   };
+  //   modalRef.result.then((res) => {
+  //     this.updateOrInsertCompany(res);
+  //   });
+  // }
   openModal() {
     var modalRef = this._modalService.open(CompanyFormModalComponent, {
       size: 'lg',
@@ -228,17 +224,17 @@ export class CompanyListComponent extends AgGridMaster implements OnInit {
     });
   }
   onSelectionChanged() {
-    this.selectedRows = this.gridApi.getSelectedRows();
+    // this.selectedRows = this.gridApi.getSelectedRows();
   }
 
   restoreState(state) {
     // let state = window.localStorage.getItem('save');
-    setTimeout(() => {
-      this.gridOptions.columnApi.applyColumnState({
-        state: state,
-        applyOrder: true,
-      });
-    }, 900);
+    // setTimeout(() => {
+    //   this.gridOptions.columnApi.applyColumnState({
+    //     state: state,
+    //     applyOrder: true,
+    //   });
+    // }, 900);
   }
   updateOrInsertCompany(model: companyInsert) {
     this.companyService.updateCompany(model).subscribe((res) => {

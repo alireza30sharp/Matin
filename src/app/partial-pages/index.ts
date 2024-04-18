@@ -1,1 +1,0 @@
-export * from './get-fonts/fonts.component';

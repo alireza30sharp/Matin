@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Data, response } from '~/share/models/response.model';
-import { ApiUrlService } from '~/api-url.service';
 import { companyInput, companyInsert, companyModel } from '../models';
+import { ApiUrlService } from '@services';
+import { Data, response } from '@share/models/response.model';
 @Injectable()
 export class CompanyService {
   constructor(

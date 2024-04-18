@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { companyInsert } from '~/company/models';
+import { companyInsert } from 'src/app/company/models';
 @Component({
   selector: 'app-company-form',
   templateUrl: './company-form.component.html',

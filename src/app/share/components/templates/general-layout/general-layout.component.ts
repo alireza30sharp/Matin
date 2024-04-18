@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { OverflowType } from '~/share/types/overflow.type';
+import { OverflowType } from '@share/types/overflow.type';
 
 @Component({
   selector: 'app-general-layout',

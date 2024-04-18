@@ -5,7 +5,7 @@ import {
   ViewContainerRef,
   OnDestroy,
 } from '@angular/core';
-import { OverflowType } from '~/share/types/overflow.type';
+import { OverflowType } from '@share/types/overflow.type';
 
 export interface TabContextInterface {
   $implicit: string;

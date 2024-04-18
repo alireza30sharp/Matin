@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MobileCheckService } from '~/services/is-mobile';
+import { MobileCheckService } from '../services/is-mobile';
 @Component({
   selector: 'app-dashboard-test',
   templateUrl: './dashboard.component.html',

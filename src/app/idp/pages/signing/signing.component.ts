@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 
 import { HttpErrorResponse } from '@angular/common/http';
-import { UserAuthService } from '~/services';
 import {
   phoneNumberValidator,
   phoneNumberNormalizer,
 } from '@persian-tools/persian-tools';
-import { AuthVMService } from '~/share/services/auth-vm.service';
-import { ActionLogin, ActionMethod } from '~/models';
+import { ActionLogin, ActionMethod } from '@models';
+import { UserAuthService } from '@services';
+import { AuthVMService } from '@share/services/auth-vm.service';
 
 @Component({
   selector: 'app-signing',

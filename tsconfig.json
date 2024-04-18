@@ -25,25 +25,28 @@
       "dom"
     ],
     "paths": {
-      "angular-tree-component": [
-        "dist/angular-tree-component",
+      "@app/*": [
+        "app/*"
       ],
-      "angular-tree-component/*": [
-        "dist/angular-tree-component/*",
-      ],
-      "~/*": [
-        "src/app/*",
-      ],
-      "pages": [
+      "@pages": [
         "src/app/pages"
       ],
       "@share/*": [
         "src/app/share/*"
       ],
-      "models": [
+      "@templates/*": [
+        "src/app/share/components/templates/*"
+      ],
+      "@organisms/*": [
+        "src/app/share/components/organisms/*"
+      ],
+      "@ki-components/*": [
+        "src/app/share/ki-components/*"
+      ],
+      "@models": [
         "src/app/models",
       ],
-      "services": [
+      "@services": [
         "src/app/services",
       ],
     },

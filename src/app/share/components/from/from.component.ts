@@ -12,7 +12,7 @@ import {
   Validators,
   FormControl,
 } from '@angular/forms';
-import { FormService } from '~/share/services';
+import { FormService } from '@share/services';
 @Component({
   selector: 'app-from',
   templateUrl: './from.component.html',

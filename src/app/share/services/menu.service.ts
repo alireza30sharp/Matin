@@ -7,8 +7,8 @@ import {
   JwtToken,
   UserCreate,
   UserCreateAuth,
-} from 'models';
-import { ApiUrlService } from 'services';
+} from '@models';
+import { ApiUrlService } from '@services';
 import { MenuModel } from '../models';
 @Injectable({
   providedIn: 'root',

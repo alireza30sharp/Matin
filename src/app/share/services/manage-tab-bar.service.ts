@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 import { Observable, Observer, Subject } from 'rxjs';
 import { ITabBarModel, type_menu_label } from '../models/tab-bar.model';
 import { Nodes } from '../models/node';
-import { CompanyListComponent } from '~/company/pages/company-list/company-list.component';
-import { ReportComponent } from '~/report/report.component';
-import { DashboardComponent } from '~/dashboard/dashboard.component';
+import { CompanyListComponent } from 'src/app/company/pages/company-list/company-list.component';
+import { ReportComponent } from 'src/app/report/report.component';
+import { DashboardComponent } from 'src/app/dashboard/dashboard.component';
 @Injectable({
   providedIn: 'root',
 })

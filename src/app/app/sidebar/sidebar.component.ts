@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuModel, sidBarModel } from '~/share/models';
-import { MenuService } from '~/share/services/menu.service';
+import { MenuModel, sidBarModel } from '@share/models';
+import { MenuService } from '@share/services/menu.service';
 
 @Component({
   selector: 'app-sidebar',

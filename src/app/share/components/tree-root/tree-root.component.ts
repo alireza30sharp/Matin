@@ -14,9 +14,9 @@ import {
 } from '@circlon/angular-tree-component';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { v4 } from 'uuid';
-import { Nodes } from '~/share/models/node';
 import { ModalAddEditNodeComponent } from './modal-add-edit-node/modal-add-edit-node.component';
-import { ManageTabBarService } from '~/share/services/manage-tab-bar.service';
+import { ManageTabBarService } from '@share/services/manage-tab-bar.service';
+import { Nodes } from '@share/models/node';
 
 @Component({
   selector: 'app-tree-root',

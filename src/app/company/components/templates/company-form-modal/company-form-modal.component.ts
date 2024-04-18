@@ -1,8 +1,8 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { LoadingStateFrom } from '~/share/models/loadingState';
-import { companyInsert } from '~/company/models';
-import { ToastService } from '~/share/services';
+import { LoadingStateFrom } from '@share/models/loadingState';
+import { ToastService } from '@share/services';
+import { companyInsert } from 'src/app/company/models';
 @Component({
   selector: 'app-company-form-modal',
   templateUrl: './company-form-modal.component.html',

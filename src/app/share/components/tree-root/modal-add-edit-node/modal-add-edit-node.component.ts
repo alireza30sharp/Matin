@@ -3,8 +3,8 @@ import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ToastrService } from 'ngx-toastr';
 import { Subscription } from 'rxjs';
 import { NgForm } from '@angular/forms';
-import { ComponentModel, Nodes } from '~/share/models/node';
-import { components } from '~/share/models/tab-bar.model';
+import { components } from '@share/models/tab-bar.model';
+import { Nodes } from '@share/models/node';
 @Component({
   selector: 'app-modal-add-edit-node',
   templateUrl: './modal-add-edit-node.component.html',

@@ -10,6 +10,7 @@ import {
 } from '@angular/forms';
 import { BehaviorSubject, interval, of, Subject } from 'rxjs';
 
+import { remainingTime } from '@persian-tools/persian-tools';
 import {
   AuthenticationBase,
   AuthenticationLogin,
@@ -17,10 +18,8 @@ import {
   JwtToken,
   UserCreate,
   UserCreateAuth,
-} from 'models';
-import { ApiUrlService, UserAuthService } from 'services';
-
-import { remainingTime } from '@persian-tools/persian-tools';
+} from '@models';
+import { ApiUrlService, UserAuthService } from '@services';
 
 export type FormState = 'username' | 'password' | 'otp' | 'signup' | 'recovery';
 

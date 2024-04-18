@@ -12,9 +12,9 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { SidebarMobileComponent } from './sidebar/sidebar-mobile/sidebar-mobile.component';
 import * as pgs from './pages';
 import { CommonModule } from '@angular/common';
-import { ShareModule } from '~/share/share.module';
 import { AppRoutingModule } from './app-routing.module';
-import { CompanyModule } from '~/company/company.module';
+import { ShareModule } from '@share/share.module';
+import { CompanyModule } from '../company/company.module';
 
 export function MobileCheckServiceFactory(startupService: MobileCheckService) {
   return () => startupService.mobileCheck();
@@ -23,7 +23,6 @@ export function MobileCheckServiceFactory(startupService: MobileCheckService) {
 @NgModule({
   declarations: [pgs.LayoutComponent, SidebarComponent, SidebarMobileComponent],
   imports: [
-    ShareModule.forChild(),
     CommonModule,
     ShareModule,
     HttpClientModule,

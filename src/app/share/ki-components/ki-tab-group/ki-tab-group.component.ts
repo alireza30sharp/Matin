@@ -17,7 +17,7 @@ import {
 import { KiTabComponent } from './ki-tab/ki-tab.component';
 import { TabDirective } from './tab.directive';
 import { TabInterface } from './tab.interface';
-import { OverflowType } from '~/share/types/overflow.type';
+import { OverflowType } from '@share/types/overflow.type';
 
 @Component({
   selector: 'ki-tab-group',

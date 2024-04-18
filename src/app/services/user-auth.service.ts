@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { JwtToken, User } from '@models';
 import jwt_decode from 'jwt-decode';
-
-import { JwtToken, User } from '~/models';
 
 @Injectable({
   providedIn: 'root',

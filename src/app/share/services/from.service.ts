@@ -17,8 +17,8 @@ import {
   JwtToken,
   UserCreate,
   UserCreateAuth,
-} from 'models';
-import { ApiUrlService, UserAuthService } from 'services';
+} from '@models';
+import { ApiUrlService, UserAuthService } from '@services';
 import { fromModel } from '../models/from.model';
 @Injectable({
   providedIn: 'root',

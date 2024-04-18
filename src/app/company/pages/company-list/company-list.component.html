@@ -13,25 +13,13 @@
     >
     </app-tools-bar>
   </ng-template>
-  <ag-grid-angular
-    [class]="type"
-    [columnDefs]="columnsDefault"
-    [suppressAggFuncInHeader]="true"
-    [animateRows]="true"
-    [rowGroupPanelShow]="'always'"
-    [pivotPanelShow]="'always'"
+  <ag-grid-data
+    [rowDataDefault]="rowDataDefault"
+    [columnsDefault]="columnsDefault"
     [defaultColDef]="defaultColDef"
-    [getContextMenuItems]="getContextMenuItems"
-    [autoGroupColumnDef]="autoGroupColumnDef"
-    [rowData]="rowDataDefault"
-    rowSelection="single"
-    (columnGroupOpened)="changeModel.next()"
-    (filterChanged)="changeModel.next()"
-    (gridColumnsChanged)="changeModel.next()"
-    [gridOptions]="gridOptions"
-    (selectionChanged)="onSelectionChanged()"
-    (gridReady)="onGridReady($event)"
-  ></ag-grid-angular>
+    [showSideBar]="false"
+  >
+  </ag-grid-data>
 </app-general-panel>
 
 <!-- <div class="row">

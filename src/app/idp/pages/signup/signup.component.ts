@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { UserAuthService } from '~/services';
-import { ToastService } from '~/share/services';
-import { AuthVMService } from '~/share/services/auth-vm.service';
+import { UserAuthService } from '@services';
+import { ToastService } from '@share/services';
+import { AuthVMService } from '@share/services/auth-vm.service';
 
 @Component({
   selector: 'app-signup',

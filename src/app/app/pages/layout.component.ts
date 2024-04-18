@@ -1,9 +1,8 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { MobileCheckService } from '~/services/is-mobile';
-import { ManageTabBarService } from '~/share/services/manage-tab-bar.service';
 import { localStorageService } from '../../share/services/localStorage.service';
-import { ITabBarModel, sidBarModel } from '~/share/models';
-import { Nodes } from '~/share/models/node';
+import { MobileCheckService } from '../services/is-mobile';
+import { ManageTabBarService } from '@share/services/manage-tab-bar.service';
+import { ITabBarModel } from '@share/models';
 @Component({
   selector: 'app-layout',
   templateUrl: './layout.component.html',

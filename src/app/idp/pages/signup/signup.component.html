@@ -39,40 +39,39 @@
   [formGroup]="authVM.signupForm"
   class="d-flex flex-column align-items-start gap-4 w-100"
 >
-  <!-- FirstName -->
+  <!-- companyName -->
   <div
     class="input-box w-100"
     [class.input-box--invalid]="
-      authVM.signupForm.get('fname')?.dirty &&
-      !authVM.signupForm.get('fname')?.valid
+      authVM.signupForm.get('companyName')?.dirty &&
+      !authVM.signupForm.get('companyName')?.valid
     "
   >
     <input
       type="text"
       class="input h-56px"
       placeholder=" "
-      formControlName="fname"
+      formControlName="companyName"
     />
-    <label for="name" class="input-label">نام</label>
+    <label for="name" class="input-label">نام شرکت</label>
   </div>
-  <!-- LastName -->
-  <div
-    class="input-box w-100"
-    [class.input-box--invalid]="
-      authVM.signupForm.get('lname')?.dirty &&
-      !authVM.signupForm.get('lname')?.valid
-    "
-  >
-    <input
-      type="text"
-      class="input h-56px"
-      placeholder=" "
-      formControlName="lname"
-    />
-    <label for="name" class="input-label">نام‌خانوادگی</label>
-  </div>
-  <!-- UserName -->
 
+  <!-----------companyMobile-->
+  <div
+    class="input-box w-100"
+    [class.input-box--invalid]="
+      authVM.signupForm.get('companyMobile')?.dirty &&
+      !authVM.signupForm.get('companyMobile')?.valid
+    "
+  >
+    <input
+      type="text"
+      class="input h-56px"
+      placeholder=" "
+      formControlName="companyMobile"
+    />
+    <label for="name" class="input-label">موبایل</label>
+  </div>
   <!-- Email -->
   <div
     class="input-box w-100"
@@ -89,25 +88,25 @@
     />
     <label for="name" class="input-label">ایمیل</label>
   </div>
-  <!-- Password -->
+  <!-- companyPassword -->
   <div
     class="input-box w-100"
     [class.input-box--invalid]="
-      authVM.signupForm.get('password')?.dirty &&
-      !authVM.signupForm.get('password')?.valid
+      authVM.signupForm.get('companyPassword')?.dirty &&
+      !authVM.signupForm.get('companyPassword')?.valid
     "
   >
+    <!-- onselectstart="return false"
+  onpaste="return false;"
+  onCopy="return false"
+  onCut="return false"
+  onDrag="return false"
+  onDrop="return false" -->
     <input
       type="password"
       class="input h-56px"
       placeholder=" "
-      formControlName="password"
-      onselectstart="return false"
-      onpaste="return false;"
-      onCopy="return false"
-      onCut="return false"
-      onDrag="return false"
-      onDrop="return false"
+      formControlName="companyPassword"
     />
     <label for="name" class="input-label">رمزعبور</label>
   </div>
@@ -119,22 +118,22 @@
       !authVM.signupForm.get('confirmPassword')?.valid
     "
   >
+    <!-- onselectstart="return false"
+  onpaste="return false;"
+  onCopy="return false"
+  onCut="return false"
+  onDrag="return false"
+  onDrop="return false" -->
     <input
       type="password"
       class="input h-56px"
       placeholder=" "
       formControlName="confirmPassword"
-      onselectstart="return false"
-      onpaste="return false;"
-      onCopy="return false"
-      onCut="return false"
-      onDrag="return false"
-      onDrop="return false"
     />
     <label for="name" class="input-label">رمزعبور مجدد</label>
   </div>
 
-  <div *ngIf="authVM.signupForm.get('password')?.errors as errors">
+  <div *ngIf="authVM.signupForm.get('companyPassword')?.errors as errors">
     <div *ngIf="errors['hasErrors']" class="pass-desc pass-errors">
       <div class="-title">ذخیره گذرواژه با خطا مواجه شده است.</div>
       <div class="-text">
@@ -148,9 +147,8 @@
       </div>
     </div>
   </div>
-
   <button
-    [disabled]="!authVM.userNameControl.valid || signupLoading"
+    [disabled]="!authVM.signupForm.get('companyName')?.valid"
     (click)="signup()"
     class="button btn-blue w-100 h-60px radius-15 f-14 min-w-unset"
   >

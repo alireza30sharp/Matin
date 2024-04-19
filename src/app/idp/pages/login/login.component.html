@@ -19,9 +19,10 @@
       <img src="/assets/images/logo-50.png" />
       <!-- <router-outlet></router-outlet> -->
       <app-signing
-        *ngIf="['username', 'password', 'otp'].includes(authVM.formState)"
+        *ngIf="['username', 'password', 'Otp'].includes(authVM.formState)"
         class="w-100"
       ></app-signing>
+      <!--  -->
       <app-signup *ngIf="['signup'].includes(authVM.formState)"></app-signup>
     </div>
   </div>

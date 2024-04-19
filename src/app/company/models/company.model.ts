@@ -1,17 +1,34 @@
+export interface companyInterFace {
+  companyUniqCode?: any;
+  CompanyName: any;
+  cityId?: any;
+  companyPassword: any;
+  companyTel?: any;
+  companyAddress?: any;
+  companyType?: any;
+  companyMobile: any;
+  email: any;
+}
+
 export interface companyModel {
-  row_NO: number;
   id: number;
-  componyUniqCode: string;
-  componyName: string;
-  cityId: number;
   cityName: string;
   componyTel: string;
   componyAddress: string;
   companyMobile: any;
   statusId: number;
-  companyTypeId: number;
+  companyType: number;
   companyStatuesName: string;
   companyTypeName: string;
+  companyUniqCode: string;
+  CompanyName: string;
+  companyPassword: string;
+  companyTel: string;
+  email: string;
+  cityId: number;
+  componyUniqCode: string;
+  componyName: string;
+  companyAddress: string;
 }
 
 export class companyInput {

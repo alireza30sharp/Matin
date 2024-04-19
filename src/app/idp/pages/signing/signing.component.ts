@@ -8,6 +8,7 @@ import {
 import { ActionLogin, ActionMethod } from '@models';
 import { UserAuthService } from '@services';
 import { AuthVMService } from '@share/services/auth-vm.service';
+import { finalize } from 'rxjs';
 
 @Component({
   selector: 'app-signing',
@@ -112,23 +113,60 @@ export class SigningComponent implements OnInit {
     this.authVM.clearError();
     if (phoneNumberValidator(username)) {
       this.userNameLoading = true;
-      this.authVM.sendOtp(phoneNumberNormalizer(username, '0')).subscribe({
-        next: (res) => {
+      this.authVM
+        .sendOtp(phoneNumberNormalizer(username, '0'))
+        .pipe(
+          finalize(() => {
+            this.userNameLoading = false;
+          })
+        )
+        .subscribe({
+          next: (res) => {
+            this.userNameLoading = false;
+            this.authVM.clearError();
+            this.authVM.otpData = res.data;
+            if (res.data.auth_Type === ActionMethod.Otp) {
+              this.authVM.changeFormState(ActionMethod.Otp);
+            } else if (res.data.action === ActionMethod.Register) {
+              this.authVM.changeFormState('signup');
+              this.authVM.signupForm_mobileControl.setValue(
+                this.authVM.userNameControl.value
+              );
+            }
+          },
+          error: (err) => {
+            this.userNameLoading = false;
+            this.authVM.showErrorMessage(
+              'کد تایید با موفقیت ارسال نشد، لطفا مجدد سعی نمایید.'
+            );
+          },
+        });
+    } else if (
+      new RegExp(
+        /^[-!#-'*+\/-9=?^-~]+(?:\.[-!#-'*+\/-9=?^-~]+)*@[-!#-'*+\/-9=?^-~]+(?:\.[-!#-'*+\/-9=?^-~]+)+$/i
+      ).test(username)
+    ) {
+      this.userNameLoading = true;
+      this.authVM
+        .emailAuth(username)
+        .pipe(
+          finalize(() => {
+            this.userNameLoading = false;
+          })
+        )
+        .subscribe((res) => {
           this.userNameLoading = false;
-          this.authVM.clearError();
-          this.authVM.otpData = res;
-          if (res.login_method === ActionMethod.Otp) {
-            this.authVM.changeFormState(ActionMethod.Otp);
+          if (res.isOk && res.data.action === ActionMethod.Login) {
+            this.authVM.changeFormState('password');
+          } else {
+            if (res.data.action === ActionMethod.Register) {
+              this.authVM.changeFormState('signup');
+              this.authVM.signupForm_mobileControl.setValue(
+                this.authVM.userNameControl.value
+              );
+            }
           }
-        },
-        error: (err) => {
-          this.userNameLoading = false;
-          this.authVM.showErrorMessage(
-            'کد تایید با موفقیت ارسال نشد، لطفا مجدد سعی نمایید.'
-          );
-        },
-      });
-    } else {
+        });
     }
   }
 
@@ -145,30 +183,21 @@ export class SigningComponent implements OnInit {
     }
     const username = this.authVM.userNameControl.value;
     const password = this.authVM.passwordControl.value;
-
     if (username && password) {
       this.passwordLoading = true;
       this.authVM
-        .existenceUser(ActionLogin.Email, username)
+        .emailSignIn(username, password)
+        .pipe(
+          finalize(() => {
+            this.passwordLoading = false;
+          })
+        )
         .subscribe((res) => {
-          if (res.exsisted && res.action == ActionMethod.Login) {
-            this.authVM
-              .singing({
-                username,
-                password,
-              })
-              .subscribe({
-                next: (res) => {
-                  this.passwordLoading = false;
-                  this.authSvc.prepareSigning(res);
-                },
-                error: (err: HttpErrorResponse) => {
-                  this.passwordLoading = false;
-                  this.authVM.showErrorMessage(err.error.detail);
-                },
-              });
+          if (res.isOk) {
+            this.passwordLoading = false;
+            this.authSvc.prepareSigning(res.data.token);
           } else {
-            if (res.action === ActionMethod.Register) {
+            if (res.data.auth_Type === ActionMethod.Register) {
               this.authVM.changeFormState('signup');
               this.authVM.signupForm_mobileControl.setValue(
                 this.authVM.userNameControl.value

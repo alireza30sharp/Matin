@@ -19,14 +19,14 @@
         type="text"
         class="input h-56px"
         placeholder=" "
-        formControlName="userName"
-        (keyup.enter)="signupUserName()"
+        formControlName="companyName"
+        (keyup.enter)="sig()"
       />
       <label for="name" class="input-label">شماره همراه یا ایمیل</label>
     </div>
     <button
       [disabled]="!authVM.userNameControl.valid || userNameLoading"
-      (click)="signupUserName()"
+      (click)="sig()"
       class="button btn-blue w-100 h-60px radius-15 f-14 min-w-unset"
     >
       <ng-container *ngIf="exsistedUser; else otp">
@@ -43,8 +43,7 @@
     کیا سیستم می‌باشد.
   </p>
 </div>
-
-<div class="auth-signing auth-signing--otp" *ngIf="authVM.formState === 'otp'">
+<div class="auth-signing auth-signing--otp" *ngIf="authVM.formState === 'Otp'">
   <div class="d-flex flex-column gap-2">
     <div
       class="auth-back d-flex gap-2"
@@ -188,7 +187,7 @@
           type="password"
           class="input h-56px"
           placeholder=" "
-          formControlName="password"
+          formControlName="companyPassword"
           (keyup.enter)="authVM.passwordControl.valid && signingWithPassword()"
         />
         <label *ngIf="{ _: passwordEle.focus() }" for="name" class="input-label"

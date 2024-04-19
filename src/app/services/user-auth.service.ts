@@ -13,19 +13,20 @@ export class UserAuthService {
 
   user?: User;
 
-  token?: JwtToken;
+  token?: any;
 
   signing() {
     this.router$.navigateByUrl('/auth');
   }
 
-  prepareSigning(jwt: JwtToken): boolean {
-    if (!jwt || !jwt.access_token) {
+  prepareSigning(jwt: string): boolean {
+    debugger;
+    if (!jwt) {
       return false;
     }
 
     try {
-      var decoded = jwt_decode(jwt.access_token);
+      var decoded = jwt_decode(jwt);
 
       this.token = Object.assign(jwt, decoded);
 
@@ -36,7 +37,7 @@ export class UserAuthService {
       if (authUri) {
         location.assign(authUri);
       }
-      this.router$.navigateByUrl('/app');
+      this.router$.navigateByUrl('/company');
       return true;
     } catch (error) {
       return false;

@@ -19,18 +19,20 @@ export interface AuthenticationLogin {
   mobile_number: string;
   has_account: boolean;
   has_password: boolean;
-  login_method: 'otp' | 'register';
+  login_method: 'otp' | 'Register';
   otp_send_successful: boolean;
   email_send_successful: boolean;
 }
 
 export interface JwtToken {
-  user_pk_id: number;
-  refresh_token: string;
-  access_token: string;
-  type_token: string;
-  sub?: string;
-  exp?: number;
+  companyName: string;
+  uniqCode: string;
+  companyTypeId: string;
+  nbf: number;
+  exp: number;
+  iat: number;
+  iss: string;
+  aud: string;
 }
 
 export interface IExistenceUser {
@@ -43,9 +45,9 @@ export enum ActionLogin {
   Email = 'email',
 }
 export enum ActionMethod {
-  Login = 'login',
-  Register = 'register',
-  Otp = 'otp',
+  Login = 'Login',
+  Register = 'Register',
+  Otp = 'Otp',
 }
 export interface UserCreate extends User, AuthenticationBase {
   confirmPassword: string;

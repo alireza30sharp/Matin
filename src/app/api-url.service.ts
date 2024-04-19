@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 
-const BASE_URL = environment.apiUrl + '/';
+const BASE_URL = environment.apiUrl + '/api/';
 const BASE_URL_v1 = BASE_URL + '/api/v1/';
 @Injectable({
   providedIn: 'root',
@@ -12,7 +12,9 @@ export class ApiUrlService {
   auth = {
     signup: BASE_URL + 'auth/signup',
     signing: BASE_URL + 'auth/signin',
-    otp: BASE_URL + 'auth/otp',
+    otp: BASE_URL + 'Auth/MobileAuth',
+    emailAuth: BASE_URL + 'Auth/EmailAuth',
+    emailSignIn: BASE_URL + 'Auth/EmailSignIn',
     verifyOtp: BASE_URL + 'auth/verifyotp',
     verifyAccount: BASE_URL + 'auth/verifyaccount',
   };
@@ -42,5 +44,6 @@ export class ApiUrlService {
     getCompanies: BASE_URL + 'Company/GetCompanies',
     deleteCompany: BASE_URL + 'Company/DeleteCompany',
     updateCompany: BASE_URL + 'Company/updateCompany',
+    addCompany: BASE_URL + 'Company/AddCompany',
   };
 }

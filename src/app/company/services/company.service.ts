@@ -1,6 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { companyInput, companyInsert, companyModel } from '../models';
+import {
+  companyInput,
+  companyInsert,
+  companyInterFace,
+  companyModel,
+} from '../models';
 import { ApiUrlService } from '@services';
 import { Data, response } from '@share/models/response.model';
 @Injectable()
@@ -40,6 +45,12 @@ export class CompanyService {
   updateCompany(model: companyInsert) {
     return this.$http.put<response<string>>(
       this.urlSvc.company.updateCompany,
+      model
+    );
+  }
+  createCompany(model: companyInterFace) {
+    return this.$http.post<response<any>>(
+      this.urlSvc.company.addCompany,
       model
     );
   }

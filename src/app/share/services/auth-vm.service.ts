@@ -21,22 +21,22 @@ import {
 } from '@models';
 import { ApiUrlService, UserAuthService } from '@services';
 
-export type FormState = 'username' | 'password' | 'otp' | 'signup' | 'recovery';
+export type FormState = 'username' | 'password' | 'Otp' | 'signup' | 'recovery';
 
 @Injectable()
 export class AuthVMService {
   formState: FormState = 'username';
 
   signingForm = this.fb.group({
-    userName: [
+    companyName: [
       null,
       [Validators.required, Validators.minLength(5), Validators.maxLength(50)],
     ],
-    password: [
+    companyPassword: [
       null,
       [Validators.required, Validators.minLength(4), Validators.maxLength(50)],
     ],
-    otp: [
+    Otp: [
       null,
       [Validators.required, Validators.min(10000), Validators.max(99999)],
     ],
@@ -49,7 +49,7 @@ export class AuthVMService {
     if (group == null) {
       return null;
     }
-    const passCtrl = group.get('password');
+    const passCtrl = group.get('companyPassword');
     let pass = passCtrl?.value;
 
     const cfgPassCtrl = group.get('confirmPassword');
@@ -104,9 +104,8 @@ export class AuthVMService {
     this.checkPasswords,
   ];
   signupForm = this.fb.group({
-    fname: [null, []],
-    lname: [null, []],
-    username: [
+    companyMobile: [null, []],
+    companyName: [
       null,
       [Validators.required, Validators.minLength(5), Validators.maxLength(50)],
     ],
@@ -118,22 +117,22 @@ export class AuthVMService {
       null,
       [Validators.required, Validators.minLength(5), Validators.maxLength(50)],
     ],
-    password: [null, this.passwordValidations],
+    companyPassword: [null, this.passwordValidations],
     confirmPassword: [null, this.passwordValidations],
   });
 
   otpData?: AuthenticationLogin;
 
   get userNameControl() {
-    return this.signingForm.get('userName')!;
+    return this.signingForm.get('companyName')!;
   }
 
   get passwordControl() {
-    return this.signingForm.get('password')!;
+    return this.signingForm.get('companyPassword')!;
   }
 
   get otpControl() {
-    return this.signingForm.get('otp')!;
+    return this.signingForm.get('Otp')!;
   }
   get signupForm_mobileControl() {
     return this.signupForm.get('mobile_number')!;
@@ -168,17 +167,25 @@ export class AuthVMService {
   }
 
   sendOtp(mobile: string) {
-    return this.$http.post<AuthenticationLogin>(
+    return this.$http.post<any>(
       this.urlSvc.auth.otp,
-      {},
-      {
-        params: {
-          mobile_number: mobile,
-        },
-      }
+      { companyMobile: mobile }
+      // {
+      //   params: {
+      //     mobile_number: mobile,
+      //   },
+      // }
     );
   }
-
+  emailAuth(email: string) {
+    return this.$http.post<any>(this.urlSvc.auth.emailAuth, { email: email });
+  }
+  emailSignIn(email: string, password: string) {
+    return this.$http.post<any>(this.urlSvc.auth.emailSignIn, {
+      email: email,
+      password: password,
+    });
+  }
   verifyOtp(code: number) {
     return this.$http.post<AuthenticationLogin>(
       this.urlSvc.auth.verifyOtp,

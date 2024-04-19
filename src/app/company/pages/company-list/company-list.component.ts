@@ -7,6 +7,7 @@ import { AgGridInterFace } from '@share/interfaces/ag-grid.interface';
 import { companyInput, companyInsert, companyModel } from '../../models';
 import { ToastService } from '@share/services';
 import { CompanyFormModalComponent } from '../../components/templates/company-form-modal/company-form-modal.component';
+import { ModalService } from '@share/services/modal.service';
 @Component({
   selector: 'app-company-list',
   templateUrl: './company-list.component.html',
@@ -144,7 +145,7 @@ export class CompanyListComponent implements OnInit {
   companyInput: companyInput = new companyInput();
   companyModel: companyModel;
   constructor(
-    private _modalService: NgbModal,
+    private _modalService: ModalService,
     private companyService: CompanyService,
     private readonly _toaster: ToastService
   ) {}
@@ -210,18 +211,10 @@ export class CompanyListComponent implements OnInit {
   //   });
   // }
   openModal() {
-    var modalRef = this._modalService.open(CompanyFormModalComponent, {
-      size: 'lg',
-      centered: true,
-      backdrop: 'static',
-    });
-
-    modalRef.componentInstance.companyModel = {
-      entryId: 12,
-    };
-    modalRef.result.then((res) => {
-      this.updateOrInsertCompany(res);
-    });
+    this._modalService
+      .open(CompanyFormModalComponent, 'lg')
+      .then((value) => {})
+      .catch((err) => {});
   }
   onSelectionChanged() {
     // this.selectedRows = this.gridApi.getSelectedRows();

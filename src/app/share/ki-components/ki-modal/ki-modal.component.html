@@ -1,27 +1,7 @@
 <section>
   <div class="modal-header" *ngIf="!hideCloseIcon && !!title">
     <h4 *ngIf="!!title" class="modal-title" id="modal-basic-title">
-      {{ title
-      }}<ng-container *ngIf="headerActionsIsShow">
-        <span class="modal-header-actions">
-          <button
-            type="button"
-            class="modal-header-actions__button modal-header-actions__button--task"
-            (click)="addTaskHandler()"
-          >
-            <span class="fa fa-tasks"></span>
-            ADD_TASK
-          </button>
-          <button
-            type="button"
-            class="modal-header-actions__button modal-header-actions__button--note"
-            (click)="addNoteHandler()"
-          >
-            <span class="fa fa-notes-medical"></span>
-            ADD_NOTE
-          </button>
-        </span>
-      </ng-container>
+      {{ title }}
     </h4>
     <button
       *ngIf="!hideCloseIcon"
@@ -34,7 +14,7 @@
   <div class="modal-body"><ng-content></ng-content></div>
   <div class="modal-footer" *ngIf="showPrimaryButton || showCancelButton">
     <ki-button [type]="'button'" (click)="closeModal()" [for]="cancelButtonFor">
-      {{ cancelButtonText ? cancelButtonText : "Cancel" }}
+      {{ cancelButtonText ? cancelButtonText : "انصراف" }}
     </ki-button>
     <ki-button
       *ngIf="showSkipButton"
@@ -53,7 +33,7 @@
       (click)="onPrimaryButtonClicked()"
       [disabled]="showPrimaryButtonLoading"
     >
-      {{ primaryButtonText ? primaryButtonText : "SAVE" }}
+      {{ primaryButtonText ? primaryButtonText : "ذخیره" }}
     </ki-button>
   </div>
 </section>

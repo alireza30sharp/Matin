@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: "https://api.ieltsdaily.ir"
+  apiUrl: 'http://37.156.14.41:2085',
 };
 
 /*

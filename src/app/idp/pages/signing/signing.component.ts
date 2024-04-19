@@ -26,6 +26,7 @@ export class SigningComponent implements OnInit {
   ngOnInit(): void {}
 
   signupUserName(allow = false) {
+    debugger;
     if (!allow && this.authVM.formState !== 'username') {
       return;
     }
@@ -97,6 +98,37 @@ export class SigningComponent implements OnInit {
       this.authVM.showErrorMessage(
         'لطفا شماره همراه یا آدرس ایمیل صحیح وارد نمایید.'
       );
+    }
+  }
+  sig(allow = false) {
+    if (!allow && this.authVM.formState !== 'username') {
+      return;
+    }
+    if (this.userNameLoading) {
+      return;
+    }
+    const username = this.authVM.userNameControl.value;
+
+    this.authVM.clearError();
+    if (phoneNumberValidator(username)) {
+      this.userNameLoading = true;
+      this.authVM.sendOtp(phoneNumberNormalizer(username, '0')).subscribe({
+        next: (res) => {
+          this.userNameLoading = false;
+          this.authVM.clearError();
+          this.authVM.otpData = res;
+          if (res.login_method === ActionMethod.Otp) {
+            this.authVM.changeFormState(ActionMethod.Otp);
+          }
+        },
+        error: (err) => {
+          this.userNameLoading = false;
+          this.authVM.showErrorMessage(
+            'کد تایید با موفقیت ارسال نشد، لطفا مجدد سعی نمایید.'
+          );
+        },
+      });
+    } else {
     }
   }
 

@@ -288,9 +288,9 @@
     border-radius: 15px !important;
   }
   
-  .modal-body {
-    line-height: 2rem;
-  }
+  // .modal-body {
+  //   line-height: 2rem;
+  // }
   
   .btn-close:focus {
     box-shadow: none !important;
@@ -329,24 +329,24 @@
     -webkit-transition: 0.2s ease all !important;;
   }
   
-  .floating-select:focus ~ .label-custom, .floating-select:not([value=""]):valid ~ .label-custom {
-    right: 10px !important;
-    top: -10px !important;;
-    font-size: 12px !important;;
-    color: #949494 !important;;
-    background: #FFF !important;;
-  }
+  // // .floating-select:focus ~ .label-custom, .floating-select:not([value=""]):valid ~ .label-custom {
+  // //   right: 10px !important;
+  // //   top: -10px !important;;
+  // //   font-size: 12px !important;;
+  // //   color: #949494 !important;;
+  // //   background: #FFF !important;;
+  // // }
   
   /* active state */
-  .floating-input:focus ~ .bar:before, .floating-input:focus ~ .bar:after, .floating-select:focus ~ .bar:before, .floating-select:focus ~ .bar:after {
-    width: 50% !important;;
-  }
+  // .floating-input:focus ~ .bar:before, .floating-input:focus ~ .bar:after, .floating-select:focus ~ .bar:before, .floating-select:focus ~ .bar:after {
+  //   width: 50% !important;;
+  // }
   
-  .floating-select {
-    -webkit-appearance: auto !important;
-    appearance: auto !important;
-    /*color: #949494 !important;*/
-  }
+  // .floating-select {
+  //   -webkit-appearance: auto !important;
+  //   appearance: auto !important;
+  //   /*color: #949494 !important;*/
+  // }
   
   .btn-check:active + .btn-outline-secondary, .btn-check:checked + .btn-outline-secondary, .btn-outline-secondary.active, .btn-outline-secondary.dropdown-toggle.show, .btn-outline-secondary:active {
     color: var(--red-color) !important;
@@ -386,11 +386,11 @@
   }
   
   /* active state */
-  .floating-input:focus ~ .highlight, .floating-select:focus ~ .highlight {
-    -webkit-animation: inputHighlighter 0.3s ease;
-    -moz-animation: inputHighlighter 0.3s ease;
-    animation: inputHighlighter 0.3s ease;
-  }
+  // .floating-input:focus ~ .highlight, .floating-select:focus ~ .highlight {
+  //   -webkit-animation: inputHighlighter 0.3s ease;
+  //   -moz-animation: inputHighlighter 0.3s ease;
+  //   animation: inputHighlighter 0.3s ease;
+  // }
   
   .popover-body {
     width: 230px;
@@ -467,71 +467,7 @@
     transform: rotate(180deg);
   }
   
-  .ng-select-container {
-    border: none !important;
-  }
-  
-  .ng-select.ng-select-opened > .ng-select-container {
-    background: transparent !important;
-  }
-  
-  .ng-dropdown-panel.ng-select-top {
-    border-radius: 10px !important;
-    padding: 10px 10px 10px 0 !important;
-    margin-bottom: 5px !important;
-    border: 2px solid #dedede !important;
-  }
-  
-  .ng-dropdown-panel.ng-select-bottom {
-    border-radius: 10px !important;
-    padding: 10px 10px 10px 0 !important;
-    margin-top: 5px !important;
-    border: 2px solid #dedede !important;
-  }
-  
-  .ng-dropdown-panel .ng-dropdown-panel-items .ng-option {
-    border-radius: 7px !important;
-  }
-  
-  .ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-marked {
-    background-color: var(--red-color) !important;
-    color: #ffffff !important;
-  }
-  
-  .ng-select .ng-arrow-wrapper .ng-arrow {
-    border-color: #999 !important;
-    border-width: 0 2px 2px 0 !important;
-    padding: 3px;
-    transform: rotate(45deg);
-    margin-bottom: 2px;
-  }
-  
-  .ng-select.ng-select-opened > .ng-select-container .ng-arrow {
-    transform: rotate(-135deg);
-    top: 3px !important;
-  }
-  
-  .ng-dropdown-panel .scroll-host {
-    padding-left: 10px;
-  }
-  
-  .ng-select.ng-select-focused:not(.ng-select-opened) > .ng-select-container {
-    box-shadow: none !important;
-  }
-  
-  .ng-select .ng-clear-wrapper .ng-clear {
-    margin-top: 5px;
-  }
-  
-  .ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-selected, .ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-selected.ng-option-marked {
-    background-color: #f2f2f2 !important;
-    color: rgba(0,0,0,0.87) !important;
-  }
-  
-  .ng-select, .ng-select .ng-select-container, .ng-select .ng-select-container .ng-value-container .ng-input > input {
-    cursor: pointer !important;
-  }
-  
+ 
   .page-link {
     background: #F4F4F4 !important ;
     color: #000 !important;

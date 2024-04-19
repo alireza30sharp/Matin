@@ -3,11 +3,11 @@
   (ngSubmit)="!companyForm.invalid && submitHandler()"
 >
   <div class="row">
-    <div class="col-3">
+    <div class="col-4">
       <ki-form-group
-        [label]="'Company Name'"
+        [label]="'نام شرکت'"
         [showRequireSign]="true"
-        [errorMessage]="'Validation Required'"
+        [errorMessage]="'فیلد اجباری'"
         [hideError]="
           !(
             (companyForm.submitted || companyName.dirty) &&
@@ -21,6 +21,183 @@
           #companyName="ngModel"
           required
         ></ki-input>
+      </ki-form-group>
+    </div>
+    <div class="col-4">
+      <ki-form-group
+        [label]="'کد شرکت'"
+        [showRequireSign]="true"
+        [errorMessage]="'فیلد اجباری'"
+        [hideError]="
+          !(
+            (companyForm.submitted || companyUniqCode.dirty) &&
+            companyUniqCode.errors?.required
+          )
+        "
+      >
+        <ki-input
+          name="companyUniqCode"
+          [(ngModel)]="companyModel.companyUniqCode"
+          #companyUniqCode="ngModel"
+          required
+        ></ki-input>
+      </ki-form-group>
+    </div>
+    <div class="col-4">
+      <ki-form-group
+        [label]="'نام شهر'"
+        [showRequireSign]="true"
+        [errorMessage]="'فیلد اجباری'"
+        [hideError]="
+          !((companyForm.submitted || cityId.dirty) && cityId.errors?.required)
+        "
+      >
+        <ki-select
+          [options]="cityOptions"
+          [allowClear]="true"
+          [(ngModel)]="companyModel.cityId"
+          name="cityId"
+          #cityId="ngModel"
+          required
+          [isloading]="lockupsIsLoading"
+        ></ki-select>
+      </ki-form-group>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-4">
+      <ki-form-group
+        class=""
+        [label]="'رمز عبور'"
+        [showRequireSign]="true"
+        [errorMessage]="'فیلد اجباری'"
+        [hideError]="
+          !(
+            (companyForm.submitted || companyPassword.dirty) &&
+            companyPassword.errors?.required
+          )
+        "
+      >
+        <ki-input
+          name="companyPassword"
+          [type]="typePassword ? 'password' : 'text'"
+          [(ngModel)]="companyModel.companyPassword"
+          #companyPassword="ngModel"
+          required
+        ></ki-input>
+        <i
+          class="fa-solid pointer"
+          [ngClass]="typePassword ? 'fa-eye' : 'fa-eye-slash'"
+          (click)="changeType()"
+        ></i>
+      </ki-form-group>
+    </div>
+    <div class="col-4">
+      <ki-form-group
+        class=""
+        [label]="'تلفن'"
+        [showRequireSign]="true"
+        [errorMessage]="'فیلد اجباری'"
+        [hideError]="
+          !(
+            (companyForm.submitted || companyTel.dirty) &&
+            companyTel.errors?.required
+          )
+        "
+      >
+        <ki-input
+          name="companyTel"
+          [type]="'phone'"
+          [(ngModel)]="companyModel.companyTel"
+          #companyTel="ngModel"
+          required
+        ></ki-input>
+      </ki-form-group>
+    </div>
+    <div class="col-4">
+      <ki-form-group
+        class=""
+        [label]="'موبایل'"
+        [showRequireSign]="true"
+        [errorMessage]="'فیلد اجباری'"
+        [hideError]="
+          !(
+            (companyForm.submitted || companyMobile.dirty) &&
+            companyMobile.errors?.required
+          )
+        "
+      >
+        <ki-input
+          name="companyMobile"
+          [type]="'phone'"
+          [(ngModel)]="companyModel.companyMobile"
+          #companyMobile="ngModel"
+          required
+        ></ki-input>
+      </ki-form-group>
+    </div>
+  </div>
+  <div class="row">
+    <ki-form-group
+      class="col-6"
+      [label]="'ایمیل'"
+      [showRequireSign]="true"
+      [errorMessage]="'فیلد اجباری'"
+      [hideError]="
+        !((companyForm.submitted || email.dirty) && email.errors?.required)
+      "
+    >
+      <ki-input
+        name="email"
+        [type]="'email'"
+        [(ngModel)]="companyModel.email"
+        #email="ngModel"
+        required
+      ></ki-input>
+    </ki-form-group>
+    <ki-form-group
+      class="col-6"
+      [label]="'نوع شرکت'"
+      [showRequireSign]="true"
+      [errorMessage]="'فیلد اجباری'"
+      [hideError]="
+        !(
+          (companyForm.submitted || companyType.dirty) &&
+          companyType.errors?.required
+        )
+      "
+    >
+      <ki-select
+        [options]="cityOptions"
+        [allowClear]="true"
+        [(ngModel)]="companyModel.companyType"
+        name="companyType"
+        #companyType="ngModel"
+        required
+        [isloading]="lockupsIsLoading"
+      ></ki-select>
+    </ki-form-group>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <ki-form-group
+        class=""
+        [label]="'آدرس'"
+        [showRequireSign]="true"
+        [errorMessage]="'فیلد اجباری'"
+        [hideError]="
+          !(
+            (companyForm.submitted || companyAddress.dirty) &&
+            companyAddress.errors?.required
+          )
+        "
+      >
+        <ki-textarea
+          [(ngModel)]="companyModel.companyAddress"
+          name="companyAddress"
+          #companyAddress="ngModel"
+          required
+        ></ki-textarea>
       </ki-form-group>
     </div>
   </div>

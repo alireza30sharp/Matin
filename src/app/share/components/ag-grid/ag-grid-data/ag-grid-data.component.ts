@@ -68,6 +68,7 @@ export class AgGridDataComponent extends AgGridMaster implements AfterViewInit {
     }
   }
   @Input() defaultColDef: AgGridInterFace;
+  @Input() activeToolBar: boolean = false;
   @Input() autoGroupColumnDef: AgGridInterFace;
   @Input() popupParent: any;
 
@@ -82,7 +83,7 @@ export class AgGridDataComponent extends AgGridMaster implements AfterViewInit {
     // this.agGridUpdate();
   }
 
-  @Input() class: string = 'ag-theme-alpine';
+  @Input() class: string = 'ag-theme-balham';
   @Input() idGrid: string;
   @Output() selectedRowsChange = new EventEmitter<any>();
   @Output() removeCellChange = new EventEmitter<any>();

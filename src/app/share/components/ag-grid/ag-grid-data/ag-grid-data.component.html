@@ -1,4 +1,4 @@
-<div class="container">
+<div>
   <input
     type="file"
     accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
@@ -7,6 +7,7 @@
     (change)="onFileChange($event)"
   />
   <app-tools-bar
+    *ngIf="activeToolBar"
     (NewSelected)="onNewSelected()"
     [countItemEdited]="countItemEdited"
     (ImportExcelSelected)="file.click()"

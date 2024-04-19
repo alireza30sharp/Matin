@@ -1,10 +1,10 @@
-@import './../../../../assets/base/variable';
+@import 'variable';
 
 $name: 'form-group';
 
 .#{$name} {
   margin-bottom: $spacing-x4;
-
+  position: relative;
   &__content {
     position: relative;
   }

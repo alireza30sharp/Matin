@@ -40,8 +40,14 @@ export class KiInputComponent implements ControlValueAccessor, OnChanges {
   @Input() _value = '';
   @Input() id?: string;
   @Input() placeholder: string;
-  @Input() type: 'file' | 'number' | 'text' | 'emial' | 'phone' | 'fax' =
-    'text';
+  @Input() type:
+    | 'password'
+    | 'file'
+    | 'number'
+    | 'text'
+    | 'emial'
+    | 'phone'
+    | 'fax' = 'text';
   @Input() min?: number;
   @Input() max?: number;
   @Input() step?: string;

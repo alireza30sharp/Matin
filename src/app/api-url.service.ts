@@ -10,14 +10,14 @@ export class ApiUrlService {
   constructor() {}
 
   auth = {
-    signup: BASE_URL_v1 + 'auth/signup',
-    signing: BASE_URL_v1 + 'auth/signin',
-    otp: BASE_URL_v1 + 'auth/otp',
-    verifyOtp: BASE_URL_v1 + 'auth/verifyotp',
-    verifyAccount: BASE_URL_v1 + 'auth/verifyaccount',
+    signup: BASE_URL + 'auth/signup',
+    signing: BASE_URL + 'auth/signin',
+    otp: BASE_URL + 'auth/otp',
+    verifyOtp: BASE_URL + 'auth/verifyotp',
+    verifyAccount: BASE_URL + 'auth/verifyaccount',
   };
   user = {
-    check: BASE_URL_v1 + 'user/check',
+    check: BASE_URL + 'user/check',
   };
   course = {
     course: 'course/',
@@ -39,8 +39,8 @@ export class ApiUrlService {
   };
 
   company = {
-    getCompanies: BASE_URL_v1 + 'Company/GetCompanies',
-    deleteCompany: BASE_URL_v1 + 'Company/DeleteCompany',
-    updateCompany: BASE_URL_v1 + 'Company/updateCompany',
+    getCompanies: BASE_URL + 'Company/GetCompanies',
+    deleteCompany: BASE_URL + 'Company/DeleteCompany',
+    updateCompany: BASE_URL + 'Company/updateCompany',
   };
 }

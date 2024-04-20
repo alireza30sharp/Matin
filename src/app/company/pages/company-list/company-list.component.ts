@@ -36,17 +36,19 @@ export class CompanyListComponent implements OnInit {
   public favoriteColor = '#26ab3c';
   public rowSelection = 'multiple';
   public defaultColDef: AgGridInterFace = {
-    width: 120,
+    width: 300,
     sortable: true,
     resizable: true,
     enableRowGroup: true,
     enablePivot: true,
     filter: true,
+    floatingFilter: true,
+
     floatingFilterComponentParams: {
       suppressFilterButton: true,
     },
     flex: 1,
-    minWidth: 100,
+    minWidth: 200,
     enableValue: true,
     filterParams: true,
     chartDataType: 'series',
@@ -162,7 +164,7 @@ export class CompanyListComponent implements OnInit {
   getCompanies() {
     this.companyService.getCompanies(this.companyInput).subscribe((list) => {
       if (list.data) {
-        this.rowDataDefault = list.data;
+        this.rowDataDefault = list.data.data;
         //this.totalCount = list.data.totalCount;
       }
     });

@@ -54,7 +54,7 @@ export class AgGridDataComponent extends AgGridMaster implements AfterViewInit {
       this.isShowToolbar = true;
       this.enableFillHandle = true;
       this.undoRedoCellEditing = true;
-      this.enableCellChangeFlash = true;
+      this.enableCellChangeFlash = false;
       let col = columns.filter((col) => col.editable);
       if (col.length > 0) {
         let findEditing = col.find((f) => f.startEditing);
@@ -84,10 +84,10 @@ export class AgGridDataComponent extends AgGridMaster implements AfterViewInit {
     // this.agGridUpdate();
   }
 
-  @Input() class: string = 'ag-theme-balham';
+  @Input() class: string = 'ag-theme-quartz';
   @Input() idGrid: string;
   @Input() pagination: boolean = true;
-  @Input() paginationPageSize: number = 10;
+  @Input() paginationPageSize: number = 175;
   paginationPageSizeSelector: number[] | boolean = [10, 20, 50, 100];
   paginationNumberFormatter: (
     params: PaginationNumberFormatterParams
@@ -161,12 +161,12 @@ export class AgGridDataComponent extends AgGridMaster implements AfterViewInit {
 
   private restoreState(state) {
     // let state = window.localStorage.getItem('save');
-    setTimeout(() => {
-      this.gridOptions.columnApi.applyColumnState({
-        state: state,
-        applyOrder: true,
-      });
-    }, 900);
+    // setTimeout(() => {
+    //   this.gridOptions.columnApi.applyColumnState({
+    //     state: state,
+    //     applyOrder: true,
+    //   });
+    // }, 900);
   }
   onSave() {
     if (this.idGrid != '') {

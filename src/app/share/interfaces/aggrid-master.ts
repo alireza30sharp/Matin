@@ -106,11 +106,11 @@ export class AgGridMaster {
 
     var columnDefs = this.gridApi.getColumnDefs();
 
-    this.gridApi.setColumnDefs(columnDefs as any);
-    if (params.api.setGridOption) {
-      params.api.setGridOption('rowData', this.rowData);
-      this.startFeed(params.api);
-    }
+    this.gridApi.updateGridOptions(columnDefs as any);
+    // if (params.api.setGridOption) {
+    //   params.api.setGridOption('rowData', this.rowData);
+    //   this.startFeed(params.api);
+    // }
   }
   startFeed(api: GridApi) {
     debugger;

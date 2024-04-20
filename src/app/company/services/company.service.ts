@@ -16,7 +16,7 @@ export class CompanyService {
   ) {}
 
   getCompanies(params?: companyInput) {
-    return this.$http.get<response<companyModel[]>>(
+    return this.$http.get<response<Data<companyModel[]>>>(
       this.urlSvc.company.getCompanies,
       {
         params: {

@@ -20,7 +20,6 @@ export class UserAuthService {
   }
 
   prepareSigning(jwt: string): boolean {
-    debugger;
     if (!jwt) {
       return false;
     }

@@ -2,11 +2,14 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { LoadingStateFrom } from '@share/models/loadingState';
 import { ToastService } from '@share/services';
+import { finalize } from 'rxjs';
 import { companyInsert } from 'src/app/company/models';
+import { CompanyService } from 'src/app/company/services';
 @Component({
   selector: 'app-company-form-modal',
   templateUrl: './company-form-modal.component.html',
   styleUrls: ['./company-form-modal.component.scss'],
+  providers: [CompanyService],
 })
 export class CompanyFormModalComponent
   extends LoadingStateFrom
@@ -23,7 +26,8 @@ export class CompanyFormModalComponent
   }
   constructor(
     private _activeModal: NgbActiveModal,
-    private _toastService: ToastService
+    private _toastService: ToastService,
+    private _companyService: CompanyService
   ) {
     super();
   }
@@ -41,6 +45,30 @@ export class CompanyFormModalComponent
       return;
     }
     this.startLoading();
+    this._companyService
+      .createCompany(data as any)
+      .pipe(
+        finalize(() => {
+          this.finalize();
+        })
+      )
+      .subscribe({
+        next: (res) => {
+          if (res.isOk) {
+            this._toastService.success('با موفقیت ثبت شد');
+          }
+        },
+        error: (err) => {
+          let msg = '';
+          if (err.error.messages) {
+            this._toastService.error(err.error.messages);
+            msg = err.error.messages.join(' ');
+          } else if (err.error.message) {
+            this._toastService.error(err.error.message);
+            msg = err.error.message.join(' ');
+          }
+        },
+      });
   }
   cancelHandler() {
     this._activeModal.close(false);

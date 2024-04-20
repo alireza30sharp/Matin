@@ -17,6 +17,7 @@ import { ModalService } from '@share/services/modal.service';
 export class CompanyListComponent implements OnInit {
   type = 'ag-theme-balham';
   rowDataDefault = [];
+  selectRow = new Array<companyModel>();
   totalCount = 0;
   selectedRows: any;
   page = 0;
@@ -40,6 +41,10 @@ export class CompanyListComponent implements OnInit {
     resizable: true,
     enableRowGroup: true,
     enablePivot: true,
+    filter: true,
+    floatingFilterComponentParams: {
+      suppressFilterButton: true,
+    },
     flex: 1,
     minWidth: 100,
     enableValue: true,
@@ -151,9 +156,7 @@ export class CompanyListComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.changeModel.pipe(debounceTime(900)).subscribe((res) => {
-      this.changed();
-    });
+    this.getCompanies();
   }
 
   getCompanies() {
@@ -170,6 +173,17 @@ export class CompanyListComponent implements OnInit {
 
     this.getCompanies();
   }
+  onSelectedRowsChangeEvent(event: Array<companyModel>) {
+    this.selectRow = new Array<companyModel>();
+    this.selectRow = event;
+  }
+  onDeleteItem(item: companyModel) {
+    this.companyService.deleteCompany(item.id).subscribe((res) => {
+      if (res.isOk) {
+        this.getCompanies();
+      }
+    });
+  }
   // saveState() {
   //   window.localStorage.setItem(
   //     'save',
@@ -177,16 +191,15 @@ export class CompanyListComponent implements OnInit {
   //   );
 
   // }
-  // override removeCell(row) {
-  //   this.companyService.deleteCompany(row.id).subscribe((res) => {
-  //     if (res.isOk) {
-  //       this._toaster.success(res.message);
-  //       this.getCompanies();
-  //     } else {
-  //       this._toaster.error(res.message);
-  //     }
-  //   });
-  // }
+  removeCell() {
+    if (this.selectRow.length) {
+      for (let i = 0; i <= this.selectRow.length; i++) {
+        this.onDeleteItem(this.selectRow[i]);
+      }
+    } else {
+      this._toaster.error('لطفا یک رکورد انتخاب شود');
+    }
+  }
   // override editCell(row: any): void {
   //   var modalRef = this._modalService.open(CompanyFormModalComponent, {
   //     size: 'xl',

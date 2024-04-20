@@ -6,7 +6,7 @@
 >
   <ng-template #header>
     <app-tools-bar
-      (DeleteSelected)="removeCell(12)"
+      (DeleteSelected)="removeCell()"
       (EditSelected)="openModal()"
       (NewSelected)="openModal()"
       [disabled]="selectedRows ? false : true"
@@ -17,7 +17,10 @@
     [rowDataDefault]="rowDataDefault"
     [columnsDefault]="columnsDefault"
     [defaultColDef]="defaultColDef"
-    [showSideBar]="false"
+    [showSideBar]="true"
+    [pagination]="true"
+    (selectedRowsChange)="onSelectedRowsChangeEvent($event)"
+    (removeCellChange)="onDeleteItem($event)"
   >
   </ag-grid-data>
 </app-general-panel>

@@ -23,7 +23,7 @@
     [class]="class"
     [columnDefs]="columnsTable"
     [suppressAggFuncInHeader]="true"
-    [suppressRowClickSelection]="true"
+    [suppressRowClickSelection]="false"
     [rowGroupPanelShow]="'always'"
     [pivotPanelShow]="'always'"
     [defaultColDef]="defaultColDef"
@@ -46,6 +46,11 @@
     [asyncTransactionWaitMillis]="asyncTransactionWaitMillis"
     (asyncTransactionsFlushed)="onAsyncTransactionsFlushed($event)"
     [getRowId]="getRowId"
+    [pivotPanelShow]="pivotPanelShow"
+    [pagination]="pagination"
+    [paginationAutoPageSize]="true"
+    [paginationPageSize]="paginationPageSize"
+    [paginationPageSizeSelector]="paginationPageSizeSelector"
   ></ag-grid-angular>
   <!-- <div id="myChart" class="ag-theme-quartz my-chart"></div> -->
 </div>

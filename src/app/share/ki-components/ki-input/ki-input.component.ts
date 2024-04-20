@@ -47,6 +47,7 @@ export class KiInputComponent implements ControlValueAccessor, OnChanges {
     | 'text'
     | 'emial'
     | 'phone'
+    | 'tel'
     | 'fax' = 'text';
   @Input() min?: number;
   @Input() max?: number;
@@ -77,7 +78,7 @@ export class KiInputComponent implements ControlValueAccessor, OnChanges {
   mask?: string;
 
   private _phonelengthMin = 1;
-  private _phonelengthMax = 12;
+  private _phonelengthMax = 11;
   constructor() {}
 
   get value() {
@@ -124,6 +125,13 @@ export class KiInputComponent implements ControlValueAccessor, OnChanges {
         this.max = this._phonelengthMax;
 
         isInvalid = !ValidatorsHelper.isPhoneValid(this._value);
+        return isInvalid ? { isInvalid: isInvalid } : null;
+        break;
+      case 'tel':
+        this.min = this._phonelengthMin;
+        this.max = this._phonelengthMax;
+
+        isInvalid = !ValidatorsHelper.isphonetelValid(this._value);
         return isInvalid ? { isInvalid: isInvalid } : null;
         break;
       default:

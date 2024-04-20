@@ -32,10 +32,9 @@ export class ToolsBarComponent implements OnInit {
 
   // متد حذف
   deleteEvent() {
-    alert('deleteItem');
-    if (!this.disabled) {
-      this.DeleteSelected.emit();
-    }
+    // if (!this.disabled) {
+    this.DeleteSelected.emit();
+    //}
   }
   escapeEvent() {
     alert('Escape');

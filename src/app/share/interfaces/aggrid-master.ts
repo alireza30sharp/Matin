@@ -23,7 +23,6 @@ export class AgGridMaster {
   top = 50;
   skip = 0;
   gridApi: GridApi;
-  paginationPageSize = 20;
   rowData = [];
 
   loadmoreFlag = false;

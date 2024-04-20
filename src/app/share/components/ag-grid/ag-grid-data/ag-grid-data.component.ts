@@ -20,6 +20,7 @@ import {
   GetRowIdParams,
   GridOptions,
   GridReadyEvent,
+  PaginationNumberFormatterParams,
   ValueParserParams,
 } from 'ag-grid-community';
 import 'ag-grid-enterprise';
@@ -85,6 +86,15 @@ export class AgGridDataComponent extends AgGridMaster implements AfterViewInit {
 
   @Input() class: string = 'ag-theme-balham';
   @Input() idGrid: string;
+  @Input() pagination: boolean = true;
+  @Input() paginationPageSize: number = 10;
+  paginationPageSizeSelector: number[] | boolean = [10, 20, 50, 100];
+  paginationNumberFormatter: (
+    params: PaginationNumberFormatterParams
+  ) => string = (params: PaginationNumberFormatterParams) => {
+    return '[' + params.value.toLocaleString() + ']';
+  };
+  pivotPanelShow: 'always' | 'onlyWhenPivoting' | 'never' = 'always';
   @Output() selectedRowsChange = new EventEmitter<any>();
   @Output() removeCellChange = new EventEmitter<any>();
   @Output() editCellChange = new EventEmitter<any>();

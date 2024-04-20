@@ -9,8 +9,20 @@ export interface companyInterFace {
   companyMobile: any;
   email: any;
 }
-
-export interface companyModel {
+export class companyInsert {
+  companyUniqCode: string;
+  companyName: string;
+  cityId: number;
+  companyPassword: string;
+  companyTel: string;
+  companyAddress: string;
+  companyType: number;
+  companyId: number;
+  companyMobile: string;
+  email: string;
+  id?: number;
+}
+export class companyModel {
   id: number;
   cityName: string;
   componyTel: string;
@@ -18,6 +30,7 @@ export interface companyModel {
   companyMobile: any;
   statusId: number;
   companyType: number;
+  companyTypeId: number;
   companyStatuesName: string;
   companyTypeName: string;
   companyUniqCode: string;
@@ -26,9 +39,10 @@ export interface companyModel {
   companyTel: string;
   email: string;
   cityId: number;
-  componyUniqCode: string;
   componyName: string;
   companyAddress: string;
+  componyUniqCode: string;
+  row_NO: number;
 }
 
 export class companyInput {
@@ -42,19 +56,4 @@ export class companyInput {
   PageSize: number = 20;
   SelectFrom: number = 0;
   SelectCount: number = 0;
-}
-
-export class companyInsert {
-  companyId: number;
-  id: number;
-  companyUniqCode: string;
-  companyName: string;
-  cityId: number;
-  companyPassword: string;
-  companyTel: string;
-  companyAddress: string;
-  companyType: number;
-  companyMobile: string;
-  stauesId: number = 0;
-  email: string;
 }

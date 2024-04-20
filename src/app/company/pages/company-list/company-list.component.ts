@@ -162,8 +162,8 @@ export class CompanyListComponent implements OnInit {
   getCompanies() {
     this.companyService.getCompanies(this.companyInput).subscribe((list) => {
       if (list.data) {
-        this.rowDataDefault = list.data.data;
-        this.totalCount = list.data.totalCount;
+        this.rowDataDefault = list.data;
+        //this.totalCount = list.data.totalCount;
       }
     });
   }

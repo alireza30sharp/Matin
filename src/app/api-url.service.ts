@@ -46,4 +46,8 @@ export class ApiUrlService {
     updateCompany: BASE_URL + 'Company/updateCompany',
     addCompany: BASE_URL + 'Company/AddCompany',
   };
+  clientPrerequisits = {
+    GetClientPrerequisits:
+      BASE_URL + 'ClientPrerequisits/GetClientPrerequisits',
+  };
 }

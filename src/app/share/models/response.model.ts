@@ -5,7 +5,7 @@ export interface response<T> {
   message: string;
 }
 export interface Data<T> {
-  data: T[];
+  data: T;
   totalCount: number;
   currentPage: number;
   pageSize: number;

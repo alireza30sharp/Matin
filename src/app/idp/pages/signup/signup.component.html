@@ -55,7 +55,22 @@
     />
     <label for="name" class="input-label">نام شرکت</label>
   </div>
-
+  <!-- companyUniqCode -->
+  <div
+    class="input-box w-100"
+    [class.input-box--invalid]="
+      authVM.signupForm.get('companyUniqCode')?.dirty &&
+      !authVM.signupForm.get('companyUniqCode')?.valid
+    "
+  >
+    <input
+      type="text"
+      class="input h-56px"
+      placeholder=" "
+      formControlName="companyUniqCode"
+    />
+    <label for="name" class="input-label">کد شرکت</label>
+  </div>
   <!-----------companyMobile-->
   <div
     class="input-box w-100"
@@ -148,7 +163,10 @@
     </div>
   </div>
   <button
-    [disabled]="!authVM.signupForm.get('companyName')?.valid"
+    [disabled]="
+      !authVM.signupForm.get('companyName')?.valid ||
+      !authVM.signupForm.get('companyUniqCode')?.valid
+    "
     (click)="signup()"
     class="button btn-blue w-100 h-60px radius-15 f-14 min-w-unset"
   >

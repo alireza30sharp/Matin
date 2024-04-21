@@ -252,16 +252,12 @@ export class SignupComponent implements OnInit {
     let m = this.authVM.signupForm.getRawValue();
     let model: companyInterFace = {
       companyMobile: m.companyMobile,
+      companyUniqCode: m.companyUniqCode,
       CompanyName: m.companyName,
       companyPassword: m.companyPassword,
       email: m.email,
-      companyAddress: '',
-      companyTel: '4444',
-      companyUniqCode: 'ddddddddddd',
-      cityId: '1',
-      companyType: '1',
     };
-    this._companyService.createCompany(model).subscribe({
+    this._companyService.preRegisterCompany(model).subscribe({
       next: (res) => {
         this.signupLoading = false;
         if (res.isOk) {

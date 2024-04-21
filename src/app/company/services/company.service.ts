@@ -54,4 +54,10 @@ export class CompanyService {
       model
     );
   }
+  preRegisterCompany(model: companyInterFace) {
+    return this.$http.post<response<any>>(
+      this.urlSvc.company.preRegisterCompany,
+      model
+    );
+  }
 }

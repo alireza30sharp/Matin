@@ -20,6 +20,7 @@ import {
   UserCreateAuth,
 } from '@models';
 import { ApiUrlService, UserAuthService } from '@services';
+import { response } from '@share/models/response.model';
 
 export type FormState = 'username' | 'password' | 'Otp' | 'signup' | 'recovery';
 
@@ -119,6 +120,10 @@ export class AuthVMService {
     ],
     companyPassword: [null, this.passwordValidations],
     confirmPassword: [null, this.passwordValidations],
+    companyUniqCode: [
+      null,
+      [Validators.required, Validators.minLength(5), Validators.maxLength(10)],
+    ],
   });
 
   otpData?: AuthenticationLogin;
@@ -166,15 +171,15 @@ export class AuthVMService {
       ();
   }
 
-  sendOtp(mobile: string) {
-    return this.$http.post<any>(
-      this.urlSvc.auth.otp,
-      { companyMobile: mobile }
-      // {
-      //   params: {
-      //     mobile_number: mobile,
-      //   },
-      // }
+  mobileAuth(mobile: string) {
+    return this.$http.post<any>(this.urlSvc.auth.mobileAuth, {
+      companyMobile: mobile,
+    });
+  }
+  activationAndVerificationCode(mobile: string) {
+    return this.$http.post<response<any>>(
+      this.urlSvc.activationAndVerificationCode.resendCode,
+      { phoneNumber: mobile }
     );
   }
   emailAuth(email: string) {
@@ -186,13 +191,13 @@ export class AuthVMService {
       password: password,
     });
   }
-  verifyOtp(code: number) {
-    return this.$http.post<AuthenticationLogin>(
-      this.urlSvc.auth.verifyOtp,
-      {},
+  verifyOtp(phoneNumber: string, code: string) {
+    return this.$http.get<response<any>>(
+      this.urlSvc.activationAndVerificationCode.checkAuthCodeAndLogin,
       {
         params: {
-          code: code.toString(),
+          PhoneNumber: phoneNumber,
+          Code: code,
         },
       }
     );

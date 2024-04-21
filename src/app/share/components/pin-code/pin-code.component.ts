@@ -22,7 +22,7 @@ export class PinCodeComponent implements OnInit {
 
   @ViewChild('resetEle', { static: true }) resetEle: any;
 
-  pinValue = Array(5).fill(null);
+  pinValue = Array(4).fill(null);
 
   onDigitCheck(event: any) {
     if (

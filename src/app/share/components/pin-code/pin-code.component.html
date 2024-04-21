@@ -32,16 +32,7 @@
       class="pointer-event-none"
       (input)="onDigitCheck($event)"
       (keydown.backspace)="backspace($event)"
-      type="number"
-      placeholder=" "
-      aria-checked="true"
-    />
-    <input
-      [(ngModel)]="pinValue[4]"
-      class="pointer-event-none"
       (input)="triggerResult($event)"
-      (input)="onDigitCheck($event)"
-      (keydown.backspace)="backspace($event)"
       type="number"
       placeholder=" "
       aria-checked="true"

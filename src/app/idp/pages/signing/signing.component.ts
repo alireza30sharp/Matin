@@ -20,6 +20,7 @@ export class SigningComponent implements OnInit {
 
   userNameLoading = false;
   passwordLoading = false;
+  verificationCodeLoading: boolean = false;
   otpVerifyLoading = false;
   exsistedUser: boolean = true;
   constructor(public authSvc: UserAuthService, public authVM: AuthVMService) {}
@@ -27,7 +28,6 @@ export class SigningComponent implements OnInit {
   ngOnInit(): void {}
 
   signupUserName(allow = false) {
-    debugger;
     if (!allow && this.authVM.formState !== 'username') {
       return;
     }
@@ -46,7 +46,7 @@ export class SigningComponent implements OnInit {
           if (res.exsisted) {
             this.exsistedUser = false;
             this.authVM
-              .sendOtp(phoneNumberNormalizer(username, '0'))
+              .mobileAuth(phoneNumberNormalizer(username, '0'))
               .subscribe({
                 next: (res) => {
                   this.userNameLoading = false;
@@ -114,7 +114,7 @@ export class SigningComponent implements OnInit {
     if (phoneNumberValidator(username)) {
       this.userNameLoading = true;
       this.authVM
-        .sendOtp(phoneNumberNormalizer(username, '0'))
+        .mobileAuth(phoneNumberNormalizer(username, '0'))
         .pipe(
           finalize(() => {
             this.userNameLoading = false;
@@ -125,6 +125,7 @@ export class SigningComponent implements OnInit {
             this.userNameLoading = false;
             this.authVM.clearError();
             this.authVM.otpData = res.data;
+            this.activationAndVerificationCode(username);
             if (res.data.auth_Type === ActionMethod.Otp) {
               this.authVM.changeFormState(ActionMethod.Otp);
             } else if (res.data.action === ActionMethod.Register) {
@@ -156,7 +157,7 @@ export class SigningComponent implements OnInit {
         )
         .subscribe((res) => {
           this.userNameLoading = false;
-          if (res.isOk && res.data.action === ActionMethod.Login) {
+          if (res.isOk && res.data.auth_Type === ActionMethod.Login) {
             this.authVM.changeFormState('password');
           } else {
             if (res.data.action === ActionMethod.Register) {
@@ -169,7 +170,16 @@ export class SigningComponent implements OnInit {
         });
     }
   }
+  activationAndVerificationCode(mobile: string) {
+    this.otpVerifyLoading = true;
 
+    this.authVM.activationAndVerificationCode(mobile).subscribe((res) => {
+      if (res.isOk) {
+        this.otpVerifyLoading = false;
+      }
+      this.otpVerifyLoading = false;
+    });
+  }
   updateFormStateToUserName() {
     this.authVM.changeFormState('username');
   }
@@ -222,16 +232,16 @@ export class SigningComponent implements OnInit {
 
     this.otpVerifyLoading = true;
     this.authVM.clearError();
-    this.authVM.verifyOtp(+otp).subscribe({
+    this.authVM.verifyOtp(username, otp).subscribe({
       next: (res) => {
         this.otpVerifyLoading = false;
 
-        if (this.authSvc.prepareSigning(res as any)) {
+        if (res.isOk && this.authSvc.prepareSigning(res.data.token)) {
           return;
         }
 
-        this.authVM.otpData = res;
-        if (res.login_method === ActionMethod.Register) {
+        this.authVM.otpData = res.data;
+        if (res.data.auth_Type === ActionMethod.Register) {
           this.authVM.changeFormState('signup');
           this.authVM.signupForm_mobileControl.setValue(
             this.authVM.userNameControl.value
@@ -240,7 +250,7 @@ export class SigningComponent implements OnInit {
       },
       error: (err: HttpErrorResponse) => {
         this.otpVerifyLoading = false;
-        this.authVM.showErrorMessage(err.error.detail);
+        this.authVM.showErrorMessage(err.error.message);
       },
     });
   }

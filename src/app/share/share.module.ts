@@ -61,6 +61,7 @@ const component = [
   grid.CurrencyRendererComponent,
   grid.SliderFilterComponent,
   grid.AgGridDataComponent,
+  _shareCmp.ReportComponent,
   SafeIframeUrlPipe,
 ];
 @NgModule({

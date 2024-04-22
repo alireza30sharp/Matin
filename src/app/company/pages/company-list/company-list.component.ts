@@ -8,6 +8,7 @@ import { companyInput, companyInsert, companyModel } from '../../models';
 import { ToastService } from '@share/services';
 import { CompanyFormModalComponent } from '../../components/templates/company-form-modal/company-form-modal.component';
 import { ModalService } from '@share/services/modal.service';
+import { ReportComponent } from '@share/components';
 @Component({
   selector: 'app-company-list',
   templateUrl: './company-list.component.html',
@@ -253,7 +254,13 @@ export class CompanyListComponent implements OnInit {
       }
     });
   }
-
+  onDesignerclickEvent(event) {
+    this._modalService.open(ReportComponent, 'xl', {
+      data: { CastingWithFormation: this.rowDataDefault },
+      dataSetName: 'CastingWithFormation',
+      reportName: 'CastingWithFormation',
+    });
+  }
   changed() {
     // this._filter.filter = this.companyInput;
     // this._filter.columnState = this.gridOptions.columnApi.getColumnState();

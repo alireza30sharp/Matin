@@ -9,6 +9,7 @@
       (DeleteSelected)="removeCell()"
       (EditSelected)="openModal()"
       (NewSelected)="openModal()"
+      (PerintSelected)="onDesignerclickEvent($event)"
       [disabled]="selectRow.length != 0 ? false : true"
     >
     </app-tools-bar>

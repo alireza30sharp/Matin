@@ -6,3 +6,4 @@ export * from './chart-loading/chart-loading.component';
 export * from './post-loading/post-loading.component';
 export * from './skeleton-loading/skeleton-loading.component';
 export * from './tools-bar/tools-bar.component';
+export * from './report/report.component';

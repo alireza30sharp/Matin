@@ -44,7 +44,6 @@ export class CompanyListComponent implements OnInit {
     enablePivot: true,
     filter: true,
     floatingFilter: true,
-
     floatingFilterComponentParams: {
       suppressFilterButton: true,
     },
@@ -248,17 +247,34 @@ export class CompanyListComponent implements OnInit {
   updateOrInsertCompany(model: companyInsert) {
     this.companyService.updateCompany(model).subscribe((res) => {
       if (res.isOk) {
-        this._toaster.success(res.message);
+        this._toaster.success(res.messages.join(''));
       } else {
-        this._toaster.error(res.message);
+        this._toaster.error(res.messages.join(''));
       }
     });
   }
   onDesignerclickEvent(event) {
+    let list = [
+      {
+        from: 12,
+        to: 11,
+      },
+      {
+        from: 13,
+        to: 25,
+      },
+    ];
+    let data = {
+      rigName: 'test',
+    };
+
+    let test = {
+      bls: 'aaaaaaaaaaaaaaaaa',
+    };
     this._modalService.open(ReportComponent, 'xl', {
-      data: { CastingWithFormation: this.rowDataDefault },
-      dataSetName: 'CastingWithFormation',
-      reportName: 'CastingWithFormation',
+      data: { ReportGeneral: { ...data, ...test } },
+      dataSetName: 'General,Test',
+      reportName: 'ReportGeneral',
     });
   }
   changed() {

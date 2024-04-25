@@ -62,6 +62,7 @@ const component = [
   grid.SliderFilterComponent,
   grid.AgGridDataComponent,
   _shareCmp.ReportComponent,
+  _shareCmp.AlertComponent,
   SafeIframeUrlPipe,
 ];
 @NgModule({

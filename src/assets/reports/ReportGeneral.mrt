@@ -4,175 +4,26 @@
   <Culture>en-US</Culture>
   <Dictionary Ref="1" type="Dictionary" isKey="true">
     <BusinessObjects isList="true" count="0" />
-    <Databases isList="true" count="1">
-      <Invoice_Data Ref="2" type="Stimulsoft.Report.Dictionary.StiExcelDatabase" isKey="true">
-        <Alias>Invoice_Data</Alias>
-        <Key>648a1bb6f8144c70a4c1f78f9e6862fe</Key>
-        <Name>Invoice_Data</Name>
-        <PathData>resource://Invoice_Data</PathData>
-      </Invoice_Data>
-    </Databases>
-    <DataSources isList="true" count="9">
-      <Statement Ref="3" type="DataTableSource" isKey="true">
-        <Alias>Statement</Alias>
-        <Columns isList="true" count="8">
-          <value>Type,System.String</value>
-          <value>Payment,System.Double</value>
-          <value>InvoiceNumber,System.Double</value>
-          <value>Invoice_x0023_,System.Double</value>
-          <value>Description,System.String</value>
-          <value>Date,System.DateTime</value>
-          <value>Balance,System.Double</value>
-          <value>Amount,System.Double</value>
+    <Databases isList="true" count="0" />
+    <DataSources isList="true" count="1">
+      <GeneralData Ref="2" type="DataTableSource" isKey="true">
+        <Alias>GeneralData</Alias>
+        <Columns isList="true" count="9">
+          <value>RiqName,System.String</value>
+          <value>WellName,System.String</value>
+          <value>WellType,System.String</value>
+          <value>ReportDate,System.String</value>
+          <value>ReportNo,System.String</value>
+          <value>HoleSection,System.String</value>
+          <value>GLE,System.String</value>
+          <value>RTE,System.String</value>
+          <value>Geologist,System.String</value>
         </Columns>
         <Dictionary isRef="1" />
-        <Key>be3a2e59bdee4178b33c68cdf792cc98</Key>
-        <Name>Statement</Name>
-        <NameInSource>Invoice_Data.Statement</NameInSource>
-      </Statement>
-      <Service Ref="4" type="DataTableSource" isKey="true">
-        <Alias>Service</Alias>
-        <Columns isList="true" count="8">
-          <value>Tax,System.Double</value>
-          <value>Rate,System.Double</value>
-          <value>Hours,System.Double</value>
-          <value>Discount,System.Double</value>
-          <value>Description,System.String</value>
-          <value>Amount_Paid,System.Double</value>
-          <value>Amount_Due__x0028_CAD_x0029_,System.Double</value>
-          <value>Amount,System.Double</value>
-        </Columns>
-        <Dictionary isRef="1" />
-        <Key>d1d1e20f772e45b9884434ff6bd1c20a</Key>
-        <Name>Service</Name>
-        <NameInSource>Invoice_Data.Service</NameInSource>
-      </Service>
-      <Products Ref="5" type="DataTableSource" isKey="true">
-        <Alias>Products</Alias>
-        <Columns isList="true" count="12">
-          <value>UnitsOnOrder,System.Double</value>
-          <value>UnitsInStock,System.Double</value>
-          <value>UnitPrice,System.Double</value>
-          <value>Tax,System.Double</value>
-          <value>SupplierID,System.String</value>
-          <value>ReorderLevel,System.Double</value>
-          <value>QuantityPerUnit,System.String</value>
-          <value>ProductName,System.String</value>
-          <value>ProductID,System.String</value>
-          <value>Discontinued,System.Double</value>
-          <value>Description,System.String</value>
-          <value>CategoryID,System.String</value>
-        </Columns>
-        <Dictionary isRef="1" />
-        <Key>16fd64ce2f874e7abc26e89040dc8ba6</Key>
-        <Name>Products</Name>
-        <NameInSource>Invoice_Data.Products</NameInSource>
-      </Products>
-      <Contacts Ref="6" type="DataTableSource" isKey="true">
-        <Alias>Contacts</Alias>
-        <Columns isList="true" count="27">
-          <value>Shipped_Date,System.DateTime</value>
-          <value>Ship_Region,System.String</value>
-          <value>Ship_Postal_Code,System.Double</value>
-          <value>Ship_Country,System.String</value>
-          <value>Ship_Contact_Name,System.String</value>
-          <value>Ship_Company_Name,System.String</value>
-          <value>Ship_City,System.String</value>
-          <value>Ship_Address2,System.String</value>
-          <value>Ship_Address1,System.String</value>
-          <value>Required_Date,System.DateTime</value>
-          <value>Po_Number,System.Double</value>
-          <value>Payment_Terms,System.String</value>
-          <value>Notes,System.String</value>
-          <value>Invoice_Number,System.Double</value>
-          <value>Invoice_NO,System.Object</value>
-          <value>Email,System.String</value>
-          <value>Bill_Region,System.String</value>
-          <value>Bill_Postal_Code,System.Object</value>
-          <value>Bill_Phone,System.String</value>
-          <value>Bill_Fax,System.String</value>
-          <value>Bill_Country,System.String</value>
-          <value>Bill_Contact_Title,System.String</value>
-          <value>Bill_Contact_Name,System.String</value>
-          <value>Bill_Company_Name,System.String</value>
-          <value>Bill_City,System.String</value>
-          <value>Bill_Address2,System.String</value>
-          <value>Bill_Address1,System.String</value>
-        </Columns>
-        <Dictionary isRef="1" />
-        <Key>59e3110bb5a846fe9d81ff78abbad530</Key>
-        <Name>Contacts</Name>
-        <NameInSource>Invoice_Data.Contacts</NameInSource>
-      </Contacts>
-      <SectionWithFormation Ref="7" type="DataTableSource" isKey="true">
-        <Alias>SectionWithFormation</Alias>
-        <Columns isList="true" count="3">
-          <value>holeSectionSize,System.Int32</value>
-          <value>from,System.Int32</value>
-          <value>to,System.Int32</value>
-        </Columns>
-        <Dictionary isRef="1" />
-        <Key>596f329d96774e78a7a90b1e2e7fbea5</Key>
-        <Name>SectionWithFormation</Name>
-        <NameInSource>SectionWithFormation</NameInSource>
-      </SectionWithFormation>
-      <LogingData Ref="8" type="DataTableSource" isKey="true">
-        <Alias>LogingData</Alias>
-        <Columns isList="true" count="6">
-          <value>holeSize,System.Int32</value>
-          <value>formLoggingMeasureDepth,System.Int32</value>
-          <value>toLoggingMeasureDepth,System.Int32</value>
-          <value>dateLogging,System.String</value>
-          <value>timeStart,System.String</value>
-          <value>timeFinal,System.String</value>
-        </Columns>
-        <Dictionary isRef="1" />
-        <Key>948308b2e5474016a26ca43cddc2bac1</Key>
-        <Name>LogingData</Name>
-        <NameInSource>LogingData</NameInSource>
-      </LogingData>
-      <CoreData Ref="9" type="DataTableSource" isKey="true">
-        <Alias>CoreData</Alias>
-        <Columns isList="true" count="6">
-          <value>holeSize,System.Int32</value>
-          <value>fromCoreMesuredDepth,System.Int32</value>
-          <value>toCoreMesuredDepth,System.Int32</value>
-          <value>recLength,System.Int32</value>
-          <value>remark,System.String</value>
-          <value>date,System.String</value>
-        </Columns>
-        <Dictionary isRef="1" />
-        <Key>37de7c53091f4866ba1586a7c612b0c0</Key>
-        <Name>CoreData</Name>
-        <NameInSource>CoreData</NameInSource>
-      </CoreData>
-      <CuttingDescription Ref="10" type="DataTableSource" isKey="true">
-        <Alias>CuttingDescription</Alias>
-        <Columns isList="true" count="5">
-          <value>ORIGINAL,toActMd,toActMd,toActMd,System.Int32,_x0039_a678e309a9d4b97bd3eaefcdf1151d3</value>
-          <value>ORIGINAL,fromActMd,fromActMd,fromActMd,System.Int32,d9b076998dde47b4b5705fb956d3819c</value>
-          <value>date,System.String</value>
-          <value>mdfyNumber,System.Int32</value>
-          <value>mdfyDate,System.String</value>
-        </Columns>
-        <Dictionary isRef="1" />
-        <Key>4ac65f6a8acf487298a40d7f3c643f01</Key>
-        <Name>CuttingDescription</Name>
-        <NameInSource>CuttingDescription</NameInSource>
-      </CuttingDescription>
-      <Tubing Ref="11" type="DataTableSource" isKey="true">
-        <Alias>Tubing</Alias>
-        <Columns isList="true" count="4">
-          <value>from,System.Int32</value>
-          <value>to,System.Int32</value>
-          <value>size,System.Int32</value>
-          <value>spec,System.String</value>
-        </Columns>
-        <Dictionary isRef="1" />
-        <Key>156f76e19b194b24ab49433ad7a8ccc2</Key>
-        <Name>Tubing</Name>
-        <NameInSource>Tubing</NameInSource>
-      </Tubing>
+        <Key>caa7d9b91c434bdf85f6980ade3f7bf0</Key>
+        <Name>GeneralData</Name>
+        <NameInSource>ReportGeneral.GeneralData</NameInSource>
+      </GeneralData>
     </DataSources>
     <Relations isList="true" count="0" />
     <Report isRef="0" />
@@ -215,11 +66,11 @@
   </Dictionary>
   <EngineVersion>EngineV2</EngineVersion>
   <GlobalizationStrings isList="true" count="3">
-    <Item11 Ref="12" type="Stimulsoft.Report.StiGlobalizationContainer" isKey="true">
+    <Item2 Ref="3" type="Stimulsoft.Report.StiGlobalizationContainer" isKey="true">
       <CultureName>en</CultureName>
       <Items isList="true" count="0" />
-    </Item11>
-    <Item12 Ref="13" type="Stimulsoft.Report.StiGlobalizationContainer" isKey="true">
+    </Item2>
+    <Item3 Ref="4" type="Stimulsoft.Report.StiGlobalizationContainer" isKey="true">
       <CultureName>ru</CultureName>
       <Items isList="true" count="15">
         <value>ReportAlias,Заказ</value>
@@ -238,8 +89,8 @@
         <value>Text33.Text,Телефон_x0020__x007B_BillToPhone_x007D_</value>
         <value>Text64.Text,Банковский_x0020_перевод_x0020__x002F__x0020_Информация_x0020_по_x0020_оплаты</value>
       </Items>
-    </Item12>
-    <Item13 Ref="14" type="Stimulsoft.Report.StiGlobalizationContainer" isKey="true">
+    </Item3>
+    <Item4 Ref="5" type="Stimulsoft.Report.StiGlobalizationContainer" isKey="true">
       <CultureName>de</CultureName>
       <Items isList="true" count="19">
         <value>ReportAlias,Bestellung</value>
@@ -262,21 +113,21 @@
         <value>Variable.CompanyName,Firmenname</value>
         <value>Variable.Notes,Verwenden_x0020_Sie_x0020_obige_x0020_Information_x002C__x0020_um_x0020_die_x0020_Bestellung_x0020_per_x0020_Banküberweisung_x0020_zu_x0020_bezahlen._x0020_Achten_x0020_Sie_x0020_darauf_x002C__x0020_Ihre_x0020_Rechnungsnummer_x0020_anzugeben._x000D__x000A_Ihre_x0020_Bank_x0020_könnte_x0020_zusätzliche_x0020_Gebühren_x002C__x0020_die_x0020_Sie_x0020_akzeptieren_x0020_müssen_x002C__x0020_erfordern._x0020__x000D__x000A_</value>
       </Items>
-    </Item13>
+    </Item4>
   </GlobalizationStrings>
   <Key>0b29b72cf86d4ad588b9e1dd15f5c9a1</Key>
   <MetaTags isList="true" count="0" />
   <Pages isList="true" count="1">
-    <Page1 Ref="15" type="Page" isKey="true">
+    <Page1 Ref="6" type="Page" isKey="true">
       <Border>All;[141:179:226];2;Solid;False;4;Black</Border>
       <Brush>Transparent</Brush>
       <Components isList="true" count="11">
-        <PageHeaderBand1 Ref="16" type="PageHeaderBand" isKey="true">
+        <PageHeaderBand1 Ref="7" type="PageHeaderBand" isKey="true">
           <Brush>[198:217:240]</Brush>
           <ClientRectangle>0,20,749,90</ClientRectangle>
           <ComponentPlacement>ph.Page1</ComponentPlacement>
           <Components isList="true" count="2">
-            <Image1 Ref="17" type="Image" isKey="true">
+            <Image1 Ref="8" type="Image" isKey="true">
               <Brush>Transparent</Brush>
               <ClientRectangle>10,10,70,70</ClientRectangle>
               <Conditions isList="true" count="0" />
@@ -3645,11 +3496,11 @@ LgIuAi4Cgx0BB4SDff3d6l0EXARcBAY+Ag4IB/4t4ALgIuAi4CIw2BH4P5NVc5plrjLDAAAAAElF
 TkSuQmCC</ImageBytes>
               <Margins>0,0,0,0</Margins>
               <Name>Image1</Name>
-              <Page isRef="15" />
-              <Parent isRef="16" />
+              <Page isRef="6" />
+              <Parent isRef="7" />
               <Stretch>True</Stretch>
             </Image1>
-            <Text8 Ref="18" type="Text" isKey="true">
+            <Text8 Ref="9" type="Text" isKey="true">
               <Brush>Transparent</Brush>
               <ClientRectangle>180,0,400,60</ClientRectangle>
               <Conditions isList="true" count="0" />
@@ -3658,8 +3509,8 @@ TkSuQmCC</ImageBytes>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text8</Name>
-              <Page isRef="15" />
-              <Parent isRef="16" />
+              <Page isRef="6" />
+              <Parent isRef="7" />
               <Text>DAILY GEOLOGICAL REPORT
  Oil Field
 Parsian Kish Drilling</Text>
@@ -3671,17 +3522,17 @@ Parsian Kish Drilling</Text>
           <Conditions isList="true" count="0" />
           <Expressions isList="true" count="0" />
           <Name>PageHeaderBand1</Name>
-          <Page isRef="15" />
-          <Parent isRef="15" />
+          <Page isRef="6" />
+          <Parent isRef="6" />
           <PrintOn>OnlyFirstPage</PrintOn>
         </PageHeaderBand1>
-        <PageFooterBand1 Ref="19" type="PageFooterBand" isKey="true">
+        <PageFooterBand1 Ref="10" type="PageFooterBand" isKey="true">
           <Border>Top;Black;1;Solid;False;4;Black</Border>
           <Brush>Transparent</Brush>
           <ClientRectangle>0,1289.2,749,20</ClientRectangle>
           <ComponentPlacement>pf.Page1</ComponentPlacement>
           <Components isList="true" count="1">
-            <Text108 Ref="20" type="Text" isKey="true">
+            <Text108 Ref="11" type="Text" isKey="true">
               <Border>None;[155:155:155];1;Solid;False;4;Black;True</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>0,0,748,20</ClientRectangle>
@@ -3693,8 +3544,8 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text108</Name>
-              <Page isRef="15" />
-              <Parent isRef="19" />
+              <Page isRef="6" />
+              <Parent isRef="10" />
               <Text>{PageNofMThrough}</Text>
               <TextBrush>Black</TextBrush>
               <Type>Expression</Type>
@@ -3704,14 +3555,14 @@ Parsian Kish Drilling</Text>
           <Conditions isList="true" count="0" />
           <Expressions isList="true" count="0" />
           <Name>PageFooterBand1</Name>
-          <Page isRef="15" />
-          <Parent isRef="15" />
+          <Page isRef="6" />
+          <Parent isRef="6" />
         </PageFooterBand1>
-        <DataBand2 Ref="21" type="DataBand" isKey="true">
+        <DataBand2 Ref="12" type="DataBand" isKey="true">
           <Brush>Transparent</Brush>
           <ClientRectangle>0,150,749,210</ClientRectangle>
           <Components isList="true" count="76">
-            <Text7 Ref="22" type="Text" isKey="true">
+            <Text7 Ref="13" type="Text" isKey="true">
               <Border>All;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>0,30,100,20</ClientRectangle>
@@ -3721,14 +3572,14 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text7</Name>
-              <Page isRef="15" />
-              <Parent isRef="21" />
+              <Page isRef="6" />
+              <Parent isRef="12" />
               <Text>Rig Name</Text>
               <TextBrush>[63:63:63]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text7>
-            <Text2 Ref="23" type="Text" isKey="true">
+            <Text2 Ref="14" type="Text" isKey="true">
               <Border>All;[89:89:89];1;Solid;False;4;Black</Border>
               <Brush>[215:227:188]</Brush>
               <ClientRectangle>190,0,190,30</ClientRectangle>
@@ -3741,15 +3592,15 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text2</Name>
-              <Page isRef="15" />
-              <Parent isRef="21" />
+              <Page isRef="6" />
+              <Parent isRef="12" />
               <Tag>HEADER</Tag>
               <Text>Drilling &amp; Bit Parameters</Text>
               <TextBrush>[0:0:0]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text2>
-            <Text4 Ref="24" type="Text" isKey="true">
+            <Text4 Ref="15" type="Text" isKey="true">
               <Border>All;[89:89:89];1;Solid;False;4;Black</Border>
               <Brush>[215:227:188]</Brush>
               <ClientRectangle>380,0,190,30</ClientRectangle>
@@ -3762,15 +3613,15 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text4</Name>
-              <Page isRef="15" />
-              <Parent isRef="21" />
+              <Page isRef="6" />
+              <Parent isRef="12" />
               <Tag>HEADER</Tag>
               <Text>Mud Properties</Text>
               <TextBrush>[0:0:0]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text4>
-            <Text22 Ref="25" type="Text" isKey="true">
+            <Text22 Ref="16" type="Text" isKey="true">
               <Border>All;[89:89:89];1;Solid;False;4;Black</Border>
               <Brush>[215:227:188]</Brush>
               <ClientRectangle>0,0,190,30</ClientRectangle>
@@ -3783,15 +3634,15 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text22</Name>
-              <Page isRef="15" />
-              <Parent isRef="21" />
+              <Page isRef="6" />
+              <Parent isRef="12" />
               <Tag>HEADER</Tag>
               <Text>General Data </Text>
               <TextBrush>[0:0:0]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text22>
-            <Text6 Ref="26" type="Text" isKey="true">
+            <Text6 Ref="17" type="Text" isKey="true">
               <Border>All;[89:89:89];1;Solid;False;4;Black</Border>
               <Brush>[215:227:188]</Brush>
               <ClientRectangle>570,0,180,30</ClientRectangle>
@@ -3804,15 +3655,15 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text6</Name>
-              <Page isRef="15" />
-              <Parent isRef="21" />
+              <Page isRef="6" />
+              <Parent isRef="12" />
               <Tag>HEADER</Tag>
               <Text>Formation Properties</Text>
               <TextBrush>[0:0:0]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text6>
-            <Text9 Ref="27" type="Text" isKey="true">
+            <Text9 Ref="18" type="Text" isKey="true">
               <Border>All;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>100,30,90,20</ClientRectangle>
@@ -3822,13 +3673,13 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text9</Name>
-              <Page isRef="15" />
-              <Parent isRef="21" />
+              <Page isRef="6" />
+              <Parent isRef="12" />
               <TextBrush>[63:63:63]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text9>
-            <Text10 Ref="28" type="Text" isKey="true">
+            <Text10 Ref="19" type="Text" isKey="true">
               <Border>All;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>0,50,100,20</ClientRectangle>
@@ -3838,14 +3689,14 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text10</Name>
-              <Page isRef="15" />
-              <Parent isRef="21" />
+              <Page isRef="6" />
+              <Parent isRef="12" />
               <Text>Well Name</Text>
               <TextBrush>[63:63:63]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text10>
-            <Text11 Ref="29" type="Text" isKey="true">
+            <Text11 Ref="20" type="Text" isKey="true">
               <Border>All;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>100,50,90,20</ClientRectangle>
@@ -3855,13 +3706,13 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text11</Name>
-              <Page isRef="15" />
-              <Parent isRef="21" />
+              <Page isRef="6" />
+              <Parent isRef="12" />
               <TextBrush>[63:63:63]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text11>
-            <Text12 Ref="30" type="Text" isKey="true">
+            <Text12 Ref="21" type="Text" isKey="true">
               <Border>All;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>0,70,100,20</ClientRectangle>
@@ -3871,14 +3722,14 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text12</Name>
-              <Page isRef="15" />
-              <Parent isRef="21" />
+              <Page isRef="6" />
+              <Parent isRef="12" />
               <Text>Well Type</Text>
               <TextBrush>[63:63:63]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text12>
-            <Text13 Ref="31" type="Text" isKey="true">
+            <Text13 Ref="22" type="Text" isKey="true">
               <Border>All;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>100,70,90,20</ClientRectangle>
@@ -3888,13 +3739,13 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text13</Name>
-              <Page isRef="15" />
-              <Parent isRef="21" />
+              <Page isRef="6" />
+              <Parent isRef="12" />
               <TextBrush>[63:63:63]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text13>
-            <Text14 Ref="32" type="Text" isKey="true">
+            <Text14 Ref="23" type="Text" isKey="true">
               <Border>All;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>0,90,100,20</ClientRectangle>
@@ -3904,14 +3755,14 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text14</Name>
-              <Page isRef="15" />
-              <Parent isRef="21" />
+              <Page isRef="6" />
+              <Parent isRef="12" />
               <Text>Report Date</Text>
               <TextBrush>[63:63:63]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text14>
-            <Text15 Ref="33" type="Text" isKey="true">
+            <Text15 Ref="24" type="Text" isKey="true">
               <Border>All;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>100,90,90,20</ClientRectangle>
@@ -3921,13 +3772,13 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text15</Name>
-              <Page isRef="15" />
-              <Parent isRef="21" />
+              <Page isRef="6" />
+              <Parent isRef="12" />
               <TextBrush>[63:63:63]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text15>
-            <Text16 Ref="34" type="Text" isKey="true">
+            <Text16 Ref="25" type="Text" isKey="true">
               <Border>All;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>0,110,100,20</ClientRectangle>
@@ -3937,14 +3788,14 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text16</Name>
-              <Page isRef="15" />
-              <Parent isRef="21" />
+              <Page isRef="6" />
+              <Parent isRef="12" />
               <Text>Report No</Text>
               <TextBrush>[63:63:63]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text16>
-            <Text17 Ref="35" type="Text" isKey="true">
+            <Text17 Ref="26" type="Text" isKey="true">
               <Border>All;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>100,110,90,20</ClientRectangle>
@@ -3954,13 +3805,13 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text17</Name>
-              <Page isRef="15" />
-              <Parent isRef="21" />
+              <Page isRef="6" />
+              <Parent isRef="12" />
               <TextBrush>[63:63:63]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text17>
-            <Text18 Ref="36" type="Text" isKey="true">
+            <Text18 Ref="27" type="Text" isKey="true">
               <Border>All;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>0,130,100,20</ClientRectangle>
@@ -3970,14 +3821,14 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text18</Name>
-              <Page isRef="15" />
-              <Parent isRef="21" />
+              <Page isRef="6" />
+              <Parent isRef="12" />
               <Text>Hole Section (in)</Text>
               <TextBrush>[63:63:63]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text18>
-            <Text19 Ref="37" type="Text" isKey="true">
+            <Text19 Ref="28" type="Text" isKey="true">
               <Border>All;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>100,130,90,20</ClientRectangle>
@@ -3987,13 +3838,13 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text19</Name>
-              <Page isRef="15" />
-              <Parent isRef="21" />
+              <Page isRef="6" />
+              <Parent isRef="12" />
               <TextBrush>[63:63:63]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text19>
-            <Text20 Ref="38" type="Text" isKey="true">
+            <Text20 Ref="29" type="Text" isKey="true">
               <Border>All;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>0,150,100,20</ClientRectangle>
@@ -4003,14 +3854,14 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text20</Name>
-              <Page isRef="15" />
-              <Parent isRef="21" />
+              <Page isRef="6" />
+              <Parent isRef="12" />
               <Text>G.L.E (m)</Text>
               <TextBrush>[63:63:63]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text20>
-            <Text21 Ref="39" type="Text" isKey="true">
+            <Text21 Ref="30" type="Text" isKey="true">
               <Border>All;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>100,150,90,20</ClientRectangle>
@@ -4020,13 +3871,13 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text21</Name>
-              <Page isRef="15" />
-              <Parent isRef="21" />
+              <Page isRef="6" />
+              <Parent isRef="12" />
               <TextBrush>[63:63:63]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text21>
-            <Text23 Ref="40" type="Text" isKey="true">
+            <Text23 Ref="31" type="Text" isKey="true">
               <Border>All;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>0,170,100,20</ClientRectangle>
@@ -4036,14 +3887,14 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text23</Name>
-              <Page isRef="15" />
-              <Parent isRef="21" />
+              <Page isRef="6" />
+              <Parent isRef="12" />
               <Text>RTE (m)</Text>
               <TextBrush>[63:63:63]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text23>
-            <Text24 Ref="41" type="Text" isKey="true">
+            <Text24 Ref="32" type="Text" isKey="true">
               <Border>All;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>100,170,90,20</ClientRectangle>
@@ -4053,13 +3904,13 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text24</Name>
-              <Page isRef="15" />
-              <Parent isRef="21" />
+              <Page isRef="6" />
+              <Parent isRef="12" />
               <TextBrush>[63:63:63]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text24>
-            <Text25 Ref="42" type="Text" isKey="true">
+            <Text25 Ref="33" type="Text" isKey="true">
               <Border>All;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>0,190,100,20</ClientRectangle>
@@ -4069,14 +3920,14 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text25</Name>
-              <Page isRef="15" />
-              <Parent isRef="21" />
+              <Page isRef="6" />
+              <Parent isRef="12" />
               <Text>Geologist</Text>
               <TextBrush>[63:63:63]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text25>
-            <Text26 Ref="43" type="Text" isKey="true">
+            <Text26 Ref="34" type="Text" isKey="true">
               <Border>All;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>100,190,90,20</ClientRectangle>
@@ -4086,13 +3937,13 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text26</Name>
-              <Page isRef="15" />
-              <Parent isRef="21" />
+              <Page isRef="6" />
+              <Parent isRef="12" />
               <TextBrush>[63:63:63]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text26>
-            <Text27 Ref="44" type="Text" isKey="true">
+            <Text27 Ref="35" type="Text" isKey="true">
               <Border>All;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>190,30,100,20</ClientRectangle>
@@ -4102,14 +3953,14 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text27</Name>
-              <Page isRef="15" />
-              <Parent isRef="21" />
+              <Page isRef="6" />
+              <Parent isRef="12" />
               <Text>Previous Depth (MD/SubSea)</Text>
               <TextBrush>[63:63:63]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text27>
-            <Text28 Ref="45" type="Text" isKey="true">
+            <Text28 Ref="36" type="Text" isKey="true">
               <Border>All;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>290,30,90,20</ClientRectangle>
@@ -4119,13 +3970,13 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text28</Name>
-              <Page isRef="15" />
-              <Parent isRef="21" />
+              <Page isRef="6" />
+              <Parent isRef="12" />
               <TextBrush>[63:63:63]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text28>
-            <Text29 Ref="46" type="Text" isKey="true">
+            <Text29 Ref="37" type="Text" isKey="true">
               <Border>All;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>190,50,100,20</ClientRectangle>
@@ -4135,14 +3986,14 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text29</Name>
-              <Page isRef="15" />
-              <Parent isRef="21" />
+              <Page isRef="6" />
+              <Parent isRef="12" />
               <Text>Mid Night Depth (MD/SubSea)</Text>
               <TextBrush>[63:63:63]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text29>
-            <Text30 Ref="47" type="Text" isKey="true">
+            <Text30 Ref="38" type="Text" isKey="true">
               <Border>All;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>290,50,90,20</ClientRectangle>
@@ -4152,13 +4003,13 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text30</Name>
-              <Page isRef="15" />
-              <Parent isRef="21" />
+              <Page isRef="6" />
+              <Parent isRef="12" />
               <TextBrush>[63:63:63]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text30>
-            <Text31 Ref="48" type="Text" isKey="true">
+            <Text31 Ref="39" type="Text" isKey="true">
               <Border>All;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>190,70,100,20</ClientRectangle>
@@ -4168,14 +4019,14 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text31</Name>
-              <Page isRef="15" />
-              <Parent isRef="21" />
+              <Page isRef="6" />
+              <Parent isRef="12" />
               <Text>Drilled/time (m/hrs)</Text>
               <TextBrush>[63:63:63]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text31>
-            <Text32 Ref="49" type="Text" isKey="true">
+            <Text32 Ref="40" type="Text" isKey="true">
               <Border>All;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>290,70,90,20</ClientRectangle>
@@ -4185,13 +4036,13 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text32</Name>
-              <Page isRef="15" />
-              <Parent isRef="21" />
+              <Page isRef="6" />
+              <Parent isRef="12" />
               <TextBrush>[63:63:63]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text32>
-            <Text33 Ref="50" type="Text" isKey="true">
+            <Text33 Ref="41" type="Text" isKey="true">
               <Border>All;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>190,90,100,20</ClientRectangle>
@@ -4201,14 +4052,14 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text33</Name>
-              <Page isRef="15" />
-              <Parent isRef="21" />
+              <Page isRef="6" />
+              <Parent isRef="12" />
               <Text>Ave. ROP (m/hr)</Text>
               <TextBrush>[63:63:63]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text33>
-            <Text34 Ref="51" type="Text" isKey="true">
+            <Text34 Ref="42" type="Text" isKey="true">
               <Border>All;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>290,90,90,20</ClientRectangle>
@@ -4218,13 +4069,13 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text34</Name>
-              <Page isRef="15" />
-              <Parent isRef="21" />
+              <Page isRef="6" />
+              <Parent isRef="12" />
               <TextBrush>[63:63:63]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text34>
-            <Text35 Ref="52" type="Text" isKey="true">
+            <Text35 Ref="43" type="Text" isKey="true">
               <Border>All;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>190,110,100,20</ClientRectangle>
@@ -4234,14 +4085,14 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text35</Name>
-              <Page isRef="15" />
-              <Parent isRef="21" />
+              <Page isRef="6" />
+              <Parent isRef="12" />
               <Text>Morning Depth (MD/SubSea)</Text>
               <TextBrush>[63:63:63]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text35>
-            <Text36 Ref="53" type="Text" isKey="true">
+            <Text36 Ref="44" type="Text" isKey="true">
               <Border>All;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>290,110,90,20</ClientRectangle>
@@ -4251,13 +4102,13 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text36</Name>
-              <Page isRef="15" />
-              <Parent isRef="21" />
+              <Page isRef="6" />
+              <Parent isRef="12" />
               <TextBrush>[63:63:63]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text36>
-            <Text37 Ref="54" type="Text" isKey="true">
+            <Text37 Ref="45" type="Text" isKey="true">
               <Border>All;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>190,130,100,20</ClientRectangle>
@@ -4267,14 +4118,14 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text37</Name>
-              <Page isRef="15" />
-              <Parent isRef="21" />
+              <Page isRef="6" />
+              <Parent isRef="12" />
               <Text>K.O.P (m)</Text>
               <TextBrush>[63:63:63]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text37>
-            <Text38 Ref="55" type="Text" isKey="true">
+            <Text38 Ref="46" type="Text" isKey="true">
               <Border>All;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>290,130,90,20</ClientRectangle>
@@ -4284,13 +4135,13 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text38</Name>
-              <Page isRef="15" />
-              <Parent isRef="21" />
+              <Page isRef="6" />
+              <Parent isRef="12" />
               <TextBrush>[63:63:63]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text38>
-            <Text39 Ref="56" type="Text" isKey="true">
+            <Text39 Ref="47" type="Text" isKey="true">
               <Border>All;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>190,150,100,20</ClientRectangle>
@@ -4300,14 +4151,14 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text39</Name>
-              <Page isRef="15" />
-              <Parent isRef="21" />
+              <Page isRef="6" />
+              <Parent isRef="12" />
               <Text>W.O.B (klb)</Text>
               <TextBrush>[63:63:63]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text39>
-            <Text40 Ref="57" type="Text" isKey="true">
+            <Text40 Ref="48" type="Text" isKey="true">
               <Border>All;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>290,150,90,20</ClientRectangle>
@@ -4317,13 +4168,13 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text40</Name>
-              <Page isRef="15" />
-              <Parent isRef="21" />
+              <Page isRef="6" />
+              <Parent isRef="12" />
               <TextBrush>[63:63:63]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text40>
-            <Text41 Ref="58" type="Text" isKey="true">
+            <Text41 Ref="49" type="Text" isKey="true">
               <Border>All;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>190,170,100,20</ClientRectangle>
@@ -4333,14 +4184,14 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text41</Name>
-              <Page isRef="15" />
-              <Parent isRef="21" />
+              <Page isRef="6" />
+              <Parent isRef="12" />
               <Text>GPM (gal/min)</Text>
               <TextBrush>[63:63:63]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text41>
-            <Text42 Ref="59" type="Text" isKey="true">
+            <Text42 Ref="50" type="Text" isKey="true">
               <Border>All;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>290,170,90,20</ClientRectangle>
@@ -4350,13 +4201,13 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text42</Name>
-              <Page isRef="15" />
-              <Parent isRef="21" />
+              <Page isRef="6" />
+              <Parent isRef="12" />
               <TextBrush>[63:63:63]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text42>
-            <Text43 Ref="60" type="Text" isKey="true">
+            <Text43 Ref="51" type="Text" isKey="true">
               <Border>All;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>190,190,100,20</ClientRectangle>
@@ -4366,14 +4217,14 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text43</Name>
-              <Page isRef="15" />
-              <Parent isRef="21" />
+              <Page isRef="6" />
+              <Parent isRef="12" />
               <Text>Bit Size/Type</Text>
               <TextBrush>[63:63:63]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text43>
-            <Text44 Ref="61" type="Text" isKey="true">
+            <Text44 Ref="52" type="Text" isKey="true">
               <Border>All;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>290,190,90,20</ClientRectangle>
@@ -4383,13 +4234,13 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text44</Name>
-              <Page isRef="15" />
-              <Parent isRef="21" />
+              <Page isRef="6" />
+              <Parent isRef="12" />
               <TextBrush>[63:63:63]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text44>
-            <Text45 Ref="62" type="Text" isKey="true">
+            <Text45 Ref="53" type="Text" isKey="true">
               <Border>All;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>380,30,100,20</ClientRectangle>
@@ -4399,14 +4250,14 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text45</Name>
-              <Page isRef="15" />
-              <Parent isRef="21" />
+              <Page isRef="6" />
+              <Parent isRef="12" />
               <Text>Mud Type</Text>
               <TextBrush>[63:63:63]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text45>
-            <Text46 Ref="63" type="Text" isKey="true">
+            <Text46 Ref="54" type="Text" isKey="true">
               <Border>All;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>480,30,90,20</ClientRectangle>
@@ -4416,13 +4267,13 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text46</Name>
-              <Page isRef="15" />
-              <Parent isRef="21" />
+              <Page isRef="6" />
+              <Parent isRef="12" />
               <TextBrush>[63:63:63]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text46>
-            <Text47 Ref="64" type="Text" isKey="true">
+            <Text47 Ref="55" type="Text" isKey="true">
               <Border>All;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>380,50,100,20</ClientRectangle>
@@ -4432,14 +4283,14 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text47</Name>
-              <Page isRef="15" />
-              <Parent isRef="21" />
+              <Page isRef="6" />
+              <Parent isRef="12" />
               <Text>Mud Weight (pcf)</Text>
               <TextBrush>[63:63:63]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text47>
-            <Text48 Ref="65" type="Text" isKey="true">
+            <Text48 Ref="56" type="Text" isKey="true">
               <Border>All;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>480,50,90,20</ClientRectangle>
@@ -4449,13 +4300,13 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text48</Name>
-              <Page isRef="15" />
-              <Parent isRef="21" />
+              <Page isRef="6" />
+              <Parent isRef="12" />
               <TextBrush>[63:63:63]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text48>
-            <Text49 Ref="66" type="Text" isKey="true">
+            <Text49 Ref="57" type="Text" isKey="true">
               <Border>All;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>380,70,100,20</ClientRectangle>
@@ -4465,14 +4316,14 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text49</Name>
-              <Page isRef="15" />
-              <Parent isRef="21" />
+              <Page isRef="6" />
+              <Parent isRef="12" />
               <Text>Viscosity (sec/qt)</Text>
               <TextBrush>[63:63:63]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text49>
-            <Text51 Ref="67" type="Text" isKey="true">
+            <Text51 Ref="58" type="Text" isKey="true">
               <Border>All;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>480,70,90,20</ClientRectangle>
@@ -4482,13 +4333,13 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text51</Name>
-              <Page isRef="15" />
-              <Parent isRef="21" />
+              <Page isRef="6" />
+              <Parent isRef="12" />
               <TextBrush>[63:63:63]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text51>
-            <Text52 Ref="68" type="Text" isKey="true">
+            <Text52 Ref="59" type="Text" isKey="true">
               <Border>All;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>380,90,100,20</ClientRectangle>
@@ -4498,14 +4349,14 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text52</Name>
-              <Page isRef="15" />
-              <Parent isRef="21" />
+              <Page isRef="6" />
+              <Parent isRef="12" />
               <Text>PV (cp)</Text>
               <TextBrush>[63:63:63]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text52>
-            <Text53 Ref="69" type="Text" isKey="true">
+            <Text53 Ref="60" type="Text" isKey="true">
               <Border>All;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>480,90,90,20</ClientRectangle>
@@ -4515,13 +4366,13 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text53</Name>
-              <Page isRef="15" />
-              <Parent isRef="21" />
+              <Page isRef="6" />
+              <Parent isRef="12" />
               <TextBrush>[63:63:63]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text53>
-            <Text54 Ref="70" type="Text" isKey="true">
+            <Text54 Ref="61" type="Text" isKey="true">
               <Border>All;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>380,110,100,20</ClientRectangle>
@@ -4531,14 +4382,14 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text54</Name>
-              <Page isRef="15" />
-              <Parent isRef="21" />
+              <Page isRef="6" />
+              <Parent isRef="12" />
               <Text>YP (lb/100ft2)</Text>
               <TextBrush>[63:63:63]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text54>
-            <Text55 Ref="71" type="Text" isKey="true">
+            <Text55 Ref="62" type="Text" isKey="true">
               <Border>All;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>480,110,90,20</ClientRectangle>
@@ -4548,13 +4399,13 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text55</Name>
-              <Page isRef="15" />
-              <Parent isRef="21" />
+              <Page isRef="6" />
+              <Parent isRef="12" />
               <TextBrush>[63:63:63]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text55>
-            <Text56 Ref="72" type="Text" isKey="true">
+            <Text56 Ref="63" type="Text" isKey="true">
               <Border>All;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>380,130,100,20</ClientRectangle>
@@ -4564,14 +4415,14 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text56</Name>
-              <Page isRef="15" />
-              <Parent isRef="21" />
+              <Page isRef="6" />
+              <Parent isRef="12" />
               <Text>PH @ 27˚C</Text>
               <TextBrush>[63:63:63]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text56>
-            <Text57 Ref="73" type="Text" isKey="true">
+            <Text57 Ref="64" type="Text" isKey="true">
               <Border>All;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>480,130,90,20</ClientRectangle>
@@ -4581,13 +4432,13 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text57</Name>
-              <Page isRef="15" />
-              <Parent isRef="21" />
+              <Page isRef="6" />
+              <Parent isRef="12" />
               <TextBrush>[63:63:63]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text57>
-            <Text58 Ref="74" type="Text" isKey="true">
+            <Text58 Ref="65" type="Text" isKey="true">
               <Border>All;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>380,150,100,20</ClientRectangle>
@@ -4597,14 +4448,14 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text58</Name>
-              <Page isRef="15" />
-              <Parent isRef="21" />
+              <Page isRef="6" />
+              <Parent isRef="12" />
               <Text>Mud Lost Down Hole (bbls/day)</Text>
               <TextBrush>[63:63:63]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text58>
-            <Text59 Ref="75" type="Text" isKey="true">
+            <Text59 Ref="66" type="Text" isKey="true">
               <Border>All;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>480,150,90,20</ClientRectangle>
@@ -4614,13 +4465,13 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text59</Name>
-              <Page isRef="15" />
-              <Parent isRef="21" />
+              <Page isRef="6" />
+              <Parent isRef="12" />
               <TextBrush>[63:63:63]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text59>
-            <Text60 Ref="76" type="Text" isKey="true">
+            <Text60 Ref="67" type="Text" isKey="true">
               <Border>All;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>380,170,100,20</ClientRectangle>
@@ -4630,14 +4481,14 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text60</Name>
-              <Page isRef="15" />
-              <Parent isRef="21" />
+              <Page isRef="6" />
+              <Parent isRef="12" />
               <Text>Mud Lost at Surface (bbls/day)</Text>
               <TextBrush>[63:63:63]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text60>
-            <Text61 Ref="77" type="Text" isKey="true">
+            <Text61 Ref="68" type="Text" isKey="true">
               <Border>All;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>480,170,90,20</ClientRectangle>
@@ -4647,13 +4498,13 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text61</Name>
-              <Page isRef="15" />
-              <Parent isRef="21" />
+              <Page isRef="6" />
+              <Parent isRef="12" />
               <TextBrush>[63:63:63]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text61>
-            <Text62 Ref="78" type="Text" isKey="true">
+            <Text62 Ref="69" type="Text" isKey="true">
               <Border>All;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>380,190,100,20</ClientRectangle>
@@ -4663,14 +4514,14 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text62</Name>
-              <Page isRef="15" />
-              <Parent isRef="21" />
+              <Page isRef="6" />
+              <Parent isRef="12" />
               <Text>Gain (bbls/hr)</Text>
               <TextBrush>[63:63:63]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text62>
-            <Text63 Ref="79" type="Text" isKey="true">
+            <Text63 Ref="70" type="Text" isKey="true">
               <Border>All;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>480,190,90,20</ClientRectangle>
@@ -4680,13 +4531,13 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text63</Name>
-              <Page isRef="15" />
-              <Parent isRef="21" />
+              <Page isRef="6" />
+              <Parent isRef="12" />
               <TextBrush>[63:63:63]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text63>
-            <Text64 Ref="80" type="Text" isKey="true">
+            <Text64 Ref="71" type="Text" isKey="true">
               <Border>All;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>570,30,100,20</ClientRectangle>
@@ -4696,14 +4547,14 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text64</Name>
-              <Page isRef="15" />
-              <Parent isRef="21" />
+              <Page isRef="6" />
+              <Parent isRef="12" />
               <Text>Formation/Member</Text>
               <TextBrush>[63:63:63]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text64>
-            <Text65 Ref="81" type="Text" isKey="true">
+            <Text65 Ref="72" type="Text" isKey="true">
               <Border>All;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>670,30,80,20</ClientRectangle>
@@ -4713,13 +4564,13 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text65</Name>
-              <Page isRef="15" />
-              <Parent isRef="21" />
+              <Page isRef="6" />
+              <Parent isRef="12" />
               <TextBrush>[63:63:63]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text65>
-            <Text66 Ref="82" type="Text" isKey="true">
+            <Text66 Ref="73" type="Text" isKey="true">
               <Border>All;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>570,50,100,20</ClientRectangle>
@@ -4729,14 +4580,14 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text66</Name>
-              <Page isRef="15" />
-              <Parent isRef="21" />
+              <Page isRef="6" />
+              <Parent isRef="12" />
               <Text>Formation Top @ m (MD/SubSea)</Text>
               <TextBrush>[63:63:63]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text66>
-            <Text67 Ref="83" type="Text" isKey="true">
+            <Text67 Ref="74" type="Text" isKey="true">
               <Border>All;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>670,50,80,20</ClientRectangle>
@@ -4746,13 +4597,13 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text67</Name>
-              <Page isRef="15" />
-              <Parent isRef="21" />
+              <Page isRef="6" />
+              <Parent isRef="12" />
               <TextBrush>[63:63:63]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text67>
-            <Text68 Ref="84" type="Text" isKey="true">
+            <Text68 Ref="75" type="Text" isKey="true">
               <Border>All;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>570,70,100,20</ClientRectangle>
@@ -4762,14 +4613,14 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text68</Name>
-              <Page isRef="15" />
-              <Parent isRef="21" />
+              <Page isRef="6" />
+              <Parent isRef="12" />
               <Text>Dominate Lithology</Text>
               <TextBrush>[63:63:63]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text68>
-            <Text69 Ref="85" type="Text" isKey="true">
+            <Text69 Ref="76" type="Text" isKey="true">
               <Border>All;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>670,70,80,20</ClientRectangle>
@@ -4779,13 +4630,13 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text69</Name>
-              <Page isRef="15" />
-              <Parent isRef="21" />
+              <Page isRef="6" />
+              <Parent isRef="12" />
               <TextBrush>[63:63:63]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text69>
-            <Text70 Ref="86" type="Text" isKey="true">
+            <Text70 Ref="77" type="Text" isKey="true">
               <Border>All;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>570,90,100,20</ClientRectangle>
@@ -4795,14 +4646,14 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text70</Name>
-              <Page isRef="15" />
-              <Parent isRef="21" />
+              <Page isRef="6" />
+              <Parent isRef="12" />
               <Text>Next Formation</Text>
               <TextBrush>[63:63:63]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text70>
-            <Text71 Ref="87" type="Text" isKey="true">
+            <Text71 Ref="78" type="Text" isKey="true">
               <Border>All;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>670,90,80,20</ClientRectangle>
@@ -4812,13 +4663,13 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text71</Name>
-              <Page isRef="15" />
-              <Parent isRef="21" />
+              <Page isRef="6" />
+              <Parent isRef="12" />
               <TextBrush>[63:63:63]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text71>
-            <Text72 Ref="88" type="Text" isKey="true">
+            <Text72 Ref="79" type="Text" isKey="true">
               <Border>All;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>570,110,100,20</ClientRectangle>
@@ -4828,14 +4679,14 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text72</Name>
-              <Page isRef="15" />
-              <Parent isRef="21" />
+              <Page isRef="6" />
+              <Parent isRef="12" />
               <Text>Next Fm. Top @ m (MD/SubSea)</Text>
               <TextBrush>[63:63:63]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text72>
-            <Text73 Ref="89" type="Text" isKey="true">
+            <Text73 Ref="80" type="Text" isKey="true">
               <Border>All;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>670,110,80,20</ClientRectangle>
@@ -4845,13 +4696,13 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text73</Name>
-              <Page isRef="15" />
-              <Parent isRef="21" />
+              <Page isRef="6" />
+              <Parent isRef="12" />
               <TextBrush>[63:63:63]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text73>
-            <Text74 Ref="90" type="Text" isKey="true">
+            <Text74 Ref="81" type="Text" isKey="true">
               <Border>All;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>570,130,100,20</ClientRectangle>
@@ -4861,14 +4712,14 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text74</Name>
-              <Page isRef="15" />
-              <Parent isRef="21" />
+              <Page isRef="6" />
+              <Parent isRef="12" />
               <Text>Last CSG Size (in)</Text>
               <TextBrush>[63:63:63]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text74>
-            <Text75 Ref="91" type="Text" isKey="true">
+            <Text75 Ref="82" type="Text" isKey="true">
               <Border>All;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>670,130,80,20</ClientRectangle>
@@ -4878,13 +4729,13 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text75</Name>
-              <Page isRef="15" />
-              <Parent isRef="21" />
+              <Page isRef="6" />
+              <Parent isRef="12" />
               <TextBrush>[63:63:63]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text75>
-            <Text76 Ref="92" type="Text" isKey="true">
+            <Text76 Ref="83" type="Text" isKey="true">
               <Border>All;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>570,150,100,20</ClientRectangle>
@@ -4894,14 +4745,14 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text76</Name>
-              <Page isRef="15" />
-              <Parent isRef="21" />
+              <Page isRef="6" />
+              <Parent isRef="12" />
               <Text>Last CSG Shoe @ MD/SubSea/Fm.</Text>
               <TextBrush>[63:63:63]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text76>
-            <Text77 Ref="93" type="Text" isKey="true">
+            <Text77 Ref="84" type="Text" isKey="true">
               <Border>All;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>670,150,80,20</ClientRectangle>
@@ -4911,13 +4762,13 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text77</Name>
-              <Page isRef="15" />
-              <Parent isRef="21" />
+              <Page isRef="6" />
+              <Parent isRef="12" />
               <TextBrush>[63:63:63]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text77>
-            <Text78 Ref="94" type="Text" isKey="true">
+            <Text78 Ref="85" type="Text" isKey="true">
               <Border>All;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>570,170,100,20</ClientRectangle>
@@ -4927,14 +4778,14 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text78</Name>
-              <Page isRef="15" />
-              <Parent isRef="21" />
+              <Page isRef="6" />
+              <Parent isRef="12" />
               <Text>Next CSG Size (in)</Text>
               <TextBrush>[63:63:63]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text78>
-            <Text79 Ref="95" type="Text" isKey="true">
+            <Text79 Ref="86" type="Text" isKey="true">
               <Border>All;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>670,170,80,20</ClientRectangle>
@@ -4944,13 +4795,13 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text79</Name>
-              <Page isRef="15" />
-              <Parent isRef="21" />
+              <Page isRef="6" />
+              <Parent isRef="12" />
               <TextBrush>[63:63:63]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text79>
-            <Text80 Ref="96" type="Text" isKey="true">
+            <Text80 Ref="87" type="Text" isKey="true">
               <Border>All;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>570,190,100,20</ClientRectangle>
@@ -4960,14 +4811,14 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text80</Name>
-              <Page isRef="15" />
-              <Parent isRef="21" />
+              <Page isRef="6" />
+              <Parent isRef="12" />
               <Text>Next CSG Shoe @ MD/SubSea/Fm.</Text>
               <TextBrush>[63:63:63]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text80>
-            <Text81 Ref="97" type="Text" isKey="true">
+            <Text81 Ref="88" type="Text" isKey="true">
               <Border>All;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>670,190,80,20</ClientRectangle>
@@ -4977,8 +4828,8 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text81</Name>
-              <Page isRef="15" />
-              <Parent isRef="21" />
+              <Page isRef="6" />
+              <Parent isRef="12" />
               <TextBrush>[63:63:63]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
@@ -4988,18 +4839,18 @@ Parsian Kish Drilling</Text>
           <Expressions isList="true" count="0" />
           <Filters isList="true" count="0" />
           <Name>DataBand2</Name>
-          <Page isRef="15" />
-          <Parent isRef="15" />
+          <Page isRef="6" />
+          <Parent isRef="6" />
           <Sort isList="true" count="0" />
         </DataBand2>
-        <DataBand1 Ref="98" type="DataBand" isKey="true">
+        <DataBand1 Ref="89" type="DataBand" isKey="true">
           <Border>None;[43:43:43];1;Solid;False;4;Black</Border>
           <Brush>Transparent</Brush>
           <BusinessObjectGuid isNull="true" />
           <ClientRectangle>0,400,749,40</ClientRectangle>
           <ComponentPlacement>d.Page1</ComponentPlacement>
           <Components isList="true" count="5">
-            <Text1 Ref="99" type="Text" isKey="true">
+            <Text1 Ref="90" type="Text" isKey="true">
               <Border>All;[89:89:89];1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>0,0,190,40</ClientRectangle>
@@ -5012,14 +4863,14 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text1</Name>
-              <Page isRef="15" />
-              <Parent isRef="98" />
+              <Page isRef="6" />
+              <Parent isRef="89" />
               <Tag>HEADER</Tag>
               <TextBrush>White</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text1>
-            <Text3 Ref="100" type="Text" isKey="true">
+            <Text3 Ref="91" type="Text" isKey="true">
               <Border>All;[89:89:89];1;Solid;False;4;Black</Border>
               <Brush>[215:227:188]</Brush>
               <ClientRectangle>190,0,560,40</ClientRectangle>
@@ -5032,15 +4883,15 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text3</Name>
-              <Page isRef="15" />
-              <Parent isRef="98" />
+              <Page isRef="6" />
+              <Parent isRef="89" />
               <Tag>HEADER</Tag>
               <Text>Description</Text>
               <TextBrush>[0:0:0]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text3>
-            <Text5 Ref="101" type="Text" isKey="true">
+            <Text5 Ref="92" type="Text" isKey="true">
               <Border>Bottom;[0:0:0];1;DashDot;False;4;[0:0:0]</Border>
               <Brush>[215:227:188]</Brush>
               <ClientRectangle>0,0,190,20</ClientRectangle>
@@ -5050,15 +4901,15 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text5</Name>
-              <Page isRef="15" />
-              <Parent isRef="98" />
+              <Page isRef="6" />
+              <Parent isRef="89" />
               <Text>Depth (m)
 </Text>
               <TextBrush>[63:63:63]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text5>
-            <Text50 Ref="102" type="Text" isKey="true">
+            <Text50 Ref="93" type="Text" isKey="true">
               <Border>Right;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>[215:227:188]</Brush>
               <ClientRectangle>0,20,90,20</ClientRectangle>
@@ -5068,15 +4919,15 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text50</Name>
-              <Page isRef="15" />
-              <Parent isRef="98" />
+              <Page isRef="6" />
+              <Parent isRef="89" />
               <Text>From
 </Text>
               <TextBrush>[63:63:63]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text50>
-            <Text82 Ref="103" type="Text" isKey="true">
+            <Text82 Ref="94" type="Text" isKey="true">
               <Border>Right;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>[215:227:188]</Brush>
               <ClientRectangle>90,20,100,20</ClientRectangle>
@@ -5086,8 +4937,8 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text82</Name>
-              <Page isRef="15" />
-              <Parent isRef="98" />
+              <Page isRef="6" />
+              <Parent isRef="89" />
               <Text>To
 </Text>
               <TextBrush>[63:63:63]</TextBrush>
@@ -5102,15 +4953,15 @@ Parsian Kish Drilling</Text>
           <Filters isList="true" count="0" />
           <Guid>a713895547434379a5e5d7315c8dff9c</Guid>
           <Name>DataBand1</Name>
-          <Page isRef="15" />
-          <Parent isRef="15" />
+          <Page isRef="6" />
+          <Parent isRef="6" />
           <Sort isList="true" count="0" />
         </DataBand1>
-        <DataBand3 Ref="104" type="DataBand" isKey="true">
+        <DataBand3 Ref="95" type="DataBand" isKey="true">
           <Brush>Transparent</Brush>
           <ClientRectangle>0,480,749,20</ClientRectangle>
           <Components isList="true" count="3">
-            <Text83 Ref="105" type="Text" isKey="true">
+            <Text83 Ref="96" type="Text" isKey="true">
               <Border>All;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>0,0,90,20</ClientRectangle>
@@ -5120,15 +4971,15 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text83</Name>
-              <Page isRef="15" />
-              <Parent isRef="104" />
+              <Page isRef="6" />
+              <Parent isRef="95" />
               <Text>12
 </Text>
               <TextBrush>[63:63:63]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text83>
-            <Text84 Ref="106" type="Text" isKey="true">
+            <Text84 Ref="97" type="Text" isKey="true">
               <Border>All;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>90,0,100,20</ClientRectangle>
@@ -5138,15 +4989,15 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text84</Name>
-              <Page isRef="15" />
-              <Parent isRef="104" />
+              <Page isRef="6" />
+              <Parent isRef="95" />
               <Text>2323
 </Text>
               <TextBrush>[63:63:63]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text84>
-            <Text85 Ref="107" type="Text" isKey="true">
+            <Text85 Ref="98" type="Text" isKey="true">
               <Border>All;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>190,0,560,20</ClientRectangle>
@@ -5156,8 +5007,8 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text85</Name>
-              <Page isRef="15" />
-              <Parent isRef="104" />
+              <Page isRef="6" />
+              <Parent isRef="95" />
               <Text>Mrl: gry-lt gry., sft-md hd. 100%
 
 </Text>
@@ -5171,15 +5022,15 @@ Parsian Kish Drilling</Text>
           <Expressions isList="true" count="0" />
           <Filters isList="true" count="0" />
           <Name>DataBand3</Name>
-          <Page isRef="15" />
-          <Parent isRef="15" />
+          <Page isRef="6" />
+          <Parent isRef="6" />
           <Sort isList="true" count="0" />
         </DataBand3>
-        <DataBand4 Ref="108" type="DataBand" isKey="true">
+        <DataBand4 Ref="99" type="DataBand" isKey="true">
           <Brush>Transparent</Brush>
           <ClientRectangle>0,540,749,30</ClientRectangle>
           <Components isList="true" count="1">
-            <Text86 Ref="109" type="Text" isKey="true">
+            <Text86 Ref="100" type="Text" isKey="true">
               <Border>All;[89:89:89];1;Solid;False;4;Black</Border>
               <Brush>[215:227:188]</Brush>
               <ClientRectangle>0,0,750,30</ClientRectangle>
@@ -5192,8 +5043,8 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text86</Name>
-              <Page isRef="15" />
-              <Parent isRef="108" />
+              <Page isRef="6" />
+              <Parent isRef="99" />
               <Tag>HEADER</Tag>
               <Text>Summary of Operation (00:00 - 24:00 ) 
 </Text>
@@ -5207,15 +5058,15 @@ Parsian Kish Drilling</Text>
           <Expressions isList="true" count="0" />
           <Filters isList="true" count="0" />
           <Name>DataBand4</Name>
-          <Page isRef="15" />
-          <Parent isRef="15" />
+          <Page isRef="6" />
+          <Parent isRef="6" />
           <Sort isList="true" count="0" />
         </DataBand4>
-        <DataBand5 Ref="110" type="DataBand" isKey="true">
+        <DataBand5 Ref="101" type="DataBand" isKey="true">
           <Brush>Transparent</Brush>
           <ClientRectangle>0,610,749,30</ClientRectangle>
           <Components isList="true" count="1">
-            <Text87 Ref="111" type="Text" isKey="true">
+            <Text87 Ref="102" type="Text" isKey="true">
               <Border>All;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>0,0,750,30</ClientRectangle>
@@ -5225,8 +5076,8 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text87</Name>
-              <Page isRef="15" />
-              <Parent isRef="110" />
+              <Page isRef="6" />
+              <Parent isRef="101" />
               <Text>DRLG 17 1/2" hole size section F/ 429 to 506m. while pump tandem pill periodically and W/R each STD w/0-4 BPH loss @ M.N.
 
 </Text>
@@ -5240,15 +5091,15 @@ Parsian Kish Drilling</Text>
           <Expressions isList="true" count="0" />
           <Filters isList="true" count="0" />
           <Name>DataBand5</Name>
-          <Page isRef="15" />
-          <Parent isRef="15" />
+          <Page isRef="6" />
+          <Parent isRef="6" />
           <Sort isList="true" count="0" />
         </DataBand5>
-        <DataBand6 Ref="112" type="DataBand" isKey="true">
+        <DataBand6 Ref="103" type="DataBand" isKey="true">
           <Brush>Transparent</Brush>
           <ClientRectangle>0,680,749,30</ClientRectangle>
           <Components isList="true" count="1">
-            <Text88 Ref="113" type="Text" isKey="true">
+            <Text88 Ref="104" type="Text" isKey="true">
               <Border>All;[89:89:89];1;Solid;False;4;Black</Border>
               <Brush>[215:227:188]</Brush>
               <ClientRectangle>0,0,750,30</ClientRectangle>
@@ -5261,8 +5112,8 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text88</Name>
-              <Page isRef="15" />
-              <Parent isRef="112" />
+              <Page isRef="6" />
+              <Parent isRef="103" />
               <Tag>HEADER</Tag>
               <Text>Hazard/Remarks 
 </Text>
@@ -5276,15 +5127,15 @@ Parsian Kish Drilling</Text>
           <Expressions isList="true" count="0" />
           <Filters isList="true" count="0" />
           <Name>DataBand6</Name>
-          <Page isRef="15" />
-          <Parent isRef="15" />
+          <Page isRef="6" />
+          <Parent isRef="6" />
           <Sort isList="true" count="0" />
         </DataBand6>
-        <DataBand7 Ref="114" type="DataBand" isKey="true">
+        <DataBand7 Ref="105" type="DataBand" isKey="true">
           <Brush>Transparent</Brush>
           <ClientRectangle>0,750,749,30</ClientRectangle>
           <Components isList="true" count="1">
-            <Text89 Ref="115" type="Text" isKey="true">
+            <Text89 Ref="106" type="Text" isKey="true">
               <Border>All;[0:0:0];1;Solid;False;4;[0:0:0]</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>0,0,750,30</ClientRectangle>
@@ -5294,8 +5145,8 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text89</Name>
-              <Page isRef="15" />
-              <Parent isRef="114" />
+              <Page isRef="6" />
+              <Parent isRef="105" />
               <Text>asdasda asdasdasd</Text>
               <TextBrush>[63:63:63]</TextBrush>
               <Type>Expression</Type>
@@ -5307,15 +5158,15 @@ Parsian Kish Drilling</Text>
           <Expressions isList="true" count="0" />
           <Filters isList="true" count="0" />
           <Name>DataBand7</Name>
-          <Page isRef="15" />
-          <Parent isRef="15" />
+          <Page isRef="6" />
+          <Parent isRef="6" />
           <Sort isList="true" count="0" />
         </DataBand7>
-        <DataBand8 Ref="116" type="DataBand" isKey="true">
+        <DataBand8 Ref="107" type="DataBand" isKey="true">
           <Brush>Transparent</Brush>
           <ClientRectangle>0,820,749,50</ClientRectangle>
           <Components isList="true" count="17">
-            <Text90 Ref="117" type="Text" isKey="true">
+            <Text90 Ref="108" type="Text" isKey="true">
               <Border>All;[89:89:89];1;Solid;False;4;Black</Border>
               <Brush>[215:227:188]</Brush>
               <ClientRectangle>0,0,550,30</ClientRectangle>
@@ -5328,8 +5179,8 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text90</Name>
-              <Page isRef="15" />
-              <Parent isRef="116" />
+              <Page isRef="6" />
+              <Parent isRef="107" />
               <Tag>HEADER</Tag>
               <Text>Survey Data
 
@@ -5338,7 +5189,7 @@ Parsian Kish Drilling</Text>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text90>
-            <Text91 Ref="118" type="Text" isKey="true">
+            <Text91 Ref="109" type="Text" isKey="true">
               <Border>All;[89:89:89];1;Solid;False;4;Black</Border>
               <Brush>[215:227:188]</Brush>
               <ClientRectangle>550,0,200,30</ClientRectangle>
@@ -5351,8 +5202,8 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text91</Name>
-              <Page isRef="15" />
-              <Parent isRef="116" />
+              <Page isRef="6" />
+              <Parent isRef="107" />
               <Tag>HEADER</Tag>
               <Text>Formation/Member Tops
 
@@ -5361,7 +5212,7 @@ Parsian Kish Drilling</Text>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text91>
-            <Text92 Ref="119" type="Text" isKey="true">
+            <Text92 Ref="110" type="Text" isKey="true">
               <Border>All;[89:89:89];1;Solid;False;4;Black</Border>
               <Brush>[215:227:188]</Brush>
               <ClientRectangle>0,30,60,20</ClientRectangle>
@@ -5374,15 +5225,15 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text92</Name>
-              <Page isRef="15" />
-              <Parent isRef="116" />
+              <Page isRef="6" />
+              <Parent isRef="107" />
               <Tag>HEADER</Tag>
               <Text>M.D (m)</Text>
               <TextBrush>[0:0:0]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text92>
-            <Text93 Ref="120" type="Text" isKey="true">
+            <Text93 Ref="111" type="Text" isKey="true">
               <Border>All;[89:89:89];1;Solid;False;4;Black</Border>
               <Brush>[215:227:188]</Brush>
               <ClientRectangle>70,30,70,20</ClientRectangle>
@@ -5395,15 +5246,15 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text93</Name>
-              <Page isRef="15" />
-              <Parent isRef="116" />
+              <Page isRef="6" />
+              <Parent isRef="107" />
               <Tag>HEADER</Tag>
               <Text>M.D (m)</Text>
               <TextBrush>White</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text93>
-            <Text94 Ref="121" type="Text" isKey="true">
+            <Text94 Ref="112" type="Text" isKey="true">
               <Border>All;[89:89:89];1;Solid;False;4;Black</Border>
               <Brush>[215:227:188]</Brush>
               <ClientRectangle>60,30,50,20</ClientRectangle>
@@ -5416,15 +5267,15 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text94</Name>
-              <Page isRef="15" />
-              <Parent isRef="116" />
+              <Page isRef="6" />
+              <Parent isRef="107" />
               <Tag>HEADER</Tag>
               <Text>Incl</Text>
               <TextBrush>[0:0:0]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text94>
-            <Text95 Ref="122" type="Text" isKey="true">
+            <Text95 Ref="113" type="Text" isKey="true">
               <Border>All;[89:89:89];1;Solid;False;4;Black</Border>
               <Brush>[215:227:188]</Brush>
               <ClientRectangle>110,30,60,20</ClientRectangle>
@@ -5437,15 +5288,15 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text95</Name>
-              <Page isRef="15" />
-              <Parent isRef="116" />
+              <Page isRef="6" />
+              <Parent isRef="107" />
               <Tag>HEADER</Tag>
               <Text>Azimuth</Text>
               <TextBrush>[0:0:0]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text95>
-            <Text96 Ref="123" type="Text" isKey="true">
+            <Text96 Ref="114" type="Text" isKey="true">
               <Border>All;[89:89:89];1;Solid;False;4;Black</Border>
               <Brush>[215:227:188]</Brush>
               <ClientRectangle>170,30,50,20</ClientRectangle>
@@ -5458,15 +5309,15 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text96</Name>
-              <Page isRef="15" />
-              <Parent isRef="116" />
+              <Page isRef="6" />
+              <Parent isRef="107" />
               <Tag>HEADER</Tag>
               <Text>TVD (m)</Text>
               <TextBrush>[0:0:0]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text96>
-            <Text97 Ref="124" type="Text" isKey="true">
+            <Text97 Ref="115" type="Text" isKey="true">
               <Border>All;[89:89:89];1;Solid;False;4;Black</Border>
               <Brush>[215:227:188]</Brush>
               <ClientRectangle>220,30,50,20</ClientRectangle>
@@ -5479,15 +5330,15 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text97</Name>
-              <Page isRef="15" />
-              <Parent isRef="116" />
+              <Page isRef="6" />
+              <Parent isRef="107" />
               <Tag>HEADER</Tag>
               <Text>North (m)</Text>
               <TextBrush>[0:0:0]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text97>
-            <Text98 Ref="125" type="Text" isKey="true">
+            <Text98 Ref="116" type="Text" isKey="true">
               <Border>All;[89:89:89];1;Solid;False;4;Black</Border>
               <Brush>[215:227:188]</Brush>
               <ClientRectangle>270,30,60,20</ClientRectangle>
@@ -5500,15 +5351,15 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text98</Name>
-              <Page isRef="15" />
-              <Parent isRef="116" />
+              <Page isRef="6" />
+              <Parent isRef="107" />
               <Tag>HEADER</Tag>
               <Text>East (m)</Text>
               <TextBrush>[0:0:0]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text98>
-            <Text99 Ref="126" type="Text" isKey="true">
+            <Text99 Ref="117" type="Text" isKey="true">
               <Border>All;[89:89:89];1;Solid;False;4;Black</Border>
               <Brush>[215:227:188]</Brush>
               <ClientRectangle>330,30,50,20</ClientRectangle>
@@ -5521,15 +5372,15 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text99</Name>
-              <Page isRef="15" />
-              <Parent isRef="116" />
+              <Page isRef="6" />
+              <Parent isRef="107" />
               <Tag>HEADER</Tag>
               <Text>VS</Text>
               <TextBrush>[0:0:0]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text99>
-            <Text100 Ref="127" type="Text" isKey="true">
+            <Text100 Ref="118" type="Text" isKey="true">
               <Border>All;[89:89:89];1;Solid;False;4;Black</Border>
               <Brush>[215:227:188]</Brush>
               <ClientRectangle>380,30,60,20</ClientRectangle>
@@ -5542,15 +5393,15 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text100</Name>
-              <Page isRef="15" />
-              <Parent isRef="116" />
+              <Page isRef="6" />
+              <Parent isRef="107" />
               <Tag>HEADER</Tag>
               <Text>DLS (d/30m)</Text>
               <TextBrush>[0:0:0]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text100>
-            <Text101 Ref="128" type="Text" isKey="true">
+            <Text101 Ref="119" type="Text" isKey="true">
               <Border>All;[89:89:89];1;Solid;False;4;Black</Border>
               <Brush>[215:227:188]</Brush>
               <ClientRectangle>440,30,60,20</ClientRectangle>
@@ -5563,15 +5414,15 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text101</Name>
-              <Page isRef="15" />
-              <Parent isRef="116" />
+              <Page isRef="6" />
+              <Parent isRef="107" />
               <Tag>HEADER</Tag>
               <Text>Formation</Text>
               <TextBrush>[0:0:0]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text101>
-            <Text102 Ref="129" type="Text" isKey="true">
+            <Text102 Ref="120" type="Text" isKey="true">
               <Border>All;[89:89:89];1;Solid;False;4;Black</Border>
               <Brush>[215:227:188]</Brush>
               <ClientRectangle>500,30,50,20</ClientRectangle>
@@ -5584,15 +5435,15 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text102</Name>
-              <Page isRef="15" />
-              <Parent isRef="116" />
+              <Page isRef="6" />
+              <Parent isRef="107" />
               <Tag>HEADER</Tag>
               <Text>Tool</Text>
               <TextBrush>[0:0:0]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text102>
-            <Text103 Ref="130" type="Text" isKey="true">
+            <Text103 Ref="121" type="Text" isKey="true">
               <Border>All;[89:89:89];1;Solid;False;4;Black</Border>
               <Brush>[215:227:188]</Brush>
               <ClientRectangle>550,30,50,20</ClientRectangle>
@@ -5605,15 +5456,15 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text103</Name>
-              <Page isRef="15" />
-              <Parent isRef="116" />
+              <Page isRef="6" />
+              <Parent isRef="107" />
               <Tag>HEADER</Tag>
               <Text>Formation/Member</Text>
               <TextBrush>[0:0:0]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text103>
-            <Text104 Ref="131" type="Text" isKey="true">
+            <Text104 Ref="122" type="Text" isKey="true">
               <Border>All;[89:89:89];1;Solid;False;4;Black</Border>
               <Brush>[215:227:188]</Brush>
               <ClientRectangle>600,30,50,20</ClientRectangle>
@@ -5626,15 +5477,15 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text104</Name>
-              <Page isRef="15" />
-              <Parent isRef="116" />
+              <Page isRef="6" />
+              <Parent isRef="107" />
               <Tag>HEADER</Tag>
               <Text>Top (MD)</Text>
               <TextBrush>[0:0:0]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text104>
-            <Text105 Ref="132" type="Text" isKey="true">
+            <Text105 Ref="123" type="Text" isKey="true">
               <Border>All;[89:89:89];1;Solid;False;4;Black</Border>
               <Brush>[215:227:188]</Brush>
               <ClientRectangle>650,30,50,20</ClientRectangle>
@@ -5647,15 +5498,15 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text105</Name>
-              <Page isRef="15" />
-              <Parent isRef="116" />
+              <Page isRef="6" />
+              <Parent isRef="107" />
               <Tag>HEADER</Tag>
               <Text>Top (SubSea)</Text>
               <TextBrush>[0:0:0]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text105>
-            <Text106 Ref="133" type="Text" isKey="true">
+            <Text106 Ref="124" type="Text" isKey="true">
               <Border>All;[89:89:89];1;Solid;False;4;Black</Border>
               <Brush>[215:227:188]</Brush>
               <ClientRectangle>700,30,50,20</ClientRectangle>
@@ -5668,8 +5519,8 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text106</Name>
-              <Page isRef="15" />
-              <Parent isRef="116" />
+              <Page isRef="6" />
+              <Parent isRef="107" />
               <Tag>HEADER</Tag>
               <Text>Do. Lithology</Text>
               <TextBrush>[0:0:0]</TextBrush>
@@ -5682,15 +5533,15 @@ Parsian Kish Drilling</Text>
           <Expressions isList="true" count="0" />
           <Filters isList="true" count="0" />
           <Name>DataBand8</Name>
-          <Page isRef="15" />
-          <Parent isRef="15" />
+          <Page isRef="6" />
+          <Parent isRef="6" />
           <Sort isList="true" count="0" />
         </DataBand8>
-        <DataBand9 Ref="134" type="DataBand" isKey="true">
+        <DataBand9 Ref="125" type="DataBand" isKey="true">
           <Brush>Transparent</Brush>
           <ClientRectangle>0,910,749,20</ClientRectangle>
           <Components isList="true" count="14">
-            <Text107 Ref="135" type="Text" isKey="true">
+            <Text107 Ref="126" type="Text" isKey="true">
               <Border>All;[89:89:89];1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>0,0,60,20</ClientRectangle>
@@ -5703,15 +5554,15 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text107</Name>
-              <Page isRef="15" />
-              <Parent isRef="134" />
+              <Page isRef="6" />
+              <Parent isRef="125" />
               <Tag>HEADER</Tag>
               <Text>12</Text>
               <TextBrush>[0:0:0]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text107>
-            <Text109 Ref="136" type="Text" isKey="true">
+            <Text109 Ref="127" type="Text" isKey="true">
               <Border>All;[89:89:89];1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>60,0,50,20</ClientRectangle>
@@ -5724,15 +5575,15 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text109</Name>
-              <Page isRef="15" />
-              <Parent isRef="134" />
+              <Page isRef="6" />
+              <Parent isRef="125" />
               <Tag>HEADER</Tag>
               <Text>234</Text>
               <TextBrush>[0:0:0]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text109>
-            <Text110 Ref="137" type="Text" isKey="true">
+            <Text110 Ref="128" type="Text" isKey="true">
               <Border>All;[89:89:89];1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>110,0,60,20</ClientRectangle>
@@ -5745,14 +5596,14 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text110</Name>
-              <Page isRef="15" />
-              <Parent isRef="134" />
+              <Page isRef="6" />
+              <Parent isRef="125" />
               <Tag>HEADER</Tag>
               <TextBrush>[0:0:0]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text110>
-            <Text111 Ref="138" type="Text" isKey="true">
+            <Text111 Ref="129" type="Text" isKey="true">
               <Border>All;[89:89:89];1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>170,0,50,20</ClientRectangle>
@@ -5765,14 +5616,14 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text111</Name>
-              <Page isRef="15" />
-              <Parent isRef="134" />
+              <Page isRef="6" />
+              <Parent isRef="125" />
               <Tag>HEADER</Tag>
               <TextBrush>[0:0:0]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text111>
-            <Text112 Ref="139" type="Text" isKey="true">
+            <Text112 Ref="130" type="Text" isKey="true">
               <Border>All;[89:89:89];1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>220,0,50,20</ClientRectangle>
@@ -5785,14 +5636,14 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text112</Name>
-              <Page isRef="15" />
-              <Parent isRef="134" />
+              <Page isRef="6" />
+              <Parent isRef="125" />
               <Tag>HEADER</Tag>
               <TextBrush>[0:0:0]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text112>
-            <Text113 Ref="140" type="Text" isKey="true">
+            <Text113 Ref="131" type="Text" isKey="true">
               <Border>All;[89:89:89];1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>270,0,60,20</ClientRectangle>
@@ -5805,14 +5656,14 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text113</Name>
-              <Page isRef="15" />
-              <Parent isRef="134" />
+              <Page isRef="6" />
+              <Parent isRef="125" />
               <Tag>HEADER</Tag>
               <TextBrush>[0:0:0]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text113>
-            <Text114 Ref="141" type="Text" isKey="true">
+            <Text114 Ref="132" type="Text" isKey="true">
               <Border>All;[89:89:89];1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>330,0,50,20</ClientRectangle>
@@ -5825,14 +5676,14 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text114</Name>
-              <Page isRef="15" />
-              <Parent isRef="134" />
+              <Page isRef="6" />
+              <Parent isRef="125" />
               <Tag>HEADER</Tag>
               <TextBrush>[0:0:0]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text114>
-            <Text115 Ref="142" type="Text" isKey="true">
+            <Text115 Ref="133" type="Text" isKey="true">
               <Border>All;[89:89:89];1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>380,0,60,20</ClientRectangle>
@@ -5845,14 +5696,14 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text115</Name>
-              <Page isRef="15" />
-              <Parent isRef="134" />
+              <Page isRef="6" />
+              <Parent isRef="125" />
               <Tag>HEADER</Tag>
               <TextBrush>[0:0:0]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text115>
-            <Text116 Ref="143" type="Text" isKey="true">
+            <Text116 Ref="134" type="Text" isKey="true">
               <Border>All;[89:89:89];1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>440,0,60,20</ClientRectangle>
@@ -5865,15 +5716,15 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text116</Name>
-              <Page isRef="15" />
-              <Parent isRef="134" />
+              <Page isRef="6" />
+              <Parent isRef="125" />
               <Tag>HEADER</Tag>
               <Text>Formation</Text>
               <TextBrush>[0:0:0]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text116>
-            <Text117 Ref="144" type="Text" isKey="true">
+            <Text117 Ref="135" type="Text" isKey="true">
               <Border>All;[89:89:89];1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>500,0,50,20</ClientRectangle>
@@ -5886,14 +5737,14 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text117</Name>
-              <Page isRef="15" />
-              <Parent isRef="134" />
+              <Page isRef="6" />
+              <Parent isRef="125" />
               <Tag>HEADER</Tag>
               <TextBrush>[0:0:0]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text117>
-            <Text118 Ref="145" type="Text" isKey="true">
+            <Text118 Ref="136" type="Text" isKey="true">
               <Border>All;[89:89:89];1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>550,0,50,20</ClientRectangle>
@@ -5906,14 +5757,14 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text118</Name>
-              <Page isRef="15" />
-              <Parent isRef="134" />
+              <Page isRef="6" />
+              <Parent isRef="125" />
               <Tag>HEADER</Tag>
               <TextBrush>[0:0:0]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text118>
-            <Text119 Ref="146" type="Text" isKey="true">
+            <Text119 Ref="137" type="Text" isKey="true">
               <Border>All;[89:89:89];1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>600,0,50,20</ClientRectangle>
@@ -5926,14 +5777,14 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text119</Name>
-              <Page isRef="15" />
-              <Parent isRef="134" />
+              <Page isRef="6" />
+              <Parent isRef="125" />
               <Tag>HEADER</Tag>
               <TextBrush>[0:0:0]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text119>
-            <Text120 Ref="147" type="Text" isKey="true">
+            <Text120 Ref="138" type="Text" isKey="true">
               <Border>All;[89:89:89];1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>650,0,50,20</ClientRectangle>
@@ -5946,14 +5797,14 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text120</Name>
-              <Page isRef="15" />
-              <Parent isRef="134" />
+              <Page isRef="6" />
+              <Parent isRef="125" />
               <Tag>HEADER</Tag>
               <TextBrush>[0:0:0]</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text120>
-            <Text121 Ref="148" type="Text" isKey="true">
+            <Text121 Ref="139" type="Text" isKey="true">
               <Border>All;[89:89:89];1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>700,0,50,20</ClientRectangle>
@@ -5966,8 +5817,8 @@ Parsian Kish Drilling</Text>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text121</Name>
-              <Page isRef="15" />
-              <Parent isRef="134" />
+              <Page isRef="6" />
+              <Parent isRef="125" />
               <Tag>HEADER</Tag>
               <TextBrush>[0:0:0]</TextBrush>
               <Type>Expression</Type>
@@ -5979,8 +5830,8 @@ Parsian Kish Drilling</Text>
           <Expressions isList="true" count="0" />
           <Filters isList="true" count="0" />
           <Name>DataBand9</Name>
-          <Page isRef="15" />
-          <Parent isRef="15" />
+          <Page isRef="6" />
+          <Parent isRef="6" />
           <Sort isList="true" count="0" />
         </DataBand9>
       </Components>
@@ -5991,7 +5842,7 @@ Parsian Kish Drilling</Text>
       <Name>Page1</Name>
       <PaperSize>A4</PaperSize>
       <Report isRef="0" />
-      <Watermark Ref="149" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
+      <Watermark Ref="140" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
         <Font>Arial,100</Font>
         <ImageBytes>iVBORw0KGgoAAAANSUhEUgAAAMgAAAAuCAYAAABtRVYBAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJ
 bWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdp
@@ -6145,11 +5996,11 @@ feg6U1TB2ZV9JJX97jZE6op97RsReb9aPdepzujJ/1/yfwUYAKTCSqVbeXUiAAAAAElFTkSuQmCC</Im
   </ReferencedAssemblies>
   <ReportAlias>Order</ReportAlias>
   <ReportAuthor>Stimulsoft</ReportAuthor>
-  <ReportChanged>4/17/2024 5:35:44 PM</ReportChanged>
+  <ReportChanged>4/25/2024 4:25:55 PM</ReportChanged>
   <ReportCreated>11/12/2017 10:11:55 PM</ReportCreated>
   <ReportDescription>The sample demonstrates how to create Order</ReportDescription>
   <ReportFile>E:\ParsianKish\Fronend\PKDFE-1\src\assets\reports\ReportGeneral.mrt</ReportFile>
-  <ReportGuid>d8b1210d8f88498faba49930d8cbde86</ReportGuid>
+  <ReportGuid>1eb4751be1c441fab5dc641e6781ac49</ReportGuid>
   <ReportName>Order</ReportName>
   <ReportUnit>HundredthsOfInch</ReportUnit>
   <ReportVersion>2023.1.1.0</ReportVersion>
@@ -6178,17 +6029,17 @@ namespace Reports
 </Script>
   <ScriptLanguage>CSharp</ScriptLanguage>
   <Styles isList="true" count="14">
-    <Lime_x0020_Company_x0020_Name Ref="150" type="Stimulsoft.Report.StiStyle" isKey="true">
+    <Lime_x0020_Company_x0020_Name Ref="141" type="Stimulsoft.Report.StiStyle" isKey="true">
       <Border>None;[155:155:155];1;Solid;False;4;Black</Border>
       <Brush>Transparent</Brush>
       <CollectionName>Lime</CollectionName>
       <Conditions isList="true" count="1">
-        <Item149 Ref="151" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+        <Item140 Ref="142" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
           <ComponentName>Text01</ComponentName>
           <Location>MiddleLeft</Location>
           <Placement>PageHeader</Placement>
           <Type>ComponentName</Type>
-        </Item149>
+        </Item140>
       </Conditions>
       <Font>Microsoft Sans Serif,18,Bold,Point,False,0</Font>
       <HorAlignment>Center</HorAlignment>
@@ -6196,205 +6047,205 @@ namespace Reports
       <NegativeTextBrush>Red</NegativeTextBrush>
       <TextBrush>Black</TextBrush>
     </Lime_x0020_Company_x0020_Name>
-    <Lime_x0020_Company_x0020_Info Ref="152" type="Stimulsoft.Report.StiStyle" isKey="true">
+    <Lime_x0020_Company_x0020_Info Ref="143" type="Stimulsoft.Report.StiStyle" isKey="true">
       <AllowUseBorderFormatting>False</AllowUseBorderFormatting>
       <AllowUseBorderSides>False</AllowUseBorderSides>
       <Border>None;[155:155:155];1;Solid;False;4;Black</Border>
       <Brush>Transparent</Brush>
       <CollectionName>Lime</CollectionName>
       <Conditions isList="true" count="1">
-        <Item151 Ref="153" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+        <Item142 Ref="144" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
           <ComponentName>Text1</ComponentName>
           <OperationComponentName>BeginningWith</OperationComponentName>
           <Type>ComponentName</Type>
-        </Item151>
+        </Item142>
       </Conditions>
       <Font>Microsoft Sans Serif,9.75,Regular,Point,False,0</Font>
       <Name>Lime Company Info</Name>
       <NegativeTextBrush>Red</NegativeTextBrush>
       <TextBrush>Black</TextBrush>
     </Lime_x0020_Company_x0020_Info>
-    <Lime_x0020_Bill_x0020_To Ref="154" type="Stimulsoft.Report.StiStyle" isKey="true">
+    <Lime_x0020_Bill_x0020_To Ref="145" type="Stimulsoft.Report.StiStyle" isKey="true">
       <Border>Left;White;1;Solid;False;4;Black</Border>
       <Brush>[145:200:83]</Brush>
       <CollectionName>Lime</CollectionName>
       <Conditions isList="true" count="1">
-        <Item153 Ref="155" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+        <Item144 Ref="146" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
           <ComponentName>Text2</ComponentName>
           <OperationComponentName>BeginningWith</OperationComponentName>
           <Type>ComponentName</Type>
-        </Item153>
+        </Item144>
       </Conditions>
       <Font>Microsoft Sans Serif,7,Bold,Point,False,0</Font>
       <Name>Lime Bill To</Name>
       <NegativeTextBrush>Red</NegativeTextBrush>
       <TextBrush>White</TextBrush>
     </Lime_x0020_Bill_x0020_To>
-    <Lime_x0020_Bill_x0020_To_x0020_Info Ref="156" type="Stimulsoft.Report.StiStyle" isKey="true">
+    <Lime_x0020_Bill_x0020_To_x0020_Info Ref="147" type="Stimulsoft.Report.StiStyle" isKey="true">
       <Border>None;[155:155:155];1;Solid;False;4;Black</Border>
       <Brush>Transparent</Brush>
       <CollectionName>Lime</CollectionName>
       <Conditions isList="true" count="1">
-        <Item155 Ref="157" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+        <Item146 Ref="148" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
           <ComponentName>Text3</ComponentName>
           <OperationComponentName>BeginningWith</OperationComponentName>
           <Type>ComponentName</Type>
-        </Item155>
+        </Item146>
       </Conditions>
       <Font>Microsoft Sans Serif,9.75,Regular,Point,False,204</Font>
       <Name>Lime Bill To Info</Name>
       <NegativeTextBrush>Red</NegativeTextBrush>
       <TextBrush>[60:63:70]</TextBrush>
     </Lime_x0020_Bill_x0020_To_x0020_Info>
-    <Lime_x0020_Requisites Ref="158" type="Stimulsoft.Report.StiStyle" isKey="true">
+    <Lime_x0020_Requisites Ref="149" type="Stimulsoft.Report.StiStyle" isKey="true">
       <Border>None;[155:155:155];1;Solid;False;4;Black</Border>
       <Brush>[60:63:70]</Brush>
       <CollectionName>Lime</CollectionName>
       <Conditions isList="true" count="1">
-        <Item157 Ref="159" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+        <Item148 Ref="150" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
           <ComponentName>ReportTitleBand1</ComponentName>
           <Type>ComponentName</Type>
-        </Item157>
+        </Item148>
       </Conditions>
       <Font>Microsoft Sans Serif,12,Regular,Point,False,0</Font>
       <Name>Lime Requisites</Name>
       <NegativeTextBrush>Red</NegativeTextBrush>
       <TextBrush>White</TextBrush>
     </Lime_x0020_Requisites>
-    <Lime_x0020_Title Ref="160" type="Stimulsoft.Report.StiStyle" isKey="true">
+    <Lime_x0020_Title Ref="151" type="Stimulsoft.Report.StiStyle" isKey="true">
       <Border>None;[155:155:155];1;Solid;False;4;Black</Border>
       <Brush>Transparent</Brush>
       <CollectionName>Lime</CollectionName>
       <Conditions isList="true" count="1">
-        <Item159 Ref="161" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+        <Item150 Ref="152" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
           <ComponentName>Text02</ComponentName>
           <Type>ComponentName</Type>
-        </Item159>
+        </Item150>
       </Conditions>
       <Font>Microsoft Sans Serif,18,Bold,Point,False,204</Font>
       <Name>Lime Title</Name>
       <NegativeTextBrush>Red</NegativeTextBrush>
       <TextBrush>[145:200:83]</TextBrush>
     </Lime_x0020_Title>
-    <Lime_x0020_Headers Ref="162" type="Stimulsoft.Report.StiStyle" isKey="true">
+    <Lime_x0020_Headers Ref="153" type="Stimulsoft.Report.StiStyle" isKey="true">
       <Border>Left;White;1;Solid;False;4;Black</Border>
       <Brush>[145:200:83]</Brush>
       <CollectionName>Lime</CollectionName>
       <Conditions isList="true" count="1">
-        <Item161 Ref="163" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+        <Item152 Ref="154" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
           <ComponentName>Text4</ComponentName>
           <OperationComponentName>BeginningWith</OperationComponentName>
           <Type>ComponentName</Type>
-        </Item161>
+        </Item152>
       </Conditions>
       <Font>Microsoft Sans Serif,12,Bold,Point,False,0</Font>
       <Name>Lime Headers</Name>
       <NegativeTextBrush>Red</NegativeTextBrush>
       <TextBrush>White</TextBrush>
     </Lime_x0020_Headers>
-    <Lime_x0020_Data Ref="164" type="Stimulsoft.Report.StiStyle" isKey="true">
+    <Lime_x0020_Data Ref="155" type="Stimulsoft.Report.StiStyle" isKey="true">
       <Border>None;[145:145:145];1;Solid;False;4;Black</Border>
       <Brush>Transparent</Brush>
       <CollectionName>Lime</CollectionName>
       <Conditions isList="true" count="1">
-        <Item163 Ref="165" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+        <Item154 Ref="156" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
           <ComponentName>Text5</ComponentName>
           <OperationComponentName>BeginningWith</OperationComponentName>
           <Type>ComponentName</Type>
-        </Item163>
+        </Item154>
       </Conditions>
       <Font>Microsoft Sans Serif,9.75,Regular,Point,False,0</Font>
       <Name>Lime Data</Name>
       <NegativeTextBrush>Red</NegativeTextBrush>
       <TextBrush>[120:120:120]</TextBrush>
     </Lime_x0020_Data>
-    <Lime_x0020_Contact_x0020_Name Ref="166" type="Stimulsoft.Report.StiStyle" isKey="true">
+    <Lime_x0020_Contact_x0020_Name Ref="157" type="Stimulsoft.Report.StiStyle" isKey="true">
       <Border>None;[155:155:155];1;Solid;False;4;Black;True</Border>
       <Brush>Transparent</Brush>
       <CollectionName>Lime</CollectionName>
       <Conditions isList="true" count="1">
-        <Item165 Ref="167" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+        <Item156 Ref="158" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
           <ComponentName>Text6</ComponentName>
           <OperationComponentName>BeginningWith</OperationComponentName>
           <Type>ComponentName</Type>
-        </Item165>
+        </Item156>
       </Conditions>
       <Font>Microsoft Sans Serif,14,Bold,Point,False,0</Font>
       <Name>Lime Contact Name</Name>
       <NegativeTextBrush>Red</NegativeTextBrush>
       <TextBrush>Black</TextBrush>
     </Lime_x0020_Contact_x0020_Name>
-    <Lime_x0020_Data_x0020_Even Ref="168" type="Stimulsoft.Report.StiStyle" isKey="true">
+    <Lime_x0020_Data_x0020_Even Ref="159" type="Stimulsoft.Report.StiStyle" isKey="true">
       <Border>None;[43:43:43];1;Solid;False;4;Black</Border>
       <Brush>[236:240:241]</Brush>
       <CollectionName>Lime</CollectionName>
       <Conditions isList="true" count="1">
-        <Item167 Ref="169" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+        <Item158 Ref="160" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
           <ComponentName>Data</ComponentName>
           <Placement>DataEvenStyle</Placement>
-        </Item167>
+        </Item158>
       </Conditions>
       <Font>Microsoft Sans Serif,9.75,Regular,Point,False,0</Font>
       <Name>Lime Data Even</Name>
       <NegativeTextBrush>Red</NegativeTextBrush>
       <TextBrush>[43:43:43]</TextBrush>
     </Lime_x0020_Data_x0020_Even>
-    <Lime_x0020_Discount Ref="170" type="Stimulsoft.Report.StiStyle" isKey="true">
+    <Lime_x0020_Discount Ref="161" type="Stimulsoft.Report.StiStyle" isKey="true">
       <Border>None;[145:145:145];1;Solid;False;4;Black</Border>
       <Brush>Transparent</Brush>
       <CollectionName>Lime</CollectionName>
       <Conditions isList="true" count="1">
-        <Item169 Ref="171" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+        <Item160 Ref="162" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
           <ComponentName>Text05</ComponentName>
           <Type>ComponentName</Type>
-        </Item169>
+        </Item160>
       </Conditions>
       <Font>Microsoft Sans Serif,9.75,Regular,Point,False,0</Font>
       <Name>Lime Discount</Name>
       <NegativeTextBrush>Red</NegativeTextBrush>
       <TextBrush>[130:191:62]</TextBrush>
     </Lime_x0020_Discount>
-    <Lime_x0020_Total Ref="172" type="Stimulsoft.Report.StiStyle" isKey="true">
+    <Lime_x0020_Total Ref="163" type="Stimulsoft.Report.StiStyle" isKey="true">
       <Border>None;[155:155:155];1;Solid;False;4;Black;True</Border>
       <Brush>[145:200:83]</Brush>
       <CollectionName>Lime</CollectionName>
       <Conditions isList="true" count="1">
-        <Item171 Ref="173" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+        <Item162 Ref="164" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
           <ComponentName>Text7</ComponentName>
           <OperationComponentName>BeginningWith</OperationComponentName>
           <Type>ComponentName</Type>
-        </Item171>
+        </Item162>
       </Conditions>
       <Font>Microsoft Sans Serif,12,Bold,Point,False,204</Font>
       <Name>Lime Total</Name>
       <NegativeTextBrush>Red</NegativeTextBrush>
       <TextBrush>White</TextBrush>
     </Lime_x0020_Total>
-    <Lime_x0020_Thanks Ref="174" type="Stimulsoft.Report.StiStyle" isKey="true">
+    <Lime_x0020_Thanks Ref="165" type="Stimulsoft.Report.StiStyle" isKey="true">
       <Border>Bottom;[155:155:155];1;Solid;False;4;Black</Border>
       <Brush>Transparent</Brush>
       <CollectionName>Lime</CollectionName>
       <Conditions isList="true" count="1">
-        <Item173 Ref="175" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+        <Item164 Ref="166" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
           <ComponentName>Text03</ComponentName>
           <Type>ComponentName</Type>
-        </Item173>
+        </Item164>
       </Conditions>
       <Font>Microsoft Sans Serif,12,Regular,Point,False,0</Font>
       <Name>Lime Thanks</Name>
       <NegativeTextBrush>Red</NegativeTextBrush>
       <TextBrush>[130:191:62]</TextBrush>
     </Lime_x0020_Thanks>
-    <Lime_x0020_Notes Ref="176" type="Stimulsoft.Report.StiStyle" isKey="true">
+    <Lime_x0020_Notes Ref="167" type="Stimulsoft.Report.StiStyle" isKey="true">
       <Border>None;[155:155:155];1;Solid;False;4;Black;True</Border>
       <Brush>Transparent</Brush>
       <CollectionName>Lime</CollectionName>
       <Conditions isList="true" count="1">
-        <Item175 Ref="177" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+        <Item166 Ref="168" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
           <ComponentName>Text04</ComponentName>
           <OperationComponentName>BeginningWith</OperationComponentName>
           <Type>ComponentName</Type>
-        </Item175>
+        </Item166>
       </Conditions>
       <Font>Microsoft Sans Serif,9.75,Regular,Point,False,0</Font>
       <Name>Lime Notes</Name>

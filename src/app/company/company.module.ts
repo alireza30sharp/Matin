@@ -16,6 +16,7 @@ import { CompanyRoutingModule } from './company-routing.module';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { ShareModule } from '@share/share.module';
 import { ClientPrerequisitsService } from './services/client-prerequisits';
+import { CompanyFactorComponent } from './pages/company-factor/company-factor.component';
 export function MobileCheckServiceFactory(startupService: MobileCheckService) {
   return () => startupService.mobileCheck();
 }
@@ -28,6 +29,7 @@ export function MobileCheckServiceFactory(startupService: MobileCheckService) {
     pipes.HourPipe,
     LayoutComponent,
     DashboardComponent,
+    CompanyFactorComponent,
   ],
   imports: [
     CommonModule,

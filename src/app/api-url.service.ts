@@ -52,6 +52,9 @@ export class ApiUrlService {
     updateCompany: BASE_URL + 'Company/updateCompany',
     addCompany: BASE_URL + 'Company/AddCompany',
   };
+  barname = {
+    GetBarname: BASE_URL + 'Barname/GetBarname',
+  };
   clientPrerequisits = {
     GetClientPrerequisits:
       BASE_URL + 'ClientPrerequisits/GetClientPrerequisits',

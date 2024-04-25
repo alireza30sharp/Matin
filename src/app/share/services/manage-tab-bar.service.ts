@@ -3,7 +3,6 @@ import { Observable, Observer, Subject } from 'rxjs';
 import { ITabBarModel, type_menu_label } from '../models/tab-bar.model';
 import { Nodes } from '../models/node';
 import { CompanyListComponent } from 'src/app/company/pages/company-list/company-list.component';
-import { ReportComponent } from 'src/app/report/report.component';
 import { DashboardComponent } from 'src/app/dashboard/dashboard.component';
 @Injectable({
   providedIn: 'root',
@@ -37,7 +36,7 @@ export class ManageTabBarService {
               this.listMenu = this.listMenu.concat({
                 name: menuItem.name,
                 label: menuItem.component,
-                component: ReportComponent,
+                component: 'ReportComponent',
               });
 
               break;
@@ -71,7 +70,7 @@ export class ManageTabBarService {
             this.listMenu = this.listMenu.concat({
               name: menuItem.name,
               label: menuItem.component,
-              component: ReportComponent,
+              component: 'ReportComponent',
             });
             break;
           case type_menu_label.dashboard:

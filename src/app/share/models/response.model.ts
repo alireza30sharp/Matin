@@ -2,7 +2,7 @@ export interface response<T> {
   data: T;
   isOk: boolean;
   domainStatuesCode: any;
-  message: string;
+  messages: string[];
 }
 export interface Data<T> {
   data: T;

@@ -60,4 +60,11 @@ export class CompanyService {
       model
     );
   }
+  getBarname(eid: any) {
+    return this.$http.get<response<any>>(this.urlSvc.barname.GetBarname, {
+      params: {
+        Id: eid,
+      },
+    });
+  }
 }

@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ITabBarModel, type_menu_label } from '../models/tab-bar.model';
 import { CompanyListComponent } from 'src/app/company/pages/company-list/company-list.component';
-import { ReportComponent } from 'src/app/report/report.component';
 import { DashboardComponent } from 'src/app/dashboard/dashboard.component';
 @Injectable({
   providedIn: 'root',
@@ -25,7 +24,7 @@ export class localStorageService {
             f.component = CompanyListComponent;
             break;
           case type_menu_label.report:
-            f.component = ReportComponent;
+            f.component = 'ReportComponent';
             break;
           case type_menu_label.dashboard:
             f.component = DashboardComponent;

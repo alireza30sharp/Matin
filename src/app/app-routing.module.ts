@@ -15,7 +15,7 @@ const desktopRoutes: Route[] = [
     path: 'company',
     loadChildren: () =>
       import('./company/company.module').then((m) => m.CompanyModule),
-    canActivate: [AdminAuthGuard],
+    // canActivate: [AdminAuthGuard],
   },
 ];
 

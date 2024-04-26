@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { VariablesReportInterFace } from '@share/interfaces/variables-report.interface';
 declare var Stimulsoft: any;
 @Component({
   selector: 'app-report',
@@ -18,14 +19,14 @@ export class ReportComponent implements OnInit, AfterViewInit {
   }
   @Input() dataSetName: string;
   @Input() reportName: string;
+  @Input() variablesInReport:Array<VariablesReportInterFace>=new Array<VariablesReportInterFace>;
   _data: any;
   ngOnInit(): void {}
-  renderReport(data) {
+ async renderReport(data) {
     var options = new Stimulsoft.Viewer.StiViewerOptions();
     options.toolbar.showDesignButton = true;
     var viewer = new Stimulsoft.Viewer.StiViewer(options, 'StiViewer', false);
     var report = new Stimulsoft.Report.StiReport();
-
     var json = data;
     var dataSet = new Stimulsoft.System.Data.DataSet(this.dataSetName);
     dataSet.readJson(JSON.stringify(json));
@@ -34,7 +35,19 @@ export class ReportComponent implements OnInit, AfterViewInit {
     report.dictionary.connect(false);
     report.dictionary.synchronize();
     report.loadFile(`assets/reports/${this.reportName}.mrt`);
+   await this.setVariable(report);
     viewer.report = report;
     viewer.renderHtml('viewerContent');
+  }
+  async setVariable(report){
+    if (this.variablesInReport.length) {
+      for (let i = 0; i < this.variablesInReport.length; i++) {
+        report.dictionary.variables.getByName(this.variablesInReport[i].paramName).valueObject = this.variablesInReport[i].paramValue;
+        // report.setVariable(
+        //   this.variablesInReport[i].paramName,
+        //   this.variablesInReport[i].paramValue
+        // );
+      }
+    }
   }
 }

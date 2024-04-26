@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CompanyService } from '../../services';
+import { VariablesReportInterFace } from '@share/interfaces/variables-report.interface';
 
 @Component({
   selector: 'app-company-factor',
@@ -11,34 +12,85 @@ import { CompanyService } from '../../services';
 export class CompanyFactorComponent implements OnInit {
   eid: any;
   data;
-  dataSetName: any = 'Data';
+  dataSetName: any = 'ReportGeneral';
   message: string = '';
+  variablesInReport:Array<VariablesReportInterFace>=[
+    {paramName:'unit',paramValue:'fiiii'},
+    {paramName:'test',paramValue:'test test'}
+  ]
   constructor(
     private _activatedRoute: ActivatedRoute,
     private _companyService: CompanyService
   ) {}
   ngOnInit(): void {
     this.data = {
-      TableMe: [
+      GeneralData:
         {
-          Code: 'Code',
-          Test: 'asdasd',
+          RiqName: 'RiqName',
+          WellName: 'WellName',
+          WellType:'WellType',
+          ReportDate:'ReportDate',
+          ReportNo:'ReportNo',
+          HoleSection:'HoleSection',
+          GLE:'GLE',
+          RTE:'RTE',
+          Geologist:'Geologist'
         },
-      ],
-      Mande: [
-        {
-          Mande: 300000,
-          MandeGhabli: 560,
+        DrillingParameters:{
+          PreviousDepth:'PreviousDepth',
+          MidNightDepth:'MidNightDepth',
+          DrilledTime:'DrilledTime',
+          AveROP:'AveROP',
+          MorningDepth:'MorningDepth',
+          KOP:'KOP',
+          WOB:'WOB',
+          GPM:'GPM',
+          BitSize:'BitSize'
         },
-        {
-          Mande: 3400,
-          MandeGhabli: 344,
+        MudProperties:{
+          MudType:'MudType',
+          MudWeight:'MudWeight',
+          Viscosity:'Viscosity',
+          PV:'PV',
+          YP:'YP',
+          PH:'PH',
+          MudLostDownHole:'MudLostDownHole',
+          MudLostatSurface:'MudLostatSurface',
+          Gain:'Gain'
         },
-        {
-          Mande: 12,
-          MandeGhabli: 12,
+        FormationProperties:{
+          FormationMember:'FormationMember',
+          FormationTop:'FormationTop',
+          DominateLithology:'DominateLithology',
+          NextFormation:'NextFormation',
+          NextFmTop:'NextFmTop',
+          LastCSGSize:'LastCSGSize',
+          LastCSGShoe:'LastCSGShoe',
+          NextCSGSize:'NextCSGSize',
+          NextCSGShoe:'NextCSGShoe'
         },
-      ],
+        Description:[
+          {Desc:'asassas fjasf sdfasdf',To:1233,From:90},
+          {Desc:'asassas fjasf sdfasdf',To:1233,From:90},
+          {Desc:'asassas fjasf sdfasdf',To:1233,From:90},
+        ],
+        SummaryofOperation:[
+          {Desc:'wewee ewe e '},
+          {Desc:'assdsdd ewe e '},
+          {Desc:'oioioiio ewe e '},
+          {Desc:'terdfcgv ewe e '},
+
+        ],
+        HazardRemarks:[
+          {Desc:'HazardRemarks ewe e '},
+          {Desc:'HazardRemarks ewe e '},
+          {Desc:'oioioiio ewe e '},
+          {Desc:'terdfcgv ewe e '},
+
+        ],
+        SurveyData:[
+          {MD:232,Incl:98,Azimuth:56,TVD:544,North:345,East:987,VS:34,DLS:78,Formation:'rrr',Tool:76,FormationMember:54,TopSubSea:87,Lithology:54,TopMD:54}
+        ]
 
       // Ghabz_Masale: [
       //   {

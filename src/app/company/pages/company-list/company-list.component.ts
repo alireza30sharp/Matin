@@ -186,13 +186,7 @@ export class CompanyListComponent implements OnInit {
       }
     });
   }
-  // saveState() {
-  //   window.localStorage.setItem(
-  //     'save',
-  //     JSON.stringify(this.gridOptions.columnApi.getColumnState())
-  //   );
 
-  // }
   removeCell() {
     if (this.selectRow.length) {
       for (let i = 0; i <= this.selectRow.length; i++) {
@@ -202,32 +196,14 @@ export class CompanyListComponent implements OnInit {
       this._toaster.error('لطفا یک رکورد انتخاب شود');
     }
   }
-  // override editCell(row: any): void {
-  //   var modalRef = this._modalService.open(CompanyFormModalComponent, {
-  //     size: 'xl',
-  //     centered: true,
-  //     backdrop: 'static',
-  //   });
 
-  //   modalRef.componentInstance.companyModel = {
-  //     companyId: row.companyId,
-  //     companyUniqCode: row.companyUniqCode,
-  //     companyName: row.componyName,
-  //     cityId: row.cityId,
-  //     companyPassword: row.companyPassword,
-  //     companyTel: row.companyTel,
-  //     companyAddress: row.companyAddress,
-  //     companyType: row.companyType,
-  //     companyMobile: row.companyMobile,
-  //     id: row.id,
-  //   };
-  //   modalRef.result.then((res) => {
-  //     this.updateOrInsertCompany(res);
-  //   });
-  // }
-  openModal() {
+  openModal(isEdit: false) {
+    let entryId = null;
+    if (isEdit) {
+      entryId = this.selectRow[0].id;
+    }
     this._modalService
-      .open(CompanyFormModalComponent, 'lg')
+      .open(CompanyFormModalComponent, 'lg', { entryId: entryId })
       .then((value) => {})
       .catch((err) => {});
   }
@@ -244,6 +220,7 @@ export class CompanyListComponent implements OnInit {
     //   });
     // }, 900);
   }
+  editSelected() {}
   updateOrInsertCompany(model: companyInsert) {
     this.companyService.updateCompany(model).subscribe((res) => {
       if (res.isOk) {
@@ -276,10 +253,5 @@ export class CompanyListComponent implements OnInit {
       dataSetName: 'General,Test',
       reportName: 'ReportGeneral',
     });
-  }
-  changed() {
-    // this._filter.filter = this.companyInput;
-    // this._filter.columnState = this.gridOptions.columnApi.getColumnState();
-    // this.onSomething.emit(this._filter);
   }
 }

@@ -7,7 +7,7 @@
   <ng-template #header>
     <app-tools-bar
       (DeleteSelected)="removeCell()"
-      (EditSelected)="openModal()"
+      (EditSelected)="openModal(true)"
       (NewSelected)="openModal()"
       (PerintSelected)="onDesignerclickEvent($event)"
       [disabled]="selectRow.length != 0 ? false : true"

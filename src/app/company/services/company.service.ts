@@ -54,6 +54,13 @@ export class CompanyService {
       model
     );
   }
+  getCompaniyById(Id: number) {
+    return this.$http.get<response<any>>(this.urlSvc.company.getCompaniyById, {
+      params: {
+        Id: Id,
+      },
+    });
+  }
   preRegisterCompany(model: companyInterFace) {
     return this.$http.post<response<any>>(
       this.urlSvc.company.preRegisterCompany,
@@ -62,6 +69,13 @@ export class CompanyService {
   }
   getBarname(eid: any) {
     return this.$http.get<response<any>>(this.urlSvc.barname.GetBarname, {
+      params: {
+        Id: eid,
+      },
+    });
+  }
+  getBarnameByLink(eid: any) {
+    return this.$http.get<response<any>>(this.urlSvc.barname.GetBarnameByLink, {
       params: {
         Id: eid,
       },

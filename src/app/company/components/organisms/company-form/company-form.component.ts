@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Form } from '@angular/forms';
 import { SelectOptionInterface } from '@share/interfaces/select-option.interface';
 import { companyInsert } from 'src/app/company/models';
 import {
@@ -46,7 +47,8 @@ export class CompanyFormComponent implements OnInit {
   changeType() {
     this.typePassword = !this.typePassword;
   }
-  submitHandler() {
+  submitHandler(companyForm: any) {
     this.submitCallback.emit(this.companyModel);
+    this.companyModel = new companyInsert();
   }
 }

@@ -10,6 +10,7 @@ export interface companyInterFace {
   email: any;
 }
 export class companyInsert {
+  companyId: number;
   companyUniqCode: string;
   companyName: string;
   cityId: number;
@@ -17,7 +18,7 @@ export class companyInsert {
   companyTel: string;
   companyAddress: string;
   companyType: number;
-  companyId: number;
+  stauesId: number;
   companyMobile: string;
   email: string;
   id?: number;

@@ -1,4 +1,9 @@
-<app-report [variablesInReport]="variablesInReport" [dataSetName]="dataSetName" [reportName]="'ReportGeneral'" [data]="data">
+<app-report
+  [variablesInReport]="variablesInReport"
+  [dataSetName]="dataSetName"
+  [reportName]="'factor'"
+  [data]="data"
+>
 </app-report>
 
 <app-general-panel
@@ -6,7 +11,6 @@
   [title]="'بارنامه دریافتی '"
   [hideBackButton]="true"
 >
-
   <app-alert [message]="message" [textCenter]="true" [type]="'warning'">
   </app-alert>
 </app-general-panel>

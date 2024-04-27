@@ -67,4 +67,11 @@ export class CompanyService {
       },
     });
   }
+  GetBarnameByLink(eid: any) {
+    return this.$http.get<response<any>>(this.urlSvc.barname.GetBarnameByLink, {
+      params: {
+        Id: eid,
+      },
+    });
+  }
 }

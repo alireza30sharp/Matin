@@ -54,6 +54,7 @@ export class ApiUrlService {
   };
   barname = {
     GetBarname: BASE_URL + 'Barname/GetBarname',
+    GetBarnameByLink: BASE_URL + 'Barname/GetBarnameByLink',
   };
   clientPrerequisits = {
     GetClientPrerequisits:

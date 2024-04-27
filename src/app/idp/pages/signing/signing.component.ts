@@ -157,7 +157,7 @@ export class SigningComponent implements OnInit {
         )
         .subscribe((res) => {
           this.userNameLoading = false;
-          if (res.isOk && res.data.auth_Type === ActionMethod.Login) {
+          if (res.isOk && res.data.action === ActionMethod.Login) {
             this.authVM.changeFormState('password');
           } else {
             if (res.data.action === ActionMethod.Register) {

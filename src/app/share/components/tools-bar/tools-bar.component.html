@@ -1,18 +1,18 @@
-<div class="d-flex justify-content-bettwen rtl w-100">
+<div class="d-flex justify-content-bettwen rtl w-100 overflow-auto">
   <ki-button
     [varient]="'outline'"
     btnType="danger"
     [iconClassName]="'fa-solid fa-arrow-rotate-left'"
     [title]="'انصراف ESc'"
     (click)="escapeEvent()"
-    class="mx-2"
+    class="mx-2 f-10"
   ></ki-button>
   <ki-button
     [varient]="'outline'"
     btnType="danger"
     [iconClassName]="'fa-solid fa-screwdriver-wrench'"
     [title]="'ابزار'"
-    class="mx-2"
+    class="mx-2 f-10"
   ></ki-button>
   <ki-button
     [varient]="'outline'"
@@ -20,14 +20,14 @@
     [iconClassName]="'fa-solid fa-arrows-rotate'"
     [title]="'بروز رسانی F5'"
     (click)="refrashEvent()"
-    class="mx-2"
+    class="mx-2 f-10"
   ></ki-button>
   <ki-button
     [varient]="'outline'"
     btnType="danger"
     [iconClassName]="'fa-solid fa-circle-info'"
     [title]="'اطلاعات تماس'"
-    class="mx-2"
+    class="mx-2 f-10"
   ></ki-button>
   <ki-button
     [varient]="'outline'"
@@ -35,21 +35,21 @@
     [iconClassName]="'fa-solid fa-print'"
     [title]="'چاپ P'"
     (click)="perintEvent()"
-    class="mx-2"
+    class="mx-2 f-10"
   ></ki-button>
   <ki-button
     [varient]="'outline'"
     btnType="danger"
     [iconClassName]="'fa-solid fa-file-excel'"
     [title]="'اکسل'"
-    class="mx-2"
+    class="mx-2 f-10"
   ></ki-button>
   <ki-button
     [varient]="'outline'"
     btnType="danger"
     [iconClassName]="'fa-regular fa-circle-check'"
     [title]="'انتخاب'"
-    class="mx-2"
+    class="mx-2 f-10"
   ></ki-button>
   <ki-button
     [disabled]="disabled"
@@ -58,7 +58,7 @@
     [iconClassName]="'fas fa-trash-alt'"
     [title]="'حذف ctrlKey+D'"
     (click)="deleteEvent()"
-    class="mx-2"
+    class="mx-2 f-10"
   ></ki-button>
   <ki-button
     [varient]="'outline'"
@@ -67,7 +67,7 @@
     [title]="'اصلاح F3'"
     (click)="editEvent()"
     [disabled]="disabled"
-    class="mx-2"
+    class="mx-2 f-10"
   ></ki-button>
 
   <ki-button
@@ -76,7 +76,7 @@
     [iconClassName]="'fas fa-plus '"
     [title]="'جدید F2'"
     (click)="addEvent()"
-    class="mx-2"
+    class="mx-2 f-10"
   ></ki-button>
 
   <!-- <div ngbDropdown class="dropdown">

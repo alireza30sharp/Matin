@@ -63,6 +63,7 @@ const component = [
   grid.AgGridDataComponent,
   _shareCmp.ReportComponent,
   _shareCmp.AlertComponent,
+  _shareCmp.ReportListComponent,
   SafeIframeUrlPipe,
 ];
 @NgModule({

@@ -17,20 +17,21 @@
     [isShowToolbar]="_isEditMode"
   ></app-tools-bar>
   <!-- [rowClassRules]="rowClassRules" -->
+
   <ag-grid-angular
     id="myGrid"
     [id]="idGrid"
     [class]="class"
     [columnDefs]="columnsTable"
     [suppressAggFuncInHeader]="true"
-    [suppressRowClickSelection]="false"
+    [suppressRowClickSelection]="suppressRowClickSelection"
     [rowGroupPanelShow]="'always'"
     [pivotPanelShow]="'always'"
     [defaultColDef]="defaultColDef"
     [getContextMenuItems]="getContextMenuItems"
     [autoGroupColumnDef]="autoGroupColumnDef"
     [rowData]="rowData"
-    rowSelection="single"
+    [rowSelection]="rowSelection"
     (columnGroupOpened)="changeModel.next()"
     (filterChanged)="changeModel.next()"
     (gridColumnsChanged)="changeModel.next()"

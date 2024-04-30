@@ -34,6 +34,12 @@ export class CompanyFormModalComponent
   private _getInitialData() {
     this.isLoading = true;
     if (this.isEditMode) {
+      debugger;
+      this._companyService.getCompaniyById(this.entryId).subscribe((res) => {
+        if (res.isOk) {
+          this.initialData = res.data;
+        }
+      });
     }
     setTimeout(() => {
       this.isLoading = false;

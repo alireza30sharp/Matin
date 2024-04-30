@@ -1,0 +1,27 @@
+<app-general-panel
+  [hideBackButton]="true"
+  [height]="'100%'"
+  [contentOverflow]="'hidden'"
+>
+  <ng-template #header>
+    <app-tools-bar
+      (DeleteSelected)="removeCell()"
+      (EditSelected)="openModal()"
+      (NewSelected)="openModal()"
+      (PerintSelected)="onDesignerclickEvent($event)"
+      [disabled]="true"
+    >
+    </app-tools-bar>
+  </ng-template>
+  <ag-grid-data
+    [rowDataDefault]="rowDataDefault"
+    [columnsDefault]="columnsDefault"
+    [defaultColDef]="defaultColDef"
+    [showSideBar]="true"
+    [pagination]="true"
+    [rowSelection]="'multiple'"
+    [suppressRowClickSelection]="true"
+    (selectedRowsChange)="onSelectedRowsChangeEvent($event)"
+  >
+  </ag-grid-data>
+</app-general-panel>

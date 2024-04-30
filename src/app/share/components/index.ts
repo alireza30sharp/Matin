@@ -8,3 +8,4 @@ export * from './skeleton-loading/skeleton-loading.component';
 export * from './tools-bar/tools-bar.component';
 export * from './report/report.component';
 export * from './alert/alert.component';
+export * from './report-list/report-list.component';

@@ -1,6 +1,6 @@
 <form
   #companyForm="ngForm"
-  (ngSubmit)="!companyForm.invalid && submitHandler()"
+  (ngSubmit)="!companyForm.invalid && submitHandler(companyForm)"
 >
   <div class="row">
     <div class="col-4">
@@ -46,7 +46,7 @@
     <div class="col-4">
       <ki-form-group
         [label]="'نام شهر'"
-        [showRequireSign]="true"
+        [showRequireSign]="false"
         [errorMessage]="'فیلد اجباری'"
         [hideError]="
           !(
@@ -61,7 +61,6 @@
           [(ngModel)]="companyModel.cityId"
           name="cityId"
           #cityId="ngModel"
-          required
           [isloading]="lockupsIsLoading"
         ></ki-select>
       </ki-form-group>
@@ -171,7 +170,7 @@
     <ki-form-group
       class="col-6"
       [label]="'نوع شرکت'"
-      [showRequireSign]="true"
+      [showRequireSign]="false"
       [errorMessage]="'فیلد اجباری'"
       [hideError]="
         !(
@@ -186,7 +185,6 @@
         [(ngModel)]="companyModel.companyType"
         name="companyType"
         #companyType="ngModel"
-        required
         [isloading]="lockupsIsLoading"
       ></ki-select>
     </ki-form-group>

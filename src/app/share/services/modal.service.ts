@@ -11,7 +11,7 @@ export class ModalService {
 
   open(
     content: any,
-    size: 'sm' | 'lg' | 'xl',
+    size: 'sm' | 'md' | 'lg' | 'xl',
     data?: any,
     preventClose?: boolean
   ): Promise<any> {

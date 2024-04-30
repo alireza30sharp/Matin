@@ -51,6 +51,7 @@ export class ApiUrlService {
     deleteCompany: BASE_URL + 'Company/DeleteCompany',
     updateCompany: BASE_URL + 'Company/updateCompany',
     addCompany: BASE_URL + 'Company/AddCompany',
+    getCompaniyById: BASE_URL + 'Company/GetCompaniyById',
   };
   barname = {
     GetBarname: BASE_URL + 'Barname/GetBarname',

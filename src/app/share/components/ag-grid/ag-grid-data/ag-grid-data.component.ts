@@ -73,6 +73,8 @@ export class AgGridDataComponent extends AgGridMaster implements AfterViewInit {
   @Input() autoGroupColumnDef: AgGridInterFace;
   @Input() popupParent: any;
 
+  @Input() suppressRowClickSelection: boolean = false;
+  @Input() rowSelection: 'single' | 'multiple' = 'single';
   @Input() suppressAggFuncInHeader: boolean;
   @Input() set rowDataDefault(list: any[]) {
     this.rowData = list;

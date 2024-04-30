@@ -1,12 +1,16 @@
-
+<app-report
+  [variablesInReport]="variablesInReport"
+  [dataSetName]="dataSetName"
+  [reportName]="'factor'"
+  [data]="data"
+>
+</app-report>
 
 <app-general-panel
   class="text-end"
   [title]="'بارنامه دریافتی '"
   [hideBackButton]="true"
 >
-<app-report [variablesInReport]="variablesInReport" [dataSetName]="dataSetName" [reportName]="'factor'" [data]="data">
-</app-report>
   <app-alert [message]="message" [textCenter]="true" [type]="'warning'">
   </app-alert>
 </app-general-panel>

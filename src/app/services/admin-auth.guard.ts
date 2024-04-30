@@ -23,8 +23,11 @@ export class AdminAuthGuard implements CanActivate {
       this.authSvc.signing();
       return false;
     }
+    else{
+      return this.authSvc.token != null;
+    }
 
-    return this.authSvc.token != null;// && this.authSvc.user.role != "administrator";
+   // && this.authSvc.user.role != "administrator";
   }
 
 }

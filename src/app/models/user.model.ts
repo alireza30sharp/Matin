@@ -24,10 +24,12 @@ export interface AuthenticationLogin {
   email_send_successful: boolean;
 }
 
+
 export interface JwtToken {
   companyName: string;
+  companyId:any,
   uniqCode: string;
-  companyTypeId: string;
+  companyTypeId: number;
   nbf: number;
   exp: number;
   iat: number;

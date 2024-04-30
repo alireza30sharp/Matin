@@ -9,6 +9,7 @@ import { ToastService } from '@share/services';
 import { CompanyFormModalComponent } from '../../components/templates/company-form-modal/company-form-modal.component';
 import { ModalService } from '@share/services/modal.service';
 import { ReportComponent } from '@share/components';
+import { UserAuthService } from '@services';
 @Component({
   selector: 'app-company-list',
   templateUrl: './company-list.component.html',
@@ -82,9 +83,7 @@ export class CompanyListComponent implements OnInit {
     {
       field: 'cityId',
       headerName: 'کد شهر',
-      suppressSizeToFit: true,
-      sortable: true,
-      filter: 'agNumberColumnFilter',
+hide:true,
     },
     {
       field: 'cityName',
@@ -154,11 +153,19 @@ export class CompanyListComponent implements OnInit {
   constructor(
     private _modalService: ModalService,
     private companyService: CompanyService,
-    private readonly _toaster: ToastService
+    private readonly _toaster: ToastService,
+    private _userAuthService:UserAuthService
   ) {}
 
   ngOnInit(): void {
-    this.getCompanies();
+    this._userAuthService.user$.subscribe(user=>{
+      this.companyInput.Id=user.companyId;
+      this.companyInput.CompanyName=user.companyName;
+      this.companyInput.CompanyTypeId=user.companyTypeId;
+      this.companyInput.CompanyUniqCode=user.uniqCode;
+      this.getCompanies();
+    })
+  
   }
 
   getCompanies() {

@@ -23,27 +23,21 @@ export class companyInsert {
   email: string;
   id?: number;
 }
+
 export class companyModel {
-  id: number;
+  row_NO: number;
+  companyId: number;
+  companyUniqCode: string;
+  companyName: string;
+  cityId: number;
   cityName: string;
-  componyTel: string;
-  componyAddress: string;
-  companyMobile: any;
+  companyTel: string;
+  companyAddress: string;
+  companyMobile: string;
   statusId: number;
-  companyType: number;
   companyTypeId: number;
   companyStatuesName: string;
   companyTypeName: string;
-  companyUniqCode: string;
-  CompanyName: string;
-  companyPassword: string;
-  companyTel: string;
-  email: string;
-  cityId: number;
-  componyName: string;
-  companyAddress: string;
-  componyUniqCode: string;
-  row_NO: number;
 }
 
 export class companyInput {

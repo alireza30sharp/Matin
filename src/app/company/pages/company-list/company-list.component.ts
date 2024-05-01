@@ -10,6 +10,7 @@ import { CompanyFormModalComponent } from '../../components/templates/company-fo
 import { ModalService } from '@share/services/modal.service';
 import { ReportComponent } from '@share/components';
 import { UserAuthService } from '@services';
+import { propertyOf } from '@share/utilities/property-of';
 @Component({
   selector: 'app-company-list',
   templateUrl: './company-list.component.html',
@@ -18,7 +19,7 @@ import { UserAuthService } from '@services';
 })
 export class CompanyListComponent implements OnInit {
   type = 'ag-theme-balham';
-  rowDataDefault = [];
+  rowDataDefault = new Array<companyModel>();
   selectRow = new Array<companyModel>();
   totalCount = 0;
   selectedRows: any;
@@ -57,16 +58,25 @@ export class CompanyListComponent implements OnInit {
 
   columnsDefault: AgGridInterFace[] = [
     {
-      field: 'row_NO',
+      field: propertyOf<companyModel>('row_NO'),
       headerName: 'row_NO',
       hide: true,
     },
     {
-      field: 'id',
+      field: propertyOf<companyModel>('companyId'),
       hide: true,
     },
     {
-      field: 'componyUniqCode',
+      field: propertyOf<companyModel>('statusId'),
+      headerName: 'کد وضعیت',
+    },
+    {
+      field: propertyOf<companyModel>('companyTypeId'),
+      headerName: 'نوع شرکت',
+      hide: true,
+    },
+    {
+      field: propertyOf<companyModel>('companyUniqCode'),
       headerName: 'کد شرکت',
       filterParams: true,
       suppressSizeToFit: true,
@@ -74,7 +84,7 @@ export class CompanyListComponent implements OnInit {
       filter: 'agTextColumnFilter',
     },
     {
-      field: 'componyName',
+      field: propertyOf<companyModel>('companyName'),
       headerName: 'نام شرکت',
       suppressSizeToFit: true,
       sortable: true,
@@ -83,10 +93,10 @@ export class CompanyListComponent implements OnInit {
     {
       field: 'cityId',
       headerName: 'کد شهر',
-hide:true,
+      hide: true,
     },
     {
-      field: 'cityName',
+      field: propertyOf<companyModel>('cityName'),
       enableRowGroup: true,
       enablePivot: true,
       headerName: 'نام شهر',
@@ -95,43 +105,30 @@ hide:true,
       filter: 'agTextColumnFilter',
     },
     {
-      field: 'componyTel',
+      field: propertyOf<companyModel>('companyTel'),
       headerName: 'تلفن شرکت',
       suppressSizeToFit: true,
       sortable: true,
       filter: 'agTextColumnFilter',
     },
     {
-      field: 'componyAddress',
+      field: propertyOf<companyModel>('companyAddress'),
       headerName: 'آدرس شرکت',
       suppressSizeToFit: true,
       sortable: true,
       filter: 'agTextColumnFilter',
     },
     {
-      field: 'companyMobile',
+      field: propertyOf<companyModel>('companyMobile'),
       headerName: 'تلفن شرکت',
       suppressSizeToFit: true,
       sortable: true,
       filter: 'agTextColumnFilter',
     },
+
     {
-      field: 'statusId',
-      headerName: 'کد وضعیت',
-      suppressSizeToFit: true,
-      sortable: true,
-      filter: 'agNumberColumnFilter',
-    },
-    {
-      field: 'companyTypeId',
-      headerName: 'نوع شرکت',
-      suppressSizeToFit: true,
-      sortable: true,
-      filter: 'agNumberColumnFilter',
-    },
-    {
-      field: 'companyStatuesName',
-      headerName: 'نام وضعیت',
+      field: propertyOf<companyModel>('companyStatuesName'),
+      headerName: 'وضعیت',
       enableRowGroup: true,
       enablePivot: true,
       suppressSizeToFit: true,
@@ -139,8 +136,8 @@ hide:true,
       filter: 'agTextColumnFilter',
     },
     {
-      field: 'companyTypeName',
-      headerName: 'نام نوع شرکت',
+      field: propertyOf<companyModel>('companyTypeName'),
+      headerName: 'نوع شرکت',
       suppressSizeToFit: true,
       enableRowGroup: true,
       enablePivot: true,
@@ -154,18 +151,17 @@ hide:true,
     private _modalService: ModalService,
     private companyService: CompanyService,
     private readonly _toaster: ToastService,
-    private _userAuthService:UserAuthService
+    private _userAuthService: UserAuthService
   ) {}
 
   ngOnInit(): void {
-    this._userAuthService.user$.subscribe(user=>{
-      this.companyInput.Id=user.companyId;
-      this.companyInput.CompanyName=user.companyName;
-      this.companyInput.CompanyTypeId=user.companyTypeId;
-      this.companyInput.CompanyUniqCode=user.uniqCode;
+    this._userAuthService.user$.subscribe((user) => {
+      this.companyInput.Id = user.companyId;
+      this.companyInput.CompanyName = user.companyName;
+      this.companyInput.CompanyTypeId = user.companyTypeId;
+      this.companyInput.CompanyUniqCode = user.uniqCode;
       this.getCompanies();
-    })
-  
+    });
   }
 
   getCompanies() {
@@ -187,7 +183,7 @@ hide:true,
     this.selectRow = event;
   }
   onDeleteItem(item: companyModel) {
-    this.companyService.deleteCompany(item.id).subscribe((res) => {
+    this.companyService.deleteCompany(item.companyId).subscribe((res) => {
       if (res.isOk) {
         this.getCompanies();
       }
@@ -207,7 +203,7 @@ hide:true,
   openModal(isEdit: false) {
     let entryId = null;
     if (isEdit) {
-      entryId = this.selectRow[0].id;
+      entryId = this.selectRow[0].companyId;
     }
     this._modalService
       .open(CompanyFormModalComponent, 'lg', { entryId: entryId })

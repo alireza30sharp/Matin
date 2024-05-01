@@ -21,7 +21,6 @@ export class CompanyService {
       {
         params: {
           CompanyId: params.Id,
-          CompanyId: params.Id,
           CityId: params.CityId,
           statuesId: params.statuesId,
           CompanyTypeId: params.CompanyTypeId,
@@ -58,7 +57,7 @@ export class CompanyService {
   getCompaniyById(Id: number) {
     return this.$http.get<response<any>>(this.urlSvc.company.getCompaniyById, {
       params: {
-        Id: Id,
+        CompanyId: Id,
       },
     });
   }

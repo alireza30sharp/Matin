@@ -147,7 +147,7 @@
   </div>
   <div class="row">
     <ki-form-group
-      class="col-6"
+      class="col-4"
       [label]="'ایمیل'"
       [showRequireSign]="true"
       [errorMessage]="email.errors?.isInvalid ? 'فرمت اشتباه' : 'فیلد اجباری'"
@@ -168,7 +168,7 @@
       ></ki-input>
     </ki-form-group>
     <ki-form-group
-      class="col-6"
+      class="col-4"
       [label]="'نوع شرکت'"
       [showRequireSign]="false"
       [errorMessage]="'فیلد اجباری'"
@@ -186,6 +186,27 @@
         name="companyType"
         #companyType="ngModel"
         [isloading]="lockupsIsLoading"
+      ></ki-select>
+    </ki-form-group>
+    <ki-form-group
+      class="col-4"
+      [label]="'وضعیت'"
+      [showRequireSign]="true"
+      [errorMessage]="'فیلد اجباری'"
+      [hideError]="
+        !(
+          (companyStatus.touched || companyForm.submitted) &&
+          companyStatus.errors?.required
+        )
+      "
+    >
+      <ki-select
+        [options]="companyStatusIdOptions"
+        [allowClear]="true"
+        [(ngModel)]="companyModel.stauesId"
+        name="companyStatus"
+        #companyStatus="ngModel"
+        required
       ></ki-select>
     </ki-form-group>
   </div>

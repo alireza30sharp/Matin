@@ -61,4 +61,7 @@ export class ApiUrlService {
     GetClientPrerequisits:
       BASE_URL + 'ClientPrerequisits/GetClientPrerequisits',
   };
+  report = {
+    GetReports: BASE_URL + 'Report/GetReports',
+  };
 }

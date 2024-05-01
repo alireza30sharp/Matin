@@ -20,7 +20,7 @@ export class CompanyService {
       this.urlSvc.company.getCompanies,
       {
         params: {
-          Id: params.Id,
+          CompanyId: params.Id,
           CityId: params.CityId,
           statuesId: params.statuesId,
           CompanyTypeId: params.CompanyTypeId,
@@ -75,10 +75,13 @@ export class CompanyService {
     });
   }
   getBarnameByLink(eid: any) {
-    return this.$http.get<response<any>>(this.urlSvc.barname.GetBarnameByLink, {
-      params: {
-        Id: eid,
-      },
-    });
+    return this.$http.post<response<any>>(
+      this.urlSvc.barname.GetBarnameByLink,
+      {
+        params: {
+          Id: eid,
+        },
+      }
+    );
   }
 }

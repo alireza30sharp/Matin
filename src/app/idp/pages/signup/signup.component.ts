@@ -261,7 +261,7 @@ export class SignupComponent implements OnInit {
       next: (res) => {
         this.signupLoading = false;
         if (res.isOk) {
-          if (this.authSvc.prepareSigning(res.data.refreshToken)) {
+          if (this.authSvc.prepareSigning(res.data.token)) {
             return;
           }
         }

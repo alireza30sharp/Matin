@@ -182,7 +182,7 @@
       <ki-select
         [options]="companyTypeOptions"
         [allowClear]="true"
-        [(ngModel)]="companyModel.companyType"
+        [(ngModel)]="companyModel.companyTypeId"
         name="companyType"
         #companyType="ngModel"
         [isloading]="lockupsIsLoading"
@@ -203,7 +203,7 @@
       <ki-select
         [options]="companyStatusIdOptions"
         [allowClear]="true"
-        [(ngModel)]="companyModel.stauesId"
+        [(ngModel)]="companyModel.statusId"
         name="companyStatus"
         #companyStatus="ngModel"
         required

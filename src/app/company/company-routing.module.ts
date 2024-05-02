@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LayoutComponent } from './pages/layout/layout.component';
 import { CompanyListComponent } from './pages/company-list/company-list.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { CompanyProfileComponent } from './pages';
 
 const routes: Routes = [
   // { path: '', redirectTo: 'auth', pathMatch: 'full' },
@@ -15,7 +16,11 @@ const routes: Routes = [
         path: 'list',
         component: CompanyListComponent,
       },
-     
+      {
+        path: 'profile',
+        component: CompanyProfileComponent,
+      },
+
       {
         path: 'dashboard',
         component: DashboardComponent,

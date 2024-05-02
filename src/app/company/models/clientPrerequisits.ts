@@ -14,6 +14,6 @@ export interface CacheDataInterface {
 export enum cacheKeyEnum {
   cities = 'cities',
   barname = 'barname-types-access',
-  companyStatuesType = 'company-statues-type',
+  companyStatusType = 'company-status-type',
   company_types = 'company-types',
 }

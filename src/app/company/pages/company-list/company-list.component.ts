@@ -4,7 +4,7 @@ import { Subject, debounceTime } from 'rxjs';
 import { CompanyService } from '../../services';
 import { ITabBarModel } from '@share/models';
 import { AgGridInterFace } from '@share/interfaces/ag-grid.interface';
-import { companyInput, companyInsert, companyModel } from '../../models';
+import { companyInput, companyModel } from '../../models';
 import { ToastService } from '@share/services';
 import { CompanyFormModalComponent } from '../../components/templates/company-form-modal/company-form-modal.component';
 import { ModalService } from '@share/services/modal.service';
@@ -39,11 +39,13 @@ export class CompanyListComponent implements OnInit {
   public favoriteColor = '#26ab3c';
   public rowSelection = 'multiple';
   public defaultColDef: AgGridInterFace = {
-    width: 300,
-    sortable: true,
-    resizable: true,
+    suppressSizeToFit: true,
     enableRowGroup: true,
     enablePivot: true,
+    sortable: true,
+    filterParams: true,
+    width: 300,
+    resizable: true,
     filter: true,
     floatingFilter: true,
     floatingFilterComponentParams: {
@@ -52,7 +54,7 @@ export class CompanyListComponent implements OnInit {
     flex: 1,
     minWidth: 200,
     enableValue: true,
-    filterParams: true,
+
     chartDataType: 'series',
   };
 
@@ -78,16 +80,16 @@ export class CompanyListComponent implements OnInit {
     {
       field: propertyOf<companyModel>('companyUniqCode'),
       headerName: 'کد شرکت',
-      filterParams: true,
-      suppressSizeToFit: true,
-      sortable: true,
       filter: 'agTextColumnFilter',
     },
     {
       field: propertyOf<companyModel>('companyName'),
       headerName: 'نام شرکت',
-      suppressSizeToFit: true,
-      sortable: true,
+      filter: 'agTextColumnFilter',
+    },
+    {
+      field: propertyOf<companyModel>('companyTypeName'),
+      headerName: 'نوع شرکت',
       filter: 'agTextColumnFilter',
     },
     {
@@ -97,51 +99,29 @@ export class CompanyListComponent implements OnInit {
     },
     {
       field: propertyOf<companyModel>('cityName'),
-      enableRowGroup: true,
-      enablePivot: true,
       headerName: 'نام شهر',
-      suppressSizeToFit: true,
-      sortable: true,
       filter: 'agTextColumnFilter',
     },
     {
       field: propertyOf<companyModel>('companyTel'),
       headerName: 'تلفن شرکت',
-      suppressSizeToFit: true,
-      sortable: true,
       filter: 'agTextColumnFilter',
     },
     {
       field: propertyOf<companyModel>('companyAddress'),
       headerName: 'آدرس شرکت',
-      suppressSizeToFit: true,
-      sortable: true,
+  
       filter: 'agTextColumnFilter',
     },
     {
       field: propertyOf<companyModel>('companyMobile'),
       headerName: 'تلفن شرکت',
-      suppressSizeToFit: true,
-      sortable: true,
       filter: 'agTextColumnFilter',
     },
 
     {
-      field: propertyOf<companyModel>('companyStatuesName'),
+      field: propertyOf<companyModel>('companyStatusName'),
       headerName: 'وضعیت',
-      enableRowGroup: true,
-      enablePivot: true,
-      suppressSizeToFit: true,
-      sortable: true,
-      filter: 'agTextColumnFilter',
-    },
-    {
-      field: propertyOf<companyModel>('companyTypeName'),
-      headerName: 'نوع شرکت',
-      suppressSizeToFit: true,
-      enableRowGroup: true,
-      enablePivot: true,
-      sortable: true,
       filter: 'agTextColumnFilter',
     },
   ];
@@ -155,13 +135,13 @@ export class CompanyListComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this._userAuthService.user$.subscribe((user) => {
-      this.companyInput.Id = user.companyId;
-      this.companyInput.CompanyName = user.companyName;
-      this.companyInput.CompanyTypeId = user.companyTypeId;
-      this.companyInput.CompanyUniqCode = user.uniqCode;
-      this.getCompanies();
-    });
+    this.getCompanies();
+    // this._userAuthService.user$.subscribe((user) => {
+    //   this.companyInput.Id = user.companyId;
+    //   this.companyInput.CompanyName = user.companyName;
+    //   this.companyInput.CompanyTypeId = user.companyTypeId;
+    //   this.companyInput.CompanyUniqCode = user.uniqCode;
+    // });
   }
 
   getCompanies() {
@@ -173,9 +153,6 @@ export class CompanyListComponent implements OnInit {
     });
   }
   displayActivePage(ev: any) {
-    this.companyInput.PageSize = this.pageSize;
-    this.companyInput.PageNumber = this.page;
-
     this.getCompanies();
   }
   onSelectedRowsChangeEvent(event: Array<companyModel>) {
@@ -224,7 +201,7 @@ export class CompanyListComponent implements OnInit {
     // }, 900);
   }
   editSelected() {}
-  updateOrInsertCompany(model: companyInsert) {
+  updateOrInsertCompany(model: companyModel) {
     this.companyService.updateCompany(model).subscribe((res) => {
       if (res.isOk) {
         this._toaster.success(res.messages.join(''));

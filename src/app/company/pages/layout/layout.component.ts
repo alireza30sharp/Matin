@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UserAuthService } from '@services';
 
 @Component({
   selector: 'app-layout',
@@ -6,8 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./layout.component.scss'],
 })
 export class LayoutComponent {
-  toggle: boolean = false;
+  constructor(private _userAuthService:UserAuthService){
 
+  }
+  toggle: boolean = false;
+  logout(){
+this._userAuthService.signing()
+  }
   toggleChange() {
     if (this.toggle) {
       document.body.classList.add('dark');

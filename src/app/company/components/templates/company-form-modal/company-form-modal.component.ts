@@ -3,7 +3,7 @@ import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { LoadingStateFrom } from '@share/models/loadingState';
 import { ToastService } from '@share/services';
 import { finalize } from 'rxjs';
-import { companyInsert } from 'src/app/company/models';
+import {  companyModel } from 'src/app/company/models';
 import { CompanyService } from 'src/app/company/services';
 @Component({
   selector: 'app-company-form-modal',
@@ -16,7 +16,7 @@ export class CompanyFormModalComponent
   implements OnInit
 {
   @Input() entryId?: number;
-  initialData?: companyInsert = new companyInsert();
+  initialData?: companyModel = new companyModel();
   readonly submitButtonId: string = 'submit-button';
   isEditMode?: boolean;
   isLoading?: boolean;
@@ -45,7 +45,7 @@ export class CompanyFormModalComponent
       this.isLoading = false;
     }, 100);
   }
-  saveHandler(data: companyInsert) {
+  saveHandler(data: companyModel) {
     this.isResetForm = Object.assign(false, false);
     if (this.isLoadingForm) {
       this._toastService.error('::Please_Wait_While_Executing_The_Request');

@@ -5,50 +5,51 @@ export interface companyInterFace {
   companyPassword: any;
   companyTel?: any;
   companyAddress?: any;
-  companyType?: any;
+  companyTypeId?: any;
   companyMobile: any;
   email: any;
 }
-export class companyInsert {
-  companyId: number;
-  companyUniqCode: string;
-  companyName: string;
-  cityId: number;
-  companyPassword: string;
-  companyTel: string;
-  companyAddress: string;
-  companyType: number;
-  stauesId: number;
-  companyMobile: string;
-  email: string;
-  id?: number;
-}
+// export class companyInsert {
+//   companyId: number;
+//   companyUniqCode: string;
+//   companyName: string;
+//   cityId: number;
+//   companyPassword: string;
+//   companyTel: string;
+//   companyAddress: string;
+//   companyTypeId: number;
+//   statusId: number;
+//   companyMobile: string;
+//   email: string;
+//   id?: number;
+// }
 
 export class companyModel {
-  row_NO: number;
+  row_NO?: number;
   companyId: number;
   companyUniqCode: string;
   companyName: string;
   cityId: number;
-  cityName: string;
+  cityName?: string;
   companyTel: string;
+  companyPassword?:string;
   companyAddress: string;
   companyMobile: string;
   statusId: number;
   companyTypeId: number;
-  companyStatuesName: string;
-  companyTypeName: string;
+  companyStatusName?: string;
+  companyTypeName?: string;
+  email: string;
 }
 
 export class companyInput {
-  CompanyUniqCode: string = '';
-  CompanyName: string = '';
-  Id: number = 0;
-  CityId: number = 0;
-  statuesId: number = 0;
-  CompanyTypeId: number = 0;
+  companyUniqCode: string = '';
+  companyName: string = '';
+  companyId: number = 0;
+  cityId: number = 0;
+  statusId: number = 0;
+  companyTypeId: number = 0;
   PageNumber: number = 1;
   PageSize: number = 20;
-  SelectFrom: number = 0;
-  SelectCount: number = 0;
+
 }

@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {
   companyInput,
-  companyInsert,
   companyInterFace,
   companyModel,
 } from '../models';
@@ -16,20 +15,20 @@ export class CompanyService {
   ) {}
 
   getCompanies(params?: companyInput) {
+ let   PageNumber: number = 1;
+ let  PageSize: number = 20;
     return this.$http.get<response<Data<companyModel[]>>>(
       this.urlSvc.company.getCompanies,
       {
         params: {
-          CompanyId: params.Id,
-          CityId: params.CityId,
-          statuesId: params.statuesId,
-          CompanyTypeId: params.CompanyTypeId,
-          CompanyUniqCode: params.CompanyUniqCode,
-          CompanyName: params.CompanyName,
-          PageNumber: params.PageNumber,
-          PageSize: params.PageSize,
-          SelectFrom: params.SelectFrom,
-          SelectCount: params.SelectCount,
+          CompanyId: params.companyId,
+          CityId: params.cityId,
+          statusId: params.statusId,
+          CompanyTypeId: params.companyTypeId,
+          CompanyUniqCode: params.companyUniqCode,
+          CompanyName: params.companyName,
+          PageNumber: PageNumber,
+          PageSize:PageSize,
         },
       }
     );
@@ -42,13 +41,13 @@ export class CompanyService {
     );
   }
 
-  updateCompany(model: companyInsert) {
+  updateCompany(model: companyModel) {
     return this.$http.put<response<string>>(
       this.urlSvc.company.updateCompany,
       model
     );
   }
-  createCompany(model: companyInterFace) {
+  createCompany(model: companyModel) {
     return this.$http.post<response<any>>(
       this.urlSvc.company.addCompany,
       model

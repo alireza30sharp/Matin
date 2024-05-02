@@ -1,0 +1,26 @@
+<app-general-panel
+  [title]="'پروفایل'"
+  [hideBackButton]="true"
+  [height]="'100%'"
+  [contentOverflow]="'hidden'"
+>
+  <app-company-form
+    [submitButtonId]="submitButtonId"
+    [companyModel]="initialData"
+    [isResetForm]="isResetForm"
+    (submitCallback)="saveHandler($event)"
+  >
+  </app-company-form>
+  <ng-template #footer>
+    <ki-button
+      class="mx-2"
+      type="submit"
+      [btnType]="'primary'"
+      [varient]="'fill'"
+      [showLoading]="isLoading"
+      [for]="submitButtonId"
+      [title]="'ذخیره'"
+    >
+    </ki-button>
+  </ng-template>
+</app-general-panel>

@@ -6,29 +6,21 @@
   </a>
   <ul class="side-menu">
     <li routerLinkActive="active">
-      <a routerLink="dashboard"><i class="bx bxs-dashboard"></i>Dashboard</a>
+      <a routerLink="dashboard"><i class="bx bxs-dashboard"></i>داشبورد</a>
     </li>
     <li routerLinkActive="active">
-      <a routerLink="list"><i class="bx bx-store-alt"></i>company List</a>
+      <a routerLink="list"><i class="bx bx-store-alt"></i>لیست شرکت ها</a>
     </li>
-    <!-- <li>
-      <a href="#"><i class="bx bx-analyse"></i>Analytics</a>
+    <li routerLinkActive="active">
+      <a routerLink="profile"><i class="bx bx-user"></i>پروفایل</a>
     </li>
-    <li>
-      <a href="#"><i class="bx bx-message-square-dots"></i>Tickets</a>
-    </li>
-    <li>
-      <a href="#"><i class="bx bx-group"></i>Users</a>
-    </li>
-    <li>
-      <a href="#"><i class="bx bx-cog"></i>Settings</a>
-    </li> -->
+  
   </ul>
   <ul class="side-menu">
-    <li>
-      <a href="#" class="logout">
+    <li (click)="logout()">
+      <a class="logout">
         <i class="bx bx-log-out-circle"></i>
-        Logout
+        خروج
       </a>
     </li>
   </ul>

@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Form } from '@angular/forms';
 import { SelectOptionInterface } from '@share/interfaces/select-option.interface';
-import { companyInsert } from 'src/app/company/models';
+import { companyModel } from 'src/app/company/models';
 import {
   cacheKeyEnum,
   clientPrerequisitsInterface,
@@ -14,13 +14,13 @@ import { ClientPrerequisitsService } from 'src/app/company/services/client-prere
 })
 export class CompanyFormComponent implements OnInit {
   @Input() submitButtonId?: string = 'submit-button';
-  @Input() companyModel: companyInsert = new companyInsert();
+  @Input() companyModel: companyModel = new companyModel();
   @Input() set isResetForm(reset: boolean) {
     if (reset) {
-      this.companyModel = new companyInsert();
+      this.companyModel = new companyModel();
     }
   }
-  @Output() submitCallback = new EventEmitter<companyInsert>();
+  @Output() submitCallback = new EventEmitter<companyModel>();
   listclientPrerequisits: clientPrerequisitsInterface[];
   cityOptions?: SelectOptionInterface<any>[];
   companyTypeOptions?: SelectOptionInterface<any>[];

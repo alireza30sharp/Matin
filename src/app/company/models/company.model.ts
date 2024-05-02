@@ -2,7 +2,7 @@ export interface companyInterFace {
   companyUniqCode?: any;
   CompanyName: any;
   cityId?: any;
-  companyPassword: any;
+  companyPassword?: any;
   companyTel?: any;
   companyAddress?: any;
   companyTypeId?: any;

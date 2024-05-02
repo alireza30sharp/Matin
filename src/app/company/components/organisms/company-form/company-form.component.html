@@ -67,7 +67,7 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-4">
+    <div class="col-4" *ngIf="hidePassword">
       <ki-form-group
         class=""
         [label]="'رمز عبور'"

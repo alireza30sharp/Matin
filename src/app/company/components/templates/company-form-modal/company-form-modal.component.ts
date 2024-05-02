@@ -21,6 +21,7 @@ export class CompanyFormModalComponent
   isEditMode?: boolean;
   isLoading?: boolean;
   isResetForm?: boolean;
+  hidePassword?:boolean=false
   ngOnInit(): void {
     this.isEditMode = !!this.entryId;
     this._getInitialData();
@@ -33,20 +34,25 @@ export class CompanyFormModalComponent
     super();
   }
   private _getInitialData() {
-    this.isLoading = true;
+  
     if (this.isEditMode) {
+      this.hidePassword=false;
       this._companyService.getCompaniyById(this.entryId).subscribe((res) => {
         if (res.isOk) {
           this.initialData = res.data;
         }
+        this.isLoading = false;
       });
     }
-    setTimeout(() => {
-      this.isLoading = false;
-    }, 100);
+    else
+    {
+      this.hidePassword=true;
+    }
+   
   }
   saveHandler(data: companyModel) {
     this.isResetForm = Object.assign(false, false);
+    this.isLoading = true;
     if (this.isLoadingForm) {
       this._toastService.error('::Please_Wait_While_Executing_The_Request');
       return;
@@ -57,6 +63,7 @@ export class CompanyFormModalComponent
         .updateCompany(data as any)
         .pipe(
           finalize(() => {
+            this.isLoading = false;
             this.finalize();
           })
         )
@@ -84,6 +91,7 @@ export class CompanyFormModalComponent
         .createCompany(data as any)
         .pipe(
           finalize(() => {
+            this.isLoading = false;
             this.finalize();
           })
         )

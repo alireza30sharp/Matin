@@ -159,6 +159,9 @@ export class CompanyListComponent implements OnInit {
     this.selectRow = new Array<companyModel>();
     this.selectRow = event;
   }
+  onRefrashSelected(){
+    this.getCompanies();
+  }
   onDeleteItem(item: companyModel) {
     this.companyService.deleteCompany(item.companyId).subscribe((res) => {
       if (res.isOk) {

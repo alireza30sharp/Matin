@@ -20,6 +20,7 @@ export class CompanyFormComponent implements OnInit {
       this.companyModel = new companyModel();
     }
   }
+  @Input() hidePassword:boolean=false;
   @Output() submitCallback = new EventEmitter<companyModel>();
   listclientPrerequisits: clientPrerequisitsInterface[];
   cityOptions?: SelectOptionInterface<any>[];

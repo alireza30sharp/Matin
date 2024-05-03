@@ -7,6 +7,7 @@ import {
   Output,
 } from '@angular/core';
 import { Router } from '@angular/router';
+import { SizeType } from '@share/types/size.type';
 @Component({
   selector: 'app-tools-bar',
   templateUrl: './tools-bar.component.html',
@@ -19,6 +20,7 @@ export class ToolsBarComponent implements OnInit {
   @Output() PerintSelected: EventEmitter<void> = new EventEmitter();
   @Output () RefrashSelected: EventEmitter<void> = new EventEmitter();
   @Input() disabled: boolean = false;
+  @Input() sizeBtn?: SizeType='lg';
   constructor() {}
 
   addEvent() {

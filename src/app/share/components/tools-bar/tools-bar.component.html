@@ -5,6 +5,7 @@
     [iconClassName]="'fa-solid fa-arrow-rotate-left'"
     [title]="'انصراف ESc'"
     (click)="escapeEvent()"
+    [size]="sizeBtn"
     class="mx-2 f-10"
   ></ki-button>
   <ki-button
@@ -12,6 +13,7 @@
     btnType="danger"
     [iconClassName]="'fa-solid fa-screwdriver-wrench'"
     [title]="'ابزار'"
+    [size]="sizeBtn"
     class="mx-2 f-10"
   ></ki-button>
   <ki-button
@@ -20,6 +22,7 @@
     [iconClassName]="'fa-solid fa-arrows-rotate'"
     [title]="'بروز رسانی F5'"
     (click)="refrashEvent()"
+    [size]="sizeBtn"
     class="mx-2 f-10"
   ></ki-button>
   <ki-button
@@ -27,6 +30,7 @@
     btnType="danger"
     [iconClassName]="'fa-solid fa-circle-info'"
     [title]="'اطلاعات تماس'"
+    [size]="sizeBtn"
     class="mx-2 f-10"
   ></ki-button>
   <ki-button
@@ -34,12 +38,14 @@
     btnType="danger"
     [iconClassName]="'fa-solid fa-print'"
     [title]="'چاپ P'"
+    [size]="sizeBtn"
     (click)="perintEvent()"
     class="mx-2 f-10"
   ></ki-button>
   <ki-button
     [varient]="'outline'"
     btnType="danger"
+    [size]="sizeBtn"
     [iconClassName]="'fa-solid fa-file-excel'"
     [title]="'اکسل'"
     class="mx-2 f-10"
@@ -49,6 +55,7 @@
     btnType="danger"
     [iconClassName]="'fa-regular fa-circle-check'"
     [title]="'انتخاب'"
+    [size]="sizeBtn"
     class="mx-2 f-10"
   ></ki-button>
   <ki-button
@@ -57,6 +64,7 @@
     btnType="danger"
     [iconClassName]="'fas fa-trash-alt'"
     [title]="'حذف ctrlKey+D'"
+    [size]="sizeBtn"
     (click)="deleteEvent()"
     class="mx-2 f-10"
   ></ki-button>
@@ -66,6 +74,7 @@
     [iconClassName]="'fas fa-edit'"
     [title]="'اصلاح F3'"
     (click)="editEvent()"
+    [size]="sizeBtn"
     [disabled]="disabled"
     class="mx-2 f-10"
   ></ki-button>
@@ -76,31 +85,8 @@
     [iconClassName]="'fas fa-plus '"
     [title]="'جدید F2'"
     (click)="addEvent()"
+    [size]="sizeBtn"
     class="mx-2 f-10"
   ></ki-button>
 
-  <!-- <div ngbDropdown class="dropdown">
-    <button
-      tabindex="3"
-      ngbDropdownToggle
-      class="btn f-12"
-      type="button"
-      id="dropdownMenuButton1"
-      aria-expanded="false"
-    >
-      گزارشات
-    </button>
-    <ul ngbDropdownMenu aria-labelledby="dropdownMenuButton1">
-      <li class="f-12 text-end" tabindex="4">
-        <a ngbDropdownItem href="#">
-          <i class="fas fa-file-excel icon"></i> خروجی اکسل
-        </a>
-      </li>
-      <li class="f-12 text-end" tabindex="5">
-        <a ngbDropdownItem href="#">
-          <i class="fas fa-file-pdf icon"></i> خروجی پی‌دی‌اف
-        </a>
-      </li>
-    </ul>
-  </div> -->
 </div>

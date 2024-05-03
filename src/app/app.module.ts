@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { Route, Router, RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LicenseManager } from 'ag-grid-enterprise';
+import { NgxPermissionsModule, NgxPermissionsService } from 'ngx-permissions';
+
 import 'ag-grid-enterprise';
 import {
   HttpClientModule,
@@ -26,6 +28,8 @@ import { NgProgressHttpModule } from 'ngx-progressbar/http';
 import { NgProgressRouterModule } from 'ngx-progressbar/router';
 import { CommonModule } from '@angular/common';
 import { LoadingComponent } from './loading/loading.component';
+import { ClientPrerequisitsService } from './company/services/client-prerequisits';
+import { cacheKeyEnum } from './company/models/clientPrerequisits';
 export function MobileCheckServiceFactory(startupService: MobileCheckService) {
   return () => startupService.mobileCheck();
 }
@@ -48,6 +52,7 @@ export function AppTokenStartup(authSvc: svc.UserAuthService) {
     HttpClientModule,
     NgProgressModule,
     ShareModule.forRoot(),
+    NgxPermissionsModule.forRoot(),
     AppRoutingModule,
     NgbModule,
     AppRoutingModule,
@@ -76,6 +81,24 @@ export function AppTokenStartup(authSvc: svc.UserAuthService) {
         spinnerPosition: 'left',
         color: '#019DA4',
       },
+    },
+    {
+      provide: APP_INITIALIZER,
+      useFactory: (ds: ClientPrerequisitsService, ps: NgxPermissionsService) =>
+        function () {
+          let cacheKeyType = cacheKeyEnum;
+          return ds.getClientPrerequisits().subscribe((res) => {
+            debugger;
+            let keys = res.data
+              .find((f) => f.cacheKey == cacheKeyType.company_types)
+              .cacheData.map((item) => {
+                return item.code.toString();
+              });
+            return ps.loadPermissions(keys);
+          });
+        },
+      deps: [ClientPrerequisitsService, NgxPermissionsService],
+      multi: true,
     },
   ],
   bootstrap: [AppComponent],

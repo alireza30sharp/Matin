@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Form } from '@angular/forms';
 import { SelectOptionInterface } from '@share/interfaces/select-option.interface';
+import { idpEnum } from '@share/models/idp.model';
 import { companyModel } from 'src/app/company/models';
 import {
   cacheKeyEnum,
@@ -26,7 +27,7 @@ export class CompanyFormComponent implements OnInit {
   cityOptions?: SelectOptionInterface<any>[];
   companyTypeOptions?: SelectOptionInterface<any>[];
   companyStatusIdOptions?: SelectOptionInterface<any>[];
-
+  idpEnum=idpEnum;
   lockupsIsLoading: boolean = false;
   typePassword: boolean = true;
   cacheKeyType = cacheKeyEnum;

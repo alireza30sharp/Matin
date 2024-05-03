@@ -8,7 +8,7 @@
     <li routerLinkActive="active">
       <a routerLink="dashboard"><i class="bx bxs-dashboard"></i>داشبورد</a>
     </li>
-    <li routerLinkActive="active">
+    <li routerLinkActive="active" *ngxPermissionsOnly="[idpEnum.kiaSystem]">
       <a routerLink="list"><i class="bx bx-store-alt"></i>لیست شرکت ها</a>
     </li>
     <li routerLinkActive="active">

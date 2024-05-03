@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { UserAuthService } from '@services';
+import { idpEnum } from '@share/models/idp.model';
 
 @Component({
   selector: 'app-layout',
@@ -11,6 +12,7 @@ export class LayoutComponent {
 
   }
   toggle: boolean = false;
+  idpEnum=idpEnum;
   logout(){
 this._userAuthService.signing()
   }

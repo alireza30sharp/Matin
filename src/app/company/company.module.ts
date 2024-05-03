@@ -17,6 +17,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { ShareModule } from '@share/share.module';
 import { ClientPrerequisitsService } from './services/client-prerequisits';
 import { CompanyProfileComponent } from './pages';
+import { NgxPermissionsModule } from 'ngx-permissions';
 export function MobileCheckServiceFactory(startupService: MobileCheckService) {
   return () => startupService.mobileCheck();
 }
@@ -42,6 +43,9 @@ export function MobileCheckServiceFactory(startupService: MobileCheckService) {
     NgbModule,
     HighchartsChartModule,
     DragDropModule,
+    NgxPermissionsModule.forChild({
+      permissionsIsolate: true, 
+      rolesIsolate: true})
   ],
   providers: [
     {

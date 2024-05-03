@@ -168,6 +168,7 @@
       ></ki-input>
     </ki-form-group>
     <ki-form-group
+    *ngxPermissionsOnly="[idpEnum.kiaSystem]"
       class="col-4"
       [label]="'نوع شرکت'"
       [showRequireSign]="false"

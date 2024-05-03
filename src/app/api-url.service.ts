@@ -50,6 +50,8 @@ export class ApiUrlService {
     preRegisterCompany: BASE_URL + 'Company/PreRegisterCompany',
     deleteCompany: BASE_URL + 'Company/DeleteCompany',
     updateCompany: BASE_URL + 'Company/updateCompany',
+    updateCompanyPassword: BASE_URL + 'Company/UpdateCompanyPassword',
+
     addCompany: BASE_URL + 'Company/AddCompany',
     getCompaniyById: BASE_URL + 'Company/GetCompaniyById',
   };

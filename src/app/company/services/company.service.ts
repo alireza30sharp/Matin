@@ -4,6 +4,7 @@ import {
   companyInput,
   companyInterFace,
   companyModel,
+  updateCompanyPasswordDto,
 } from '../models';
 import { ApiUrlService } from '@services';
 import { Data, response } from '@share/models/response.model';
@@ -44,6 +45,12 @@ export class CompanyService {
   updateCompany(model: companyModel) {
     return this.$http.put<response<string>>(
       this.urlSvc.company.updateCompany,
+      model
+    );
+  }
+  updatePasswordCompany(model: updateCompanyPasswordDto) {
+    return this.$http.put<response<string>>(
+      this.urlSvc.company.updateCompanyPassword,
       model
     );
   }

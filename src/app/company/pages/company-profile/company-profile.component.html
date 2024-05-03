@@ -4,13 +4,32 @@
   [height]="'100%'"
   [contentOverflow]="'hidden'"
 >
+<ki-tab-group
+#tab
+[height]="'100%'"
+[noLayout]="true"
+[bordered]="true"
+[overflow]="'auto'"
+[isSticky]="true"
+>
+<ki-tab [text]="' اطلاعات تکمیلی'" (click)="submitButtonId='info'">
   <app-company-form
-    [submitButtonId]="submitButtonId"
+    [submitButtonId]="formSubmitButtonIds['info']"
     [companyModel]="initialData"
     [isResetForm]="false"
     (submitCallback)="saveHandler($event)"
   >
   </app-company-form>
+</ki-tab>
+<ki-tab [text]="'تغییر رمز عبور'" (click)="submitButtonId='pass'">
+  <app-company-password-change
+    [submitButtonId]="formSubmitButtonIds['pass']"
+    (submitCallback)="savePasswordHandler($event)"
+  >
+  </app-company-password-change>
+</ki-tab>
+</ki-tab-group>
+ 
   <ng-template #footer>
     <ki-button
       class="mx-2"
@@ -18,7 +37,7 @@
       [btnType]="'primary'"
       [varient]="'fill'"
       [showLoading]="isLoading"
-      [for]="submitButtonId"
+      (clickCallback)="saveClickHandler()"
       [title]="'ذخیره'"
     >
     </ki-button>

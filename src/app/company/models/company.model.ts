@@ -9,20 +9,7 @@ export interface companyInterFace {
   companyMobile: any;
   email: any;
 }
-// export class companyInsert {
-//   companyId: number;
-//   companyUniqCode: string;
-//   companyName: string;
-//   cityId: number;
-//   companyPassword: string;
-//   companyTel: string;
-//   companyAddress: string;
-//   companyTypeId: number;
-//   statusId: number;
-//   companyMobile: string;
-//   email: string;
-//   id?: number;
-// }
+
 
 export class companyModel {
   row_NO?: number;
@@ -52,4 +39,11 @@ export class companyInput {
   PageNumber: number = 1;
   PageSize: number = 20;
 
+}
+
+export class updateCompanyPasswordDto{
+companyUniqCode: string;
+oldPassword: string;
+newPassword: string;
+  
 }

@@ -23,6 +23,7 @@ export function MobileCheckServiceFactory(startupService: MobileCheckService) {
 @NgModule({
   declarations: [
     _organisms.CompanyFormComponent,
+    _organisms.CompanyPasswordChangeComponent,
     _templates.CompanyFormModalComponent,
     CompanyListComponent,
     CompanyProfileComponent,

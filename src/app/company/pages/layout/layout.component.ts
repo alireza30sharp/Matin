@@ -9,7 +9,6 @@ import { idpEnum } from '@share/models/idp.model';
 })
 export class LayoutComponent {
   constructor(private _userAuthService:UserAuthService){
-
   }
   toggle: boolean = false;
   idpEnum=idpEnum;

@@ -43,9 +43,7 @@ export function MobileCheckServiceFactory(startupService: MobileCheckService) {
     NgbModule,
     HighchartsChartModule,
     DragDropModule,
-    NgxPermissionsModule.forChild({
-      permissionsIsolate: true, 
-      rolesIsolate: true})
+  
   ],
   providers: [
     {

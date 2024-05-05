@@ -25,6 +25,7 @@ import { SafeIframeUrlPipe } from './ki-components/ki-iframe/safe-iframe-url.pip
 import { MainTemplateMobileComponent } from '../dashboard/main-template-mobile/main-template-mobile.component';
 import { DashboardComponent } from '../dashboard/dashboard.component';
 import { AuthInterceptorService } from '../services/auth-interceptor.service';
+import { NgxPermissionsModule } from 'ngx-permissions';
 const component = [
   kiComponent.KiButtonComponent,
   kiComponent.KiCheckboxComponent,
@@ -88,6 +89,7 @@ const component = [
     DynamicModule,
     ReactiveFormsModule,
     TreeModule,
+    NgxPermissionsModule,
     ToastrModule.forRoot({
       timeOut: 1000,
       positionClass: 'toast-bottom-right',
@@ -114,6 +116,7 @@ const component = [
     _sharePipe.SafeUrlPipe,
     DynamicModule,
     ReactiveFormsModule,
+    NgxPermissionsModule,
     Ag.AgGridModule,
     _shareCmp.PinCodeComponent,
     _shareCmp.TreeRootComponent,

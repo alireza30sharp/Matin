@@ -84,20 +84,14 @@ export function AppTokenStartup(authSvc: svc.UserAuthService) {
     },
     {
       provide: APP_INITIALIZER,
-      useFactory: (ds: ClientPrerequisitsService, ps: NgxPermissionsService) =>
+      useFactory: (ds: svc.UserAuthService, ps: NgxPermissionsService) =>
         function () {
-          let cacheKeyType = cacheKeyEnum;
-          return ds.getClientPrerequisits().subscribe((res) => {
-            debugger;
-            let keys = res.data
-              .find((f) => f.cacheKey == cacheKeyType.company_types)
-              .cacheData.map((item) => {
-                return item.code.toString();
-              });
-            return ps.loadPermissions(keys);
+          return ds.user$.subscribe((res) => {
+            let keys = res.companyTypeId
+            return ps.loadPermissions([keys.toString()]);
           });
         },
-      deps: [ClientPrerequisitsService, NgxPermissionsService],
+      deps: [svc.UserAuthService, NgxPermissionsService],
       multi: true,
     },
   ],

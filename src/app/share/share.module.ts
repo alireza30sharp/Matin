@@ -72,7 +72,6 @@ const component = [
     _shareDir.DefaultImage,
     _shareCmp.PinCodeComponent,
     _shareCmp.FromComponent,
-    _shareCmp.ModalAddEditNodeComponent,
     _shareCmp.ChartLoadingComponent,
     _shareCmp.PostLoadingComponent,
     _shareCmp.SkeletonLoadingComponent,
@@ -86,7 +85,6 @@ const component = [
     FormsModule,
     DynamicModule,
     ReactiveFormsModule,
-    TreeModule,
     NgxPermissionsModule,
     ToastrModule.forRoot({
       timeOut: 1000,

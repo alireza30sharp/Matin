@@ -1,11 +1,15 @@
 import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
+import { UserAuthService } from '@services';
 import { AgGridInterFace } from '@share/interfaces/ag-grid.interface';
+import { ReportService } from '@share/services/report.service';
 @Component({
   selector: 'app-report-list',
   templateUrl: './report-list.component.html',
   styleUrls: ['./report-list.component.scss'],
+  providers: [ReportService],
 })
 export class ReportListComponent implements OnInit, AfterViewInit {
+  CompanyId: number;
   public defaultColDef: AgGridInterFace = {
     width: 300,
 
@@ -100,13 +104,31 @@ export class ReportListComponent implements OnInit, AfterViewInit {
       nameFile: 'Rep_2188',
     },
   ];
-  constructor() {}
+  constructor(
+    private _userAuthService: UserAuthService,
+    private _reportService: ReportService
+  ) {
+    this._userAuthService.user$.subscribe((user) => {
+      this.CompanyId = user.companyId;
+    });
+  }
   onSelectedRowsChangeEvent(e) {}
   ngAfterViewInit(): void {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getReports();
+  }
   removeCell() {}
-
+  getReports() {
+    this._reportService.GetReports(0, this.CompanyId).subscribe({
+      next: (res) => {
+        console.log(res);
+      },
+      error: (e) => {
+        console.log(e);
+      },
+    });
+  }
   openModal() {}
   onDesignerclickEvent(e) {}
 }

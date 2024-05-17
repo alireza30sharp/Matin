@@ -18,7 +18,7 @@ $name: 'general-panel';
     background-color:var(--top-header);
     z-index: 12;
     padding: $side-distance;
-    direction: ltr;
+
     &::after {
       position: absolute;
       content: '';

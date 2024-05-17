@@ -17,13 +17,12 @@
     [isShowToolbar]="_isEditMode"
   ></app-tools-bar>
   <!-- [rowClassRules]="rowClassRules" -->
-
   <ag-grid-angular
     id="myGrid"
     [id]="idGrid"
     [class]="class"
     [columnDefs]="columnsTable"
-    [suppressAggFuncInHeader]="true"
+    [suppressAggFuncInHeader]="false"
     [suppressRowClickSelection]="suppressRowClickSelection"
     [rowGroupPanelShow]="'always'"
     [pivotPanelShow]="'always'"
@@ -32,9 +31,6 @@
     [autoGroupColumnDef]="autoGroupColumnDef"
     [rowData]="rowData"
     [rowSelection]="rowSelection"
-    (columnGroupOpened)="changeModel.next()"
-    (filterChanged)="changeModel.next()"
-    (gridColumnsChanged)="changeModel.next()"
     [gridOptions]="gridOptions"
     (selectionChanged)="onSelectionChanged()"
     (gridReady)="onGridReady($event)"
@@ -42,9 +38,11 @@
     [enableFillHandle]="enableFillHandle"
     [undoRedoCellEditing]="undoRedoCellEditing"
     [undoRedoCellEditingLimit]="undoRedoCellEditingLimit"
-    [enableCellChangeFlash]="enableCellChangeFlash"
+    [enableCellChangeFlash]="false"
     [suppressAggFuncInHeader]="suppressAggFuncInHeader"
     [getRowId]="getRowId"
+    [loadingCellRenderer]="loadingCellRenderer"
+    [loadingCellRendererParams]="loadingCellRendererParams"
     [pivotPanelShow]="pivotPanelShow"
     [rowHeight]="50"
     [pagination]="pagination"

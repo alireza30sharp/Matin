@@ -2,59 +2,48 @@ export interface companyInterFace {
   companyUniqCode?: any;
   CompanyName: any;
   cityId?: any;
-  companyPassword: any;
+  companyPassword?: any;
   companyTel?: any;
   companyAddress?: any;
-  companyType?: any;
+  companyTypeId?: any;
   companyMobile: any;
   email: any;
 }
-export class companyInsert {
+
+
+export class companyModel {
+  row_NO?: number;
   companyId: number;
   companyUniqCode: string;
   companyName: string;
   cityId: number;
-  companyPassword: string;
+  cityName?: string;
   companyTel: string;
+  companyPassword?:string;
   companyAddress: string;
-  companyType: number;
-  stauesId: number;
   companyMobile: string;
-  email: string;
-  id?: number;
-}
-export class companyModel {
-  id: number;
-  cityName: string;
-  componyTel: string;
-  componyAddress: string;
-  companyMobile: any;
   statusId: number;
-  companyType: number;
   companyTypeId: number;
-  companyStatuesName: string;
-  companyTypeName: string;
-  companyUniqCode: string;
-  CompanyName: string;
-  companyPassword: string;
-  companyTel: string;
+  companyStatusName?: string;
+  companyTypeName?: string;
   email: string;
-  cityId: number;
-  componyName: string;
-  companyAddress: string;
-  componyUniqCode: string;
-  row_NO: number;
 }
 
 export class companyInput {
-  CompanyUniqCode: string = '';
-  CompanyName: string = '';
-  Id: number = 0;
-  CityId: number = 0;
-  statuesId: number = 0;
-  CompanyTypeId: number = 0;
+  companyUniqCode: string = '';
+  companyName: string = '';
+  companyId: number = 0;
+  cityId: number = 0;
+  statusId: number = 0;
+  companyTypeId: number = 0;
   PageNumber: number = 1;
   PageSize: number = 20;
-  SelectFrom: number = 0;
-  SelectCount: number = 0;
+
+}
+
+export class updateCompanyPasswordDto{
+companyUniqCode: string;
+oldPassword: string;
+newPassword: string;
+  
 }

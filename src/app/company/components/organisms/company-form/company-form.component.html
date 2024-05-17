@@ -67,7 +67,7 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-4">
+    <div class="col-4" *ngIf="hidePassword">
       <ki-form-group
         class=""
         [label]="'رمز عبور'"
@@ -147,7 +147,7 @@
   </div>
   <div class="row">
     <ki-form-group
-      class="col-6"
+      class="col-4"
       [label]="'ایمیل'"
       [showRequireSign]="true"
       [errorMessage]="email.errors?.isInvalid ? 'فرمت اشتباه' : 'فیلد اجباری'"
@@ -168,7 +168,8 @@
       ></ki-input>
     </ki-form-group>
     <ki-form-group
-      class="col-6"
+    *ngxPermissionsOnly="[idpEnum.kiaSystem]"
+      class="col-4"
       [label]="'نوع شرکت'"
       [showRequireSign]="false"
       [errorMessage]="'فیلد اجباری'"
@@ -182,10 +183,31 @@
       <ki-select
         [options]="companyTypeOptions"
         [allowClear]="true"
-        [(ngModel)]="companyModel.companyType"
+        [(ngModel)]="companyModel.companyTypeId"
         name="companyType"
         #companyType="ngModel"
         [isloading]="lockupsIsLoading"
+      ></ki-select>
+    </ki-form-group>
+    <ki-form-group
+      class="col-4"
+      [label]="'وضعیت'"
+      [showRequireSign]="true"
+      [errorMessage]="'فیلد اجباری'"
+      [hideError]="
+        !(
+          (companyStatus.touched || companyForm.submitted) &&
+          companyStatus.errors?.required
+        )
+      "
+    >
+      <ki-select
+        [options]="companyStatusIdOptions"
+        [allowClear]="true"
+        [(ngModel)]="companyModel.statusId"
+        name="companyStatus"
+        #companyStatus="ngModel"
+        required
       ></ki-select>
     </ki-form-group>
   </div>

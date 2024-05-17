@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { UserAuthService } from '@services';
+import { idpEnum } from '@share/models/idp.model';
 
 @Component({
   selector: 'app-layout',
@@ -6,8 +8,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./layout.component.scss'],
 })
 export class LayoutComponent {
+  constructor(private _userAuthService:UserAuthService){
+  }
   toggle: boolean = false;
-
+  idpEnum=idpEnum;
+  logout(){
+this._userAuthService.signing()
+  }
   toggleChange() {
     if (this.toggle) {
       document.body.classList.add('dark');

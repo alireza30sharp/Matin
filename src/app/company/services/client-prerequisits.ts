@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {
   companyInput,
-  companyInsert,
   companyInterFace,
   companyModel,
 } from '../models';
@@ -32,7 +31,7 @@ export class ClientPrerequisitsService {
             Keys: [
               'cities',
               'barname-types-access',
-              'company-statues-type',
+              'company-status-type',
               'company-types',
             ],
           },

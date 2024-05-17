@@ -65,7 +65,7 @@
     <ng-container *ngIf="!!iconClassName"
       ><span class="ki-button__icon" [class]="iconClassName"></span
     ></ng-container>
-    <span *ngIf="title">{{ title }}</span>
+    <span class="ki-button__title" *ngIf="title">{{ title }}</span>
     <ng-container *ngTemplateOutlet="content"></ng-container>
   </button>
 </ng-template>

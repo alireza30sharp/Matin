@@ -26,6 +26,7 @@ import {
 import 'ag-grid-enterprise';
 import { AgGridMaster } from '@share/interfaces/aggrid-master';
 import { AgGridInterFace } from '@share/interfaces/ag-grid.interface';
+import { CustomLoadingCellRenderer } from '../loading-cell-renderer/loading';
 @Component({
   selector: 'ag-grid-data',
   templateUrl: './ag-grid-data.component.html',
@@ -52,7 +53,7 @@ export class AgGridDataComponent extends AgGridMaster implements AfterViewInit {
     this.columnsTable = columns;
     if (this._isEditMode) {
       this.isShowToolbar = true;
-      this.enableFillHandle = true;
+      this.enableFillHandle = false;
       this.undoRedoCellEditing = true;
       this.enableCellChangeFlash = false;
       let col = columns.filter((col) => col.editable);
@@ -75,7 +76,7 @@ export class AgGridDataComponent extends AgGridMaster implements AfterViewInit {
 
   @Input() suppressRowClickSelection: boolean = false;
   @Input() rowSelection: 'single' | 'multiple' = 'single';
-  @Input() suppressAggFuncInHeader: boolean;
+  @Input() suppressAggFuncInHeader: boolean = false;
   @Input() set rowDataDefault(list: any[]) {
     this.rowData = list;
   }
@@ -103,7 +104,8 @@ export class AgGridDataComponent extends AgGridMaster implements AfterViewInit {
   @Output() saveCellChange = new EventEmitter<any>();
   @Output() DesignerclickEvent = new EventEmitter<any>();
   public getRowId: GetRowIdFunc = (params: GetRowIdParams) => {
-    return params.data.id;
+    console.log('id grid:' + params.data.companyId);
+    return params.data.companyId;
   };
   public chartThemeOverrides: AgChartThemeOverrides = {
     common: {
@@ -125,6 +127,11 @@ export class AgGridDataComponent extends AgGridMaster implements AfterViewInit {
   public chartToolPanelsDef: ChartToolPanelsDef = {
     panels: ['data', 'format'],
   };
+  public loadingCellRenderer: any = CustomLoadingCellRenderer;
+  public loadingCellRendererParams: any = {
+    loadingMessage: 'One moment please...',
+  };
+
   _isEditMode: boolean = false;
   rowValue: any;
   startEditingCell: string = null;

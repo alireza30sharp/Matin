@@ -1,5 +1,5 @@
 <app-general-panel
-  [title]="'Company List'"
+  [title]="'لیست شرکت ها'"
   [hideBackButton]="true"
   [height]="'100%'"
   [contentOverflow]="'hidden'"
@@ -10,6 +10,8 @@
       (EditSelected)="openModal(true)"
       (NewSelected)="openModal()"
       (PerintSelected)="onDesignerclickEvent($event)"
+      (RefrashSelected)="onRefrashSelected()"
+      [sizeBtn]="'md'"
       [disabled]="selectRow.length != 0 ? false : true"
     >
     </app-tools-bar>
@@ -18,7 +20,6 @@
     [rowDataDefault]="rowDataDefault"
     [columnsDefault]="columnsDefault"
     [defaultColDef]="defaultColDef"
-    [showSideBar]="true"
     [pagination]="true"
     (selectedRowsChange)="onSelectedRowsChangeEvent($event)"
     (removeCellChange)="onDeleteItem($event)"

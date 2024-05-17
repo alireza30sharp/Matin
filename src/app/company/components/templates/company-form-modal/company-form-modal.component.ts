@@ -3,7 +3,7 @@ import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { LoadingStateFrom } from '@share/models/loadingState';
 import { ToastService } from '@share/services';
 import { finalize } from 'rxjs';
-import { companyInsert } from 'src/app/company/models';
+import {  companyModel } from 'src/app/company/models';
 import { CompanyService } from 'src/app/company/services';
 @Component({
   selector: 'app-company-form-modal',
@@ -16,10 +16,12 @@ export class CompanyFormModalComponent
   implements OnInit
 {
   @Input() entryId?: number;
-  initialData?: companyInsert = new companyInsert();
+  initialData?: companyModel = new companyModel();
   readonly submitButtonId: string = 'submit-button';
   isEditMode?: boolean;
   isLoading?: boolean;
+  isResetForm?: boolean;
+  hidePassword?:boolean=false
   ngOnInit(): void {
     this.isEditMode = !!this.entryId;
     this._getInitialData();
@@ -32,49 +34,85 @@ export class CompanyFormModalComponent
     super();
   }
   private _getInitialData() {
-    this.isLoading = true;
+  
     if (this.isEditMode) {
-      debugger;
+      this.hidePassword=false;
       this._companyService.getCompaniyById(this.entryId).subscribe((res) => {
         if (res.isOk) {
           this.initialData = res.data;
         }
+        this.isLoading = false;
       });
     }
-    setTimeout(() => {
-      this.isLoading = false;
-    }, 100);
+    else
+    {
+      this.hidePassword=true;
+    }
+   
   }
-  saveHandler(data: companyInsert) {
+  saveHandler(data: companyModel) {
+    this.isResetForm = Object.assign(false, false);
+    this.isLoading = true;
     if (this.isLoadingForm) {
       this._toastService.error('::Please_Wait_While_Executing_The_Request');
       return;
     }
     this.startLoading();
-    this._companyService
-      .createCompany(data as any)
-      .pipe(
-        finalize(() => {
-          this.finalize();
-        })
-      )
-      .subscribe({
-        next: (res) => {
-          if (res.isOk) {
-            this._toastService.success('با موفقیت ثبت شد');
-          }
-        },
-        error: (err) => {
-          let msg = '';
-          if (err.error.messages) {
-            this._toastService.error(err.error.messages);
-            msg = err.error.messages.join(' ');
-          } else if (err.error.message) {
-            this._toastService.error(err.error.message);
-            msg = err.error.message.join(' ');
-          }
-        },
-      });
+    if (this.entryId) {
+      this._companyService
+        .updateCompany(data as any)
+        .pipe(
+          finalize(() => {
+            this.isLoading = false;
+            this.finalize();
+          })
+        )
+        .subscribe({
+          next: (res) => {
+            if (res.isOk) {
+              this.isResetForm = true;
+              this._toastService.success('با موفقیت ویرایش  شد');
+            }
+          },
+          error: (err) => {
+            this.isResetForm = false;
+            let msg = '';
+            if (err.error.messages) {
+              this._toastService.error(err.error.messages);
+              msg = err.error.messages.join(' ');
+            } else if (err.error.message) {
+              this._toastService.error(err.error.message);
+              msg = err.error.message.join(' ');
+            }
+          },
+        });
+    } else {
+      this._companyService
+        .createCompany(data as any)
+        .pipe(
+          finalize(() => {
+            this.isLoading = false;
+            this.finalize();
+          })
+        )
+        .subscribe({
+          next: (res) => {
+            if (res.isOk) {
+              this._toastService.success('با موفقیت ثبت شد');
+            }
+          },
+          error: (err) => {
+            let msg = '';
+            if (err.error.messages) {
+              this._toastService.error(err.error.messages);
+              msg = err.error.messages.join(' ');
+            } else if (err.error.message) {
+              this._toastService.error(err.error.message);
+              msg = err.error.message.join(' ');
+            }
+          },
+        });
+    }
   }
   cancelHandler() {
     this._activeModal.close(false);

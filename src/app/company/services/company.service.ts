@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {
   companyInput,
-  companyInsert,
   companyInterFace,
   companyModel,
+  updateCompanyPasswordDto,
 } from '../models';
 import { ApiUrlService } from '@services';
 import { Data, response } from '@share/models/response.model';
@@ -16,20 +16,20 @@ export class CompanyService {
   ) {}
 
   getCompanies(params?: companyInput) {
+ let   PageNumber: number = 1;
+ let  PageSize: number = 20;
     return this.$http.get<response<Data<companyModel[]>>>(
       this.urlSvc.company.getCompanies,
       {
         params: {
-          CompanyId: params.Id,
-          CityId: params.CityId,
-          statuesId: params.statuesId,
-          CompanyTypeId: params.CompanyTypeId,
-          CompanyUniqCode: params.CompanyUniqCode,
-          CompanyName: params.CompanyName,
-          PageNumber: params.PageNumber,
-          PageSize: params.PageSize,
-          SelectFrom: params.SelectFrom,
-          SelectCount: params.SelectCount,
+          CompanyId: params.companyId,
+          CityId: params.cityId,
+          statusId: params.statusId,
+          CompanyTypeId: params.companyTypeId,
+          CompanyUniqCode: params.companyUniqCode,
+          CompanyName: params.companyName,
+          PageNumber: PageNumber,
+          PageSize:PageSize,
         },
       }
     );
@@ -42,13 +42,19 @@ export class CompanyService {
     );
   }
 
-  updateCompany(model: companyInsert) {
+  updateCompany(model: companyModel) {
     return this.$http.put<response<string>>(
       this.urlSvc.company.updateCompany,
       model
     );
   }
-  createCompany(model: companyInterFace) {
+  updatePasswordCompany(model: updateCompanyPasswordDto) {
+    return this.$http.put<response<string>>(
+      this.urlSvc.company.updateCompanyPassword,
+      model
+    );
+  }
+  createCompany(model: companyModel) {
     return this.$http.post<response<any>>(
       this.urlSvc.company.addCompany,
       model
@@ -57,7 +63,7 @@ export class CompanyService {
   getCompaniyById(Id: number) {
     return this.$http.get<response<any>>(this.urlSvc.company.getCompaniyById, {
       params: {
-        Id: Id,
+        CompanyId: Id,
       },
     });
   }
@@ -67,5 +73,18 @@ export class CompanyService {
       model
     );
   }
-
+  getBarname(eid: any) {
+    return this.$http.get<response<any>>(this.urlSvc.barname.GetBarname, {
+      params: {
+        Id: eid,
+      },
+    });
+  }
+  getBarnameByLink(eid: any) {
+    return this.$http.get<response<any>>(this.urlSvc.barname.GetBarnameByLink, {
+      params: {
+        Id: eid,
+      },
+    });
+  }
 }

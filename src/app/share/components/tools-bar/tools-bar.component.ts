@@ -7,6 +7,7 @@ import {
   Output,
 } from '@angular/core';
 import { Router } from '@angular/router';
+import { SizeType } from '@share/types/size.type';
 @Component({
   selector: 'app-tools-bar',
   templateUrl: './tools-bar.component.html',
@@ -17,7 +18,9 @@ export class ToolsBarComponent implements OnInit {
   @Output() EditSelected: EventEmitter<void> = new EventEmitter();
   @Output() DeleteSelected: EventEmitter<void> = new EventEmitter();
   @Output() PerintSelected: EventEmitter<void> = new EventEmitter();
+  @Output () RefrashSelected: EventEmitter<void> = new EventEmitter();
   @Input() disabled: boolean = false;
+  @Input() sizeBtn?: SizeType='lg';
   constructor() {}
 
   addEvent() {
@@ -41,7 +44,7 @@ export class ToolsBarComponent implements OnInit {
     alert('Escape');
   }
   refrashEvent() {
-    alert('refrashEvent');
+    this.RefrashSelected.emit()
   }
   perintEvent() {
     this.PerintSelected.emit();

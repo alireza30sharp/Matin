@@ -19,6 +19,7 @@ export class UserAuthService {
   token?: any;
 
   signing() {
+    localStorage.removeItem(UserAuthService.AUTH_REDIRECT_KEY);
     this.router$.navigateByUrl('/auth');
   }
 

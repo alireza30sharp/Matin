@@ -155,19 +155,27 @@ export class SigningComponent implements OnInit {
             this.userNameLoading = false;
           })
         )
-        .subscribe((res) => {
-          this.userNameLoading = false;
-          if (res.isOk && res.data.action === ActionMethod.Login) {
-            this.authVM.changeFormState('password');
-          } else {
-            if (res.data.action === ActionMethod.Register) {
-              this.authVM.changeFormState('signup');
-              this.authVM.signupForm_mobileControl.setValue(
-                this.authVM.userNameControl.value
-              );
+        .subscribe(
+          (res) => {
+            this.userNameLoading = false;
+            if (res.isOk && res.data.action === ActionMethod.Login) {
+              this.authVM.changeFormState('password');
+            } else {
+              if (res.data.action === ActionMethod.Register) {
+                this.authVM.changeFormState('signup');
+                this.authVM.signupForm_mobileControl.setValue(
+                  this.authVM.userNameControl.value
+                );
+              }
             }
+          },
+          (error) => {
+            this.userNameLoading = false;
+            this.authVM.showErrorMessage(
+              'کد تایید با موفقیت ارسال نشد، لطفا مجدد سعی نمایید.'
+            );
           }
-        });
+        );
     }
   }
   activationAndVerificationCode(mobile: string) {
@@ -202,18 +210,24 @@ export class SigningComponent implements OnInit {
             this.passwordLoading = false;
           })
         )
-        .subscribe((res) => {
-          if (res.isOk) {
-            this.passwordLoading = false;
-            this.authSvc.prepareSigning(res.data.token);
-          } else {
-            if (res.data.auth_Type === ActionMethod.Register) {
-              this.authVM.changeFormState('signup');
-              this.authVM.signupForm_mobileControl.setValue(
-                this.authVM.userNameControl.value
-              );
+        .subscribe({
+          next: (res) => {
+            if (res.isOk) {
+              this.passwordLoading = false;
+              this.authSvc.prepareSigning(res.data.token);
+            } else {
+              if (res.data.auth_Type === ActionMethod.Register) {
+                this.authVM.changeFormState('signup');
+                this.authVM.signupForm_mobileControl.setValue(
+                  this.authVM.userNameControl.value
+                );
+              }
             }
-          }
+          },
+          error: (err: HttpErrorResponse) => {
+            this.otpVerifyLoading = false;
+            this.authVM.showErrorMessage(err.error.message);
+          },
         });
     } else {
       this.authVM.passwordControl.markAsDirty();

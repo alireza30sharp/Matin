@@ -7,7 +7,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import * as _sharePipe from '@share/pipes';
 import { DynamicModule } from 'ng-dynamic-component';
-import { TreeModule } from '@circlon/angular-tree-component';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { NgSelectModule } from '@ng-select/ng-select';
@@ -71,7 +70,6 @@ const component = [
     _sharePipe.SafeUrlPipe,
     _shareDir.DefaultImage,
     _shareCmp.PinCodeComponent,
-    _shareCmp.TreeRootComponent,
     _shareCmp.FromComponent,
     _shareCmp.ModalAddEditNodeComponent,
     _shareCmp.ChartLoadingComponent,
@@ -87,7 +85,6 @@ const component = [
     FormsModule,
     DynamicModule,
     ReactiveFormsModule,
-    TreeModule,
     ToastrModule.forRoot({
       timeOut: 1000,
       positionClass: 'toast-bottom-right',
@@ -116,7 +113,6 @@ const component = [
     ReactiveFormsModule,
     Ag.AgGridModule,
     _shareCmp.PinCodeComponent,
-    _shareCmp.TreeRootComponent,
     _shareCmp.FromComponent,
     _shareCmp.ChartLoadingComponent,
     _shareCmp.PostLoadingComponent,
@@ -124,7 +120,6 @@ const component = [
     _shareCmp.ToolsBarComponent,
     ...component,
     ToastrModule,
-    TreeModule,
     NgSelectModule,
     NgbModule,
     MaterialModule,

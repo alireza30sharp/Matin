@@ -53,6 +53,7 @@ export function AppTokenStartup(authSvc: svc.UserAuthService) {
     AppRoutingModule,
     HighchartsChartModule,
     DragDropModule,
+
   ],
   providers: [
     {

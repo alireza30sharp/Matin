@@ -12,6 +12,10 @@ const desktopRoutes: Route[] = [
     loadChildren: () => import('./idp/idp.module').then((m) => m.IdpModule),
   },
   {
+    path: 'map',
+    loadChildren: () => import('./map/map.module').then((m) => m.MapModule),
+  },
+  {
     path: 'company',
     loadChildren: () =>
       import('./company/company.module').then((m) => m.CompanyModule),
